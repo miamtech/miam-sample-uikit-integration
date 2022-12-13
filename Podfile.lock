@@ -1,0 +1,22 @@
+PODS:
+  - MiamIOSFramework (2.2.6)
+
+DEPENDENCIES:
+  - MiamIOSFramework (from `https://gitlab.com/miam/kmm-miam-sdk.git`, branch `fixes/uitableviewcell-autosizing`)
+
+EXTERNAL SOURCES:
+  MiamIOSFramework:
+    :branch: fixes/uitableviewcell-autosizing
+    :git: https://gitlab.com/miam/kmm-miam-sdk.git
+
+CHECKOUT OPTIONS:
+  MiamIOSFramework:
+    :commit: be5a5cb41a53de19bf3e1db6c6edbb630e30929f
+    :git: https://gitlab.com/miam/kmm-miam-sdk.git
+
+SPEC CHECKSUMS:
+  MiamIOSFramework: a7357d5ff9abe141cbb6eaf0b8b68805a07f2d32
+
+PODFILE CHECKSUM: 02c3fbddd18d9b530da5560b8010fa8dfeac258c
+
+COCOAPODS: 1.11.3
