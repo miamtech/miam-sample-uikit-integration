@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
 		BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8020287D913400F8FF9A /* MealViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
@@ -44,12 +46,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264A36B02A6FC39C00EA2D23 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				264A36B12A6FC39C00EA2D23 /* miam-sdk */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +72,7 @@
 		BF85056E28578EF800651864 = {
 			isa = PBXGroup;
 			children = (
+				264A36B02A6FC39C00EA2D23 /* Packages */,
 				BF85057928578EF800651864 /* SampleMiamUIKitIntegration */,
 				BF85057828578EF800651864 /* Products */,
 				9FCC2D7B65602A1222F1A0AD /* Frameworks */,
@@ -111,6 +123,9 @@
 			dependencies = (
 			);
 			name = SampleMiamUIKitIntegration;
+			packageProductDependencies = (
+				264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */,
+			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +154,9 @@
 				Base,
 			);
 			mainGroup = BF85056E28578EF800651864;
+			packageReferences = (
+				264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */,
+			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/diarmuidmcgonagle/sources/miam/miam-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */;
+			productName = MiamIOSFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF85056F28578EF800651864 /* Project object */;
 }
