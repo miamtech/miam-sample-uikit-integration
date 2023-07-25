@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //basketHandler.setPushProductsToRetailerBasket(func: pushProductToBasket)
         //basketHandler.pushProductsToMiamBasket(retailerBasket: [])
 //        PointOfSaleHandler.shared.updateStoreId(storeId: "35290")
-//        PointOfSaleHandler.shared.setSupplierOrigin(origin:"www.coursesu.fr")
+//        PointOfSaleHandler.shared.setSupplierOrigin(origin:"www.MiamNeutral.fr")
 //        PointOfSaleHandler.shared.setSupplier(supplierId: 7)
         PointOfSaleHandler.shared.setSupplier(supplierId: 9)
         PointOfSaleHandler.shared.setSupplierOrigin(origin: "www.franprix.fr-dev")

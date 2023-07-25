@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
 		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
+		264A36C52A7003CC00EA2D23 /* BasketPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* BasketPreviewViewController.swift */; };
+		264A36C72A7003E300EA2D23 /* ReplaceMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* ReplaceMealViewController.swift */; };
+		264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */; };
+		264A36CC2A7003F200EA2D23 /* MealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */; };
+		264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */; };
+		264A36CF2A70045200EA2D23 /* RecapPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CE2A70045200EA2D23 /* RecapPurchaseViewController.swift */; };
+		264A36D12A70045E00EA2D23 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36D02A70045E00EA2D23 /* RecipeDetailsViewController.swift */; };
 		BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8020287D913400F8FF9A /* MealViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
@@ -26,6 +33,13 @@
 /* Begin PBXFileReference section */
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
+		264A36C42A7003CC00EA2D23 /* BasketPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPreviewViewController.swift; sourceTree = "<group>"; };
+		264A36C62A7003E300EA2D23 /* ReplaceMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceMealViewController.swift; sourceTree = "<group>"; };
+		264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerFormViewController.swift; sourceTree = "<group>"; };
+		264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerViewController.swift; sourceTree = "<group>"; };
+		264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
+		264A36CE2A70045200EA2D23 /* RecapPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapPurchaseViewController.swift; sourceTree = "<group>"; };
+		264A36D02A70045E00EA2D23 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +121,13 @@
 				BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */,
 				BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */,
 				BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */,
+				264A36C42A7003CC00EA2D23 /* BasketPreviewViewController.swift */,
+				264A36C62A7003E300EA2D23 /* ReplaceMealViewController.swift */,
+				264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */,
+				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
+				264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */,
+				264A36D02A70045E00EA2D23 /* RecipeDetailsViewController.swift */,
+				264A36CE2A70045200EA2D23 /* RecapPurchaseViewController.swift */,
 			);
 			path = SampleMiamUIKitIntegration;
 			sourceTree = "<group>";
@@ -190,6 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264A36D12A70045E00EA2D23 /* RecipeDetailsViewController.swift in Sources */,
+				264A36CF2A70045200EA2D23 /* RecapPurchaseViewController.swift in Sources */,
+				264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */,
+				264A36CC2A7003F200EA2D23 /* MealPlannerViewController.swift in Sources */,
+				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
+				264A36C72A7003E300EA2D23 /* ReplaceMealViewController.swift in Sources */,
+				264A36C52A7003CC00EA2D23 /* BasketPreviewViewController.swift in Sources */,
 				BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */,
 				BF59A48228D0DF4500882BA9 /* RecipesTableViewController.swift in Sources */,
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
