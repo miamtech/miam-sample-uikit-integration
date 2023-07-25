@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
+		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
 		BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8020287D913400F8FF9A /* MealViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
+		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
 		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */,
+				264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				264A36B12A6FC39C00EA2D23 /* miam-sdk */,
+				264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -125,6 +129,7 @@
 			name = SampleMiamUIKitIntegration;
 			packageProductDependencies = (
 				264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */,
+				264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -156,6 +161,7 @@
 			mainGroup = BF85056E28578EF800651864;
 			packageReferences = (
 				264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */,
+				264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */,
 			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
@@ -420,6 +426,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/diarmuidmcgonagle/sources/miam/MiamNeutraliOSFramework";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +441,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */;
 			productName = MiamIOSFramework;
+		};
+		264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */;
+			productName = MiamNeutraliOSFramework;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
