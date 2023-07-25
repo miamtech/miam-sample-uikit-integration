@@ -74,6 +74,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="juC-UB-nml"/>
+                    <connections>
+                        <outlet property="actionButton" destination="CHj-sV-yZB" id="aS1-iO-wpa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEI-YI-dhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +85,7 @@
         <!--Meal View Controller-->
         <scene sceneID="9Ku-Sd-xTv">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BHm-S2-5ly" customClass="MealViewController" customModule="SampleUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BHm-S2-5ly" customClass="BudgetFormViewController" customModule="SampleUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hzH-lL-m6U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

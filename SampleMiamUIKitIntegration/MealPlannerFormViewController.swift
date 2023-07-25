@@ -61,9 +61,9 @@ class MealPlannerFormViewController: UIHostingController<MealPlannerFormView<Mia
             budgetForm: MiamNeutralMealPlannerForm(),
             budgetInfos: BudgetInfos(moneyBudget: 0.0, numberOfGuests: 0, numberOfMeals: 0),
             onBudgetValidated: {_ in
-//                DispatchQueue.main.async {
-//                    self.navigationController?.pushViewController(MealPlannerViewController(), animated: true)
-//                }
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(MealPlannerViewController(), animated: true)
+                }
             }
         )
         self.rootView = budgetForm
