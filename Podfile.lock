@@ -1,10 +1,10 @@
 PODS:
-  - miamCore (0.0.18)
-  - MiamIOSFramework (0.0.18):
-    - miamCore (~> 0.0.18)
+  - miamCore (3.12.6)
+  - MiamIOSFramework (3.12.6):
+    - miamCore (~> 3.12.6)
 
 DEPENDENCIES:
-  - MiamIOSFramework (~> 0.0.18)
+  - MiamIOSFramework (~> 3.12.6)
 
 SPEC REPOS:
   trunk:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - MiamIOSFramework
 
 SPEC CHECKSUMS:
-  miamCore: f3bcfcdab7bb005e89a9f4820276ded9c35af29e
-  MiamIOSFramework: 488994d5bd834df52ed5931eb2e27bf702dd0232
+  miamCore: 7893da9649cb53cf1371e39ac675dcfdcb818118
+  MiamIOSFramework: 507681ffb1ab5dca67abb408ae099cbe68ece65b
 
-PODFILE CHECKSUM: 6b34fb9720b41a7fa68b0d792c52fe84d06b3cb2
+PODFILE CHECKSUM: 9e3a5a822abc5a55ebcde621e6121f1b86bb7902
 
 COCOAPODS: 1.12.1

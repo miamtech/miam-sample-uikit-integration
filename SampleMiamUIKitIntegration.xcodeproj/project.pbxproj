@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264A36AD2A6FBF1D00EA2D23 /* Pods_SampleMiamUIKitIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */; };
 		BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8020287D913400F8FF9A /* MealViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
@@ -22,15 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4270688CB361738A14C9EF3C /* Pods-SampleUIKitIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUIKitIntegration.release.xcconfig"; path = "Target Support Files/Pods-SampleUIKitIntegration/Pods-SampleUIKitIntegration.release.xcconfig"; sourceTree = "<group>"; };
-		578E2A244104503189D12F5C /* Pods_SampleUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A15934E040A7B5052E616C /* Pods-SampleMiamUIKitIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleMiamUIKitIntegration.release.xcconfig"; path = "Target Support Files/Pods-SampleMiamUIKitIntegration/Pods-SampleMiamUIKitIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE08B949E51C066F21CB87E0 /* Pods-SampleMiamUIKitIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleMiamUIKitIntegration.debug.xcconfig"; path = "Target Support Files/Pods-SampleMiamUIKitIntegration/Pods-SampleMiamUIKitIntegration.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
 		BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		BF59A47E28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardHostingTableViewCell.swift; sourceTree = "<group>"; };
 		BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
-		BF85057728578EF800651864 /* SampleUIKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleUIKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMiamUIKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF85057A28578EF800651864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF85057C28578EF800651864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BF85058128578EF800651864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +40,6 @@
 		BF85058628578EFA00651864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF85058828578EFA00651864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8505922857955600651864 /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
-		F547E6D054306D078CC05872 /* Pods-SampleUIKitIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUIKitIntegration.debug.xcconfig"; path = "Target Support Files/Pods-SampleUIKitIntegration/Pods-SampleUIKitIntegration.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264A36AD2A6FBF1D00EA2D23 /* Pods_SampleMiamUIKitIntegration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +57,7 @@
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				578E2A244104503189D12F5C /* Pods_SampleUIKitIntegration.framework */,
+				AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,7 +75,7 @@
 		BF85057828578EF800651864 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF85057728578EF800651864 /* SampleUIKitIntegration.app */,
+				BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,8 +103,8 @@
 		E11B885B63472A6396E46D30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F547E6D054306D078CC05872 /* Pods-SampleUIKitIntegration.debug.xcconfig */,
-				4270688CB361738A14C9EF3C /* Pods-SampleUIKitIntegration.release.xcconfig */,
+				BE08B949E51C066F21CB87E0 /* Pods-SampleMiamUIKitIntegration.debug.xcconfig */,
+				A8A15934E040A7B5052E616C /* Pods-SampleMiamUIKitIntegration.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -110,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF85057628578EF800651864 /* SampleUIKitIntegration */ = {
+		BF85057628578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF85058B28578EFA00651864 /* Build configuration list for PBXNativeTarget "SampleUIKitIntegration" */;
+			buildConfigurationList = BF85058B28578EFA00651864 /* Build configuration list for PBXNativeTarget "SampleMiamUIKitIntegration" */;
 			buildPhases = (
 				5A878539C31F17F8166F453E /* [CP] Check Pods Manifest.lock */,
 				BF85057328578EF800651864 /* Sources */,
@@ -124,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = SampleUIKitIntegration;
+			name = SampleMiamUIKitIntegration;
 			productName = SampleUIKitIntegration;
-			productReference = BF85057728578EF800651864 /* SampleUIKitIntegration.app */;
+			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF85057628578EF800651864 /* SampleUIKitIntegration */,
+				BF85057628578EF800651864 /* SampleMiamUIKitIntegration */,
 			);
 		};
 /* End PBXProject section */
@@ -182,15 +184,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleUIKitIntegration/Pods-SampleUIKitIntegration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleMiamUIKitIntegration/Pods-SampleMiamUIKitIntegration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleUIKitIntegration/Pods-SampleUIKitIntegration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleMiamUIKitIntegration/Pods-SampleMiamUIKitIntegration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleUIKitIntegration/Pods-SampleUIKitIntegration-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleMiamUIKitIntegration/Pods-SampleMiamUIKitIntegration-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A878539C31F17F8166F453E /* [CP] Check Pods Manifest.lock */ = {
@@ -208,7 +210,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SampleUIKitIntegration-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SampleMiamUIKitIntegration-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,15 +374,15 @@
 		};
 		BF85058C28578EFA00651864 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F547E6D054306D078CC05872 /* Pods-SampleUIKitIntegration.debug.xcconfig */;
+			baseConfigurationReference = BE08B949E51C066F21CB87E0 /* Pods-SampleMiamUIKitIntegration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 38CGT7EPPY;
+				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleUIKitIntegration/Info.plist;
+				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -401,15 +403,15 @@
 		};
 		BF85058D28578EFA00651864 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4270688CB361738A14C9EF3C /* Pods-SampleUIKitIntegration.release.xcconfig */;
+			baseConfigurationReference = A8A15934E040A7B5052E616C /* Pods-SampleMiamUIKitIntegration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 38CGT7EPPY;
+				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleUIKitIntegration/Info.plist;
+				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -440,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF85058B28578EFA00651864 /* Build configuration list for PBXNativeTarget "SampleUIKitIntegration" */ = {
+		BF85058B28578EFA00651864 /* Build configuration list for PBXNativeTarget "SampleMiamUIKitIntegration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF85058C28578EFA00651864 /* Debug */,
