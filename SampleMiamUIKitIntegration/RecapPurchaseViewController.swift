@@ -1,49 +1,46 @@
-////
-////  RecapPurchaseViewController.swift
-////  SampleUIKitIntegration
-////
-////  Created by didi on 6/21/23.
-////
 //
-//import UIKit
-//import SwiftUI
-//import MiamIOSFramework
-//import MiamNeutraliOSFramework
+//  RecapPurchaseViewController.swift
+//  SampleUIKitIntegration
 //
-//class RecapPurchaseViewController: UIHostingController<MealPlannerRecapView<MiamNeutralMealPlannerRecapView>> {
+//  Created by didi on 6/21/23.
 //
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        let recapPurchase = MealPlannerRecapView.init(
-//            template: MiamNeutralMealPlannerRecapView(onClose: {}),
-//            onTapGesture: {}
-//        )
-//        super.init(coder: aDecoder, rootView: recapPurchase)
-//    }
-//
-//    override init(rootView: MealPlannerRecapView<MiamNeutralMealPlannerRecapView>) {
-//        super.init(rootView: rootView)
-//    }
-//
-//    public init() {
-//        let recapPurchase = MealPlannerRecapView.init(
-//            template: MiamNeutralMealPlannerRecapView(onClose: {}),
-//            onTapGesture: {}
-//        )
-//        super.init(rootView: recapPurchase)
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.title = "Mon assistant Budget repas"
-//        let recapPurchase = MealPlannerRecapView.init(
-//            template: MiamNeutralMealPlannerRecapView(
-//                   onClose: {
-//                       print("closing")
-//                   }),
-//            onTapGesture: { print("promoting")}
-//        )
-//        self.rootView = recapPurchase
-//        // Do any additional setup after loading the view.
-//    }
-//}
+
+import UIKit
+import SwiftUI
+import MiamIOSFramework
+import MiamNeutraliOSFramework
+
+class RecapPurchaseViewController: UIHostingController<MealPlannerRecapView<MiamNeutralMealPlannerRecap>> {
+
+
+    required init?(coder aDecoder: NSCoder) {
+        let recapPurchase = MealPlannerRecapView.init(
+            template: MiamNeutralMealPlannerRecap(),
+            onTapGesture: {}
+        )
+        super.init(coder: aDecoder, rootView: recapPurchase)
+    }
+
+    override init(rootView: MealPlannerRecapView<MiamNeutralMealPlannerRecap>) {
+        super.init(rootView: rootView)
+    }
+
+    public init() {
+        let recapPurchase = MealPlannerRecapView.init(
+            template: MiamNeutralMealPlannerRecap(),
+            onTapGesture: {}
+        )
+        super.init(rootView: recapPurchase)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Mon assistant Budget repas"
+        let recapPurchase = MealPlannerRecapView.init(
+            template: MiamNeutralMealPlannerRecap(),
+            onTapGesture: { print("promoting")}
+        )
+        self.rootView = recapPurchase
+        // Do any additional setup after loading the view.
+    }
+}
