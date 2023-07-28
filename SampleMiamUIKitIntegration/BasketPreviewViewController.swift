@@ -13,6 +13,7 @@ import MiamNeutraliOSFramework
 class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewView<
     MiamNeutralMealPlannerBasketPreviewLoading,
     MiamNeutralMealPlannerBasketPreviewRecipeOverview,
+    MiamNeutralMealPlannerRecipeCardLoading,
     MiamNeutralMealPlannerBasketPreviewProduct,
     MiamNeutralMealPlannerBasketPreviewFooter,
     MiamNeutralMealPlannerBasketPreviewSectionTitle,
@@ -26,6 +27,7 @@ class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewV
     override init(rootView: MealPlannerBasketPreviewView<
                   MiamNeutralMealPlannerBasketPreviewLoading,
                   MiamNeutralMealPlannerBasketPreviewRecipeOverview,
+                  MiamNeutralMealPlannerRecipeCardLoading,
                   MiamNeutralMealPlannerBasketPreviewProduct,
                   MiamNeutralMealPlannerBasketPreviewFooter,
                   MiamNeutralMealPlannerBasketPreviewSectionTitle,
@@ -37,6 +39,7 @@ class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewV
         let budgetPreview = MealPlannerBasketPreviewView.init(
             loadingTemplate: MiamNeutralMealPlannerBasketPreviewLoading(),
             recipeOverviewTemplate: MiamNeutralMealPlannerBasketPreviewRecipeOverview(),
+            recipeLoadingTemplate: MiamNeutralMealPlannerRecipeCardLoading(),
             productTemplate: MiamNeutralMealPlannerBasketPreviewProduct(),
             footerTemplate: MiamNeutralMealPlannerBasketPreviewFooter(),
             sectionTitleTemplate: MiamNeutralMealPlannerBasketPreviewSectionTitle(),
@@ -56,6 +59,7 @@ class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewV
         let budgetPreview = MealPlannerBasketPreviewView.init(
             loadingTemplate: MiamNeutralMealPlannerBasketPreviewLoading(),
             recipeOverviewTemplate: MiamNeutralMealPlannerBasketPreviewRecipeOverview(),
+            recipeLoadingTemplate: MiamNeutralMealPlannerRecipeCardLoading(),
             productTemplate: MiamNeutralMealPlannerBasketPreviewProduct(),
             footerTemplate: MiamNeutralMealPlannerBasketPreviewFooter(),
             sectionTitleTemplate: MiamNeutralMealPlannerBasketPreviewSectionTitle(),
