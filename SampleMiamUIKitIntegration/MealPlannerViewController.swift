@@ -50,9 +50,9 @@ class MealPlannerViewController: UIHostingController<MealPlannerPlannerView<Miam
             selectedRecipe: .constant("2"),
             showRecipe: { recipe in
                 UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-//                DispatchQueue.main.async {
-//                    self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
-//                }
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+                }
             },
             validateRecipes: {
                 DispatchQueue.main.async {

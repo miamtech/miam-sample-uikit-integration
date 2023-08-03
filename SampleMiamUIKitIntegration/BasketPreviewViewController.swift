@@ -78,8 +78,8 @@ class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewV
             },
             onRecipeTapped: { recipe in
                 UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-//                DispatchQueue.main.async { self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
-//                }
+                DispatchQueue.main.async { self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+                }
             }
         )
         self.rootView = budgetPreview

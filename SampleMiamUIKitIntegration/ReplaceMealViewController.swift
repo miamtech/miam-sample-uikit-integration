@@ -75,9 +75,9 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
     private func setupOnRecipeTappedAction() {
         onRecipeTappedAction = { recipe in
             UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-//            DispatchQueue.main.async { [weak self] in
-//                self?.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
-//            }
+            DispatchQueue.main.async { [weak self] in
+                self?.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+            }
         }
     }
 }
