@@ -15,7 +15,7 @@ import MiamNeutraliOSFramework
 // My experience in UIKit is not great, so this is the solution I found that worked. You will probably have a better way
 // to handle this
 // TODO: add MiamNeutralRecipeCard
-class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView<
+class ReplaceMealViewController: UIHostingController<BudgetPlannerRecipePickerView<
         MiamNeutralMealPlannerSearch,
         MiamRecipeCard>
 > {
@@ -30,7 +30,7 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
         setupOnRecipeTappedAction()
     }
 
-    override init(rootView: MealPlannerRecipePickerView<
+    override init(rootView: BudgetPlannerRecipePickerView<
           MiamNeutralMealPlannerSearch,
           MiamRecipeCard>) {
         super.init(rootView: ReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
@@ -50,10 +50,10 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
         self.rootView = ReplaceMealViewController.createRootView(onRecipeSelected: onRecipeSelectedAction, onRecipeTapped: onRecipeTappedAction)
     }
 
-    private static func createRootView(onRecipeSelected: ((String) -> Void)? = nil, onRecipeTapped: ((String) -> Void)? = nil) -> MealPlannerRecipePickerView<
+    private static func createRootView(onRecipeSelected: ((String) -> Void)? = nil, onRecipeTapped: ((String) -> Void)? = nil) -> BudgetPlannerRecipePickerView<
             MiamNeutralMealPlannerSearch,
             MiamRecipeCard> {
-        return MealPlannerRecipePickerView(
+        return BudgetPlannerRecipePickerView(
             searchTemplate: MiamNeutralMealPlannerSearch(),
             cardTemplate: MiamRecipeCard(), maxBudget: 23.2,
             onRecipeSelected: onRecipeSelected ?? { _ in },
