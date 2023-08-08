@@ -51,7 +51,9 @@ class CatalogFiltersViewController:  UIHostingController<
                     filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),
                     filterRow: MiamNeutralCatalogFilterRow(),
                     finalButtons: MiamNeutralCatalogFilterSubmitAndClearButton(),
-                    apply: {},
+                    apply: {
+                        self.navigationController?.popViewController(animated: true)
+                    },
                     close: {
                          self.navigationController?.popViewController(animated: true)
                  })

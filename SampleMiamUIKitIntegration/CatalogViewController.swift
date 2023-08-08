@@ -90,16 +90,24 @@ class CatalogViewController: UIHostingController<
             catalogEmpty: MiamNeutralCatalogEmpty(),
             catalogRecipeLoading: MiamNeutralGeneralLoading(),
             catalogRecipeEmpty: MiamNeutralGeneralEmpty(),
-            closeCatalogAction: {},
+            closeCatalogAction: {
+                print("closeCatalogAction")
+            },
             willNavigateTo: { _, _, _ in},
             filtersTapped: {
                 DispatchQueue.main.async {
                     self.navigationController?.pushViewController(CatalogFiltersViewController(), animated: true)
                 }
             },
-            searchTapped: {},
-            favoritesTapped: {},
-            preferencesTapped: {},
+            searchTapped: {
+                print("searchTapped")
+            },
+            favoritesTapped: {
+                print("favoritesTapped")
+            },
+            preferencesTapped: {
+                print("preferencesTapped")
+            },
             launchMealPlanner: {
                 DispatchQueue.main.async {
                     self.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
