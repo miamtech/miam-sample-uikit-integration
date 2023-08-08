@@ -19,10 +19,32 @@ class CatalogViewController: UIHostingController<
         MiamNeutralGeneralLoading,
         MiamNeutralGeneralEmpty>
     > {
+        
+        private func setupTabBarItem() {
+            self.tabBarItem.title = "Catalog"
+            self.tabBarItem.image = UIImage(systemName: "book.fill")
+        }
     
-    required init?(coder aDecoder: NSCoder) {
-             super.init(coder: aDecoder)
-         }
+        required init?(coder aDecoder: NSCoder) {
+            let catalogPage = CatalogViewTemplate(
+                toolbar: MiamNeutralCatalogToolbar(),
+                mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
+                catalogLoading: MiamNeutralGeneralLoading(),
+                catalogEmpty: MiamNeutralCatalogEmpty(),
+                catalogRecipeLoading: MiamNeutralGeneralLoading(),
+                catalogRecipeEmpty: MiamNeutralGeneralEmpty(),
+                closeCatalogAction: {},
+                willNavigateTo: { _, _, _ in},
+                filtersTapped: {},
+                searchTapped: {},
+                favoritesTapped: {},
+                preferencesTapped: {},
+                launchMealPlanner: {}
+            )
+            super.init(coder: aDecoder, rootView: catalogPage)
+            setupTabBarItem()
+        }
+
         
         override init(rootView:
             CatalogViewTemplate<
@@ -34,6 +56,7 @@ class CatalogViewController: UIHostingController<
                 MiamNeutralGeneralEmpty>
         ) {
             super.init(rootView: rootView)
+            setupTabBarItem()
         }
         
         public init() {
@@ -49,9 +72,13 @@ class CatalogViewController: UIHostingController<
                 filtersTapped: {},
                 searchTapped: {},
                 favoritesTapped: {},
-                preferencesTapped: {})
+                preferencesTapped: {},
+                launchMealPlanner: {})
             super.init(rootView: catalogPage)
+            setupTabBarItem()
         }
+        
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +99,12 @@ class CatalogViewController: UIHostingController<
             },
             searchTapped: {},
             favoritesTapped: {},
-            preferencesTapped: {})
+            preferencesTapped: {},
+            launchMealPlanner: {
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
+                }
+            })
         self.rootView = catalogPage
         // Do any additional setup after loading the view.
     }

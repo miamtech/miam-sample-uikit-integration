@@ -27,7 +27,7 @@ class DiscloseViewController: UIViewController {
         let miamNeutralMealPlannerCallToActionView = miamNeutralMealPlannerCallToAction.content {
             print("CoursesUMealPlannerCallToAction tapped!")
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(CatalogViewController(), animated: true)
+                self.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
             }
         }
         
