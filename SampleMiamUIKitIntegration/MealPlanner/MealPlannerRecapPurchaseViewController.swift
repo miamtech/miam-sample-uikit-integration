@@ -10,7 +10,7 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-class RecapPurchaseViewController: UIHostingController<MealPlannerRecapView<MiamNeutralMealPlannerRecap>> {
+class MealPlannerRecapPurchaseViewController: UIHostingController<MealPlannerRecapView<MiamNeutralMealPlannerRecap>> {
 
 
     required init?(coder aDecoder: NSCoder) {

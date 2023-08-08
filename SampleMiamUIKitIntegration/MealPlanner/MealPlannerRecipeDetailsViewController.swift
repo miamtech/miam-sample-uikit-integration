@@ -10,7 +10,7 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-class RecipeDetailsViewController: UIHostingController<
+class MealPlannerRecipeDetailsViewController: UIHostingController<
     RecipeDetailsViewTemplate<
         MiamNeutralRecipeDetailsHeaderView,
         MiamNeutralRecipeDetailsIngredientsView,

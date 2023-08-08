@@ -15,7 +15,7 @@ import MiamNeutraliOSFramework
 // My experience in UIKit is not great, so this is the solution I found that worked. You will probably have a better way
 // to handle this
 // TODO: add MiamNeutralRecipeCard
-class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView<
+class MealPlannerReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView<
         MiamNeutralMealPlannerSearch,
         MiamRecipeCard>
 > {
@@ -25,7 +25,7 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
     var onRecipeTappedAction: ((String) -> Void)?
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: ReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
+        super.init(coder: aDecoder, rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
         setupRecipeSelectedAction()
         setupOnRecipeTappedAction()
     }
@@ -33,13 +33,13 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
     override init(rootView: MealPlannerRecipePickerView<
           MiamNeutralMealPlannerSearch,
           MiamRecipeCard>) {
-        super.init(rootView: ReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
+        super.init(rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
         setupRecipeSelectedAction()
         setupOnRecipeTappedAction()
     }
 
     public init() {
-        super.init(rootView: ReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
+        super.init(rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
         setupRecipeSelectedAction()
         setupOnRecipeTappedAction()
     }
@@ -47,7 +47,7 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ajouter une idée repas"
-        self.rootView = ReplaceMealViewController.createRootView(onRecipeSelected: onRecipeSelectedAction, onRecipeTapped: onRecipeTappedAction)
+        self.rootView = MealPlannerReplaceMealViewController.createRootView(onRecipeSelected: onRecipeSelectedAction, onRecipeTapped: onRecipeTappedAction)
     }
 
     private static func createRootView(onRecipeSelected: ((String) -> Void)? = nil, onRecipeTapped: ((String) -> Void)? = nil) -> MealPlannerRecipePickerView<
@@ -76,7 +76,7 @@ class ReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView
         onRecipeTappedAction = { recipe in
             UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
             DispatchQueue.main.async { [weak self] in
-                self?.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+                self?.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
             }
         }
     }

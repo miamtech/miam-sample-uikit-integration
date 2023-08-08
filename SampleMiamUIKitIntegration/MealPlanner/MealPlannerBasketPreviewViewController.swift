@@ -10,7 +10,7 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 //
-class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewView<
+class MealPlannerBasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewView<
     MiamNeutralMealPlannerBasketPreviewLoading,
     MiamNeutralMealPlannerBasketPreviewRecipeOverview,
     MiamNeutralMealPlannerRecipeCardLoading,
@@ -73,12 +73,12 @@ class BasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewV
             continueShopping: {},
             showBasket: {
                 DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(RecapPurchaseViewController(), animated: true)
+                    self.navigationController?.pushViewController(MealPlannerRecapPurchaseViewController(), animated: true)
                 }
             },
             onRecipeTapped: { recipe in
                 UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-                DispatchQueue.main.async { self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+                DispatchQueue.main.async { self.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
                 }
             }
         )

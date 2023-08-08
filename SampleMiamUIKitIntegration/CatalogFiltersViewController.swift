@@ -45,7 +45,7 @@ class CatalogFiltersViewController:  UIHostingController<
                 let recipeId = UserDefaults.standard.value(forKey: "miam_mealplanner_recipeId") as? String ?? ""
 
                 super.viewDidLoad()
-                self.title = "Mon assistant Budget repas"
+                self.title = "Catalog Filters"
                 let catalogFilterPage = CatalogFilterViewTemplate.init(
                     titleAndClose: MiamNeutralCatalogFilterTitleAndClose(),
                     filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),

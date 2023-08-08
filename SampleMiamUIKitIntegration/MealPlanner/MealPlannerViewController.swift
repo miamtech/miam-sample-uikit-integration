@@ -51,17 +51,17 @@ class MealPlannerViewController: UIHostingController<MealPlannerPlannerView<Miam
             showRecipe: { recipe in
                 UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
                 DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(RecipeDetailsViewController(), animated: true)
+                    self.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
                 }
             },
             validateRecipes: {
                 DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(BasketPreviewViewController(), animated: true)
+                    self.navigationController?.pushViewController(MealPlannerBasketPreviewViewController(), animated: true)
                 }
             },
             replaceRecipe: { _ in
                 DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(ReplaceMealViewController(), animated: true)
+                    self.navigationController?.pushViewController(MealPlannerReplaceMealViewController(), animated: true)
                 }
             })
         self.rootView = mealPlannerView
