@@ -15,7 +15,7 @@ class CatalogFiltersViewController:  UIHostingController<
         MiamNeutralCatalogFilterSectionTitle,
         MiamNeutralCatalogFilterRow,
         MiamNeutralCatalogFilterSubmitAndClearButton,
-        MiamNeutralEmptyBackground
+        MiamNeutralGeneralBackground
 >
 > {
 
@@ -28,7 +28,7 @@ class CatalogFiltersViewController:  UIHostingController<
                           MiamNeutralCatalogFilterSectionTitle,
                           MiamNeutralCatalogFilterRow,
                           MiamNeutralCatalogFilterSubmitAndClearButton,
-                          MiamNeutralEmptyBackground>
+                          MiamNeutralGeneralBackground>
             ) {
                 super.init(rootView: rootView)
             }
@@ -39,7 +39,7 @@ class CatalogFiltersViewController:  UIHostingController<
                     filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),
                     filterRow: MiamNeutralCatalogFilterRow(),
                     finalButtons: MiamNeutralCatalogFilterSubmitAndClearButton(),
-                    background: MiamNeutralEmptyBackground(),
+                    background: MiamNeutralGeneralBackground(),
                     apply: {},
                     close: {})
                 super.init(rootView: catalogFilterPage)
@@ -55,7 +55,7 @@ class CatalogFiltersViewController:  UIHostingController<
                     filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),
                     filterRow: MiamNeutralCatalogFilterRow(),
                     finalButtons: MiamNeutralCatalogFilterSubmitAndClearButton(),
-                    background: MiamNeutralEmptyBackground(),
+                    background: MiamNeutralGeneralBackground(),
                     apply: {
                         self.navigationController?.popViewController(animated: true)
                     },

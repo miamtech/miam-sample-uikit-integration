@@ -11,15 +11,17 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 public struct MiamNeutralCatalogPageTemplates: CatalogPageTemplateGroup {
-    
     public var toolbar = MiamNeutralCatalogToolbar()
-    public var loading = MiamNeutralGeneralLoading()
-    public var empty = MiamNeutralGeneralEmpty()
-    // If you have no intentions of changing the Background
-    public typealias Background = DefaultBackgroundView
-    public var background: DefaultBackgroundView {
-        return DefaultBackgroundView()
-    }
+    // Use defaults 
+    public var background: some GeneralBackgroundViewTemplate {
+            return MiamGlobalConfiguration.defaultBackgroundView
+        }
+    public var loading: some GeneralLoadingViewTemplate {
+            return MiamGlobalConfiguration.defaultLoadingView
+        }
+    public var empty: some GeneralEmptyViewTemplate {
+            return MiamGlobalConfiguration.defaultEmptyView
+        }
 }
 
 
