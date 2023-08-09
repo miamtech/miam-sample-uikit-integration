@@ -10,14 +10,26 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
+public struct MiamNeutralCatalogPageTemplates: CatalogPageTemplateGroup {
+    
+    public var toolbar = MiamNeutralCatalogToolbar()
+    public var loading = MiamNeutralGeneralLoading()
+    public var empty = MiamNeutralGeneralEmpty()
+    // If you have no intentions of changing the Background
+    public typealias Background = DefaultBackgroundView
+    public var background: DefaultBackgroundView {
+        return DefaultBackgroundView()
+    }
+}
+
+
 class CatalogViewController: UIHostingController<
     CatalogViewTemplate<
-        MiamNeutralCatalogToolbar,
+        MiamNeutralCatalogPageTemplates,
         MiamNeutralMealPlannerCallToAction,
         MiamNeutralGeneralLoading,
-        MiamNeutralCatalogEmpty,
-        MiamNeutralGeneralLoading,
-        MiamNeutralGeneralEmpty>
+        MiamNeutralGeneralEmpty
+>
     > {
         
         private func setupTabBarItem() {
@@ -27,12 +39,13 @@ class CatalogViewController: UIHostingController<
     
         required init?(coder aDecoder: NSCoder) {
             let catalogPage = CatalogViewTemplate(
-                toolbar: MiamNeutralCatalogToolbar(),
+                catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
                 mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-                catalogLoading: MiamNeutralGeneralLoading(),
-                catalogEmpty: MiamNeutralCatalogEmpty(),
+//                catalogLoading: MiamNeutralGeneralLoading(),
+//                catalogEmpty: MiamNeutralCatalogEmpty(),
                 catalogRecipeLoading: MiamNeutralGeneralLoading(),
                 catalogRecipeEmpty: MiamNeutralGeneralEmpty(),
+//                background: MiamNeutralEmptyBackground(),
                 closeCatalogAction: {},
                 willNavigateTo: { _, _, _ in},
                 filtersTapped: {},
@@ -48,12 +61,10 @@ class CatalogViewController: UIHostingController<
         
         override init(rootView:
             CatalogViewTemplate<
-                MiamNeutralCatalogToolbar,
-                MiamNeutralMealPlannerCallToAction,
-                MiamNeutralGeneralLoading,
-                      MiamNeutralCatalogEmpty,
-                MiamNeutralGeneralLoading,
-                MiamNeutralGeneralEmpty>
+                      MiamNeutralCatalogPageTemplates,
+                      MiamNeutralMealPlannerCallToAction,
+                      MiamNeutralGeneralLoading,
+                      MiamNeutralGeneralEmpty>
         ) {
             super.init(rootView: rootView)
             setupTabBarItem()
@@ -61,10 +72,10 @@ class CatalogViewController: UIHostingController<
         
         public init() {
             let catalogPage = CatalogViewTemplate.init(
-                toolbar: MiamNeutralCatalogToolbar(),
+                catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
                 mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-                catalogLoading: MiamNeutralGeneralLoading(),
-                catalogEmpty: MiamNeutralCatalogEmpty(),
+//                catalogLoading: MiamNeutralGeneralLoading(),
+//                catalogEmpty: MiamNeutralCatalogEmpty(),
                 catalogRecipeLoading: MiamNeutralGeneralLoading(),
                 catalogRecipeEmpty: MiamNeutralGeneralEmpty(),
                 closeCatalogAction: {},
@@ -84,10 +95,10 @@ class CatalogViewController: UIHostingController<
         super.viewDidLoad()
         self.title = "Catalog"
         let catalogPage = CatalogViewTemplate.init(
-            toolbar: MiamNeutralCatalogToolbar(),
+            catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
             mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-            catalogLoading: MiamNeutralGeneralLoading(),
-            catalogEmpty: MiamNeutralCatalogEmpty(),
+//            catalogLoading: MiamNeutralGeneralLoading(),
+//            catalogEmpty: MiamNeutralCatalogEmpty(),
             catalogRecipeLoading: MiamNeutralGeneralLoading(),
             catalogRecipeEmpty: MiamNeutralGeneralEmpty(),
             closeCatalogAction: {
