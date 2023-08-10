@@ -18,6 +18,7 @@
 		264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */; };
 		264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */; };
 		264A36D12A70045E00EA2D23 /* MealPlannerRecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36D02A70045E00EA2D23 /* MealPlannerRecipeDetailsViewController.swift */; };
+		26DAB2C72A84F9BD00C9BDBF /* MiamViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DAB2C62A84F9BD00C9BDBF /* MiamViewConfiguration.swift */; };
 		BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8020287D913400F8FF9A /* MealViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
@@ -44,6 +45,7 @@
 		264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
 		264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecapPurchaseViewController.swift; sourceTree = "<group>"; };
 		264A36D02A70045E00EA2D23 /* MealPlannerRecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		26DAB2C62A84F9BD00C9BDBF /* MiamViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiamViewConfiguration.swift; sourceTree = "<group>"; };
 		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		26DAB2C52A84F9A100C9BDBF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				26DAB2C62A84F9BD00C9BDBF /* MiamViewConfiguration.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				26DAB2C52A84F9A100C9BDBF /* Utils */,
 				26285D892A82B2EA00E41EB7 /* MealPlanner */,
 				BF85057A28578EF800651864 /* AppDelegate.swift */,
 				BF85057C28578EF800651864 /* SceneDelegate.swift */,
@@ -238,6 +249,7 @@
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
 				BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */,
 				26285D882A81415600E41EB7 /* CatalogFiltersViewController.swift in Sources */,
+				26DAB2C72A84F9BD00C9BDBF /* MiamViewConfiguration.swift in Sources */,
 				BF8505932857955600651864 /* HostingViewController.swift in Sources */,
 				BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */,
 				BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */,

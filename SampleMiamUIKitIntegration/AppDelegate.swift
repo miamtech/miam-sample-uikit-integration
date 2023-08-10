@@ -31,9 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // resets grocery cart - good for testing, do NOT include on actual production
         GroceriesListHandler.shared.resetGroceriesList()
-        print("miamConfig: setting defaultBackgroundView")
-        MiamGlobalConfiguration.defaultBackgroundView = AnyBackgroundView(MiamNeutralGeneralBackground())
-
 
         return true
     }
