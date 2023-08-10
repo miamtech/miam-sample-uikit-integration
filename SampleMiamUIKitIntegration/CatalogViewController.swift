@@ -68,7 +68,7 @@ class CatalogViewController: UIHostingController<
     
         required init?(coder aDecoder: NSCoder) {
             let catalogPage = CatalogViewTemplate(
-                catalogViewContent: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
+                content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
                 catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
                 closeCatalogAction: {}
             )
@@ -88,7 +88,7 @@ class CatalogViewController: UIHostingController<
         
         public init() {
             let catalogPage = CatalogViewTemplate.init(
-                catalogViewContent: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
+                content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
                 catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
                 closeCatalogAction: {}
             )
@@ -100,7 +100,7 @@ class CatalogViewController: UIHostingController<
         super.viewDidLoad()
         self.title = "Catalog"
         let catalogPage = CatalogViewTemplate.init(
-            catalogViewContent: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
+            content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
             catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
             closeCatalogAction: {
                 print("closeCatalogAction")
