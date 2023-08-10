@@ -9,13 +9,19 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
+/// This sets the Templates for the CatalogFiltersPage Overview
+public struct MiamNeutralCatalogCatalogFilterViewParameters: CatalogFilterViewParameters {
+    public var titleAndClose = MiamNeutralCatalogFilterTitleAndClose()
+    public var filterSectionTitle = MiamNeutralCatalogFilterSectionTitle()
+    public var filterRow = MiamNeutralCatalogFilterRow()
+    public var finalButtons = MiamNeutralCatalogFilterSubmitAndClearButton()
+    // Use defaults
+    @DefaultBackgroundViewTemplate public var background
+}
+
 class CatalogFiltersViewController:  UIHostingController<
     CatalogFilterViewTemplate<
-        MiamNeutralCatalogFilterTitleAndClose,
-        MiamNeutralCatalogFilterSectionTitle,
-        MiamNeutralCatalogFilterRow,
-        MiamNeutralCatalogFilterSubmitAndClearButton,
-        MiamNeutralGeneralBackground
+        MiamNeutralCatalogCatalogFilterViewParameters
 >
 > {
 
@@ -24,22 +30,14 @@ class CatalogFiltersViewController:  UIHostingController<
             }
 
             override init(rootView: CatalogFilterViewTemplate<
-                          MiamNeutralCatalogFilterTitleAndClose,
-                          MiamNeutralCatalogFilterSectionTitle,
-                          MiamNeutralCatalogFilterRow,
-                          MiamNeutralCatalogFilterSubmitAndClearButton,
-                          MiamNeutralGeneralBackground>
+                          MiamNeutralCatalogCatalogFilterViewParameters>
             ) {
                 super.init(rootView: rootView)
             }
 
             public init() {
                 let catalogFilterPage = CatalogFilterViewTemplate.init(
-                    titleAndClose: MiamNeutralCatalogFilterTitleAndClose(),
-                    filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),
-                    filterRow: MiamNeutralCatalogFilterRow(),
-                    finalButtons: MiamNeutralCatalogFilterSubmitAndClearButton(),
-                    background: MiamNeutralGeneralBackground(),
+                    viewParameters: MiamNeutralCatalogCatalogFilterViewParameters(),
                     apply: {},
                     close: {})
                 super.init(rootView: catalogFilterPage)
@@ -51,11 +49,7 @@ class CatalogFiltersViewController:  UIHostingController<
                 super.viewDidLoad()
                 self.title = "Catalog Filters"
                 let catalogFilterPage = CatalogFilterViewTemplate.init(
-                    titleAndClose: MiamNeutralCatalogFilterTitleAndClose(),
-                    filterSectionTitle: MiamNeutralCatalogFilterSectionTitle(),
-                    filterRow: MiamNeutralCatalogFilterRow(),
-                    finalButtons: MiamNeutralCatalogFilterSubmitAndClearButton(),
-                    background: MiamNeutralGeneralBackground(),
+                    viewParameters: MiamNeutralCatalogCatalogFilterViewParameters(),
                     apply: {
                         self.navigationController?.popViewController(animated: true)
                     },

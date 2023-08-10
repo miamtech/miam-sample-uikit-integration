@@ -11,7 +11,7 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 /// This sets the Templates for the CatalogPage Overview
-public struct MiamNeutralCatalogPageTemplates: CatalogPageTemplateGroup {
+public struct MiamNeutralCatalogViewContent: CatalogViewContentParameters {
     public var toolbar = MiamNeutralCatalogToolbar()
     // Use defaults 
     @DefaultBackgroundViewTemplate public var background
@@ -20,7 +20,7 @@ public struct MiamNeutralCatalogPageTemplates: CatalogPageTemplateGroup {
 }
 
 /// This sets the Templates for the CatalogRecipesList Overview
-public struct MiamNeutralCatalogRecipesListTemplates: CatalogRecipesListTemplateGroup {
+public struct MiamNeutralCatalogRecipesListsViewContent: CatalogRecipesListViewContentParameters {
     // use defaults
     @DefaultLoadingViewTemplate public var loading
     @DefaultEmptyViewTemplate public var empty
@@ -29,9 +29,9 @@ public struct MiamNeutralCatalogRecipesListTemplates: CatalogRecipesListTemplate
 
 class CatalogViewController: UIHostingController<
     CatalogViewTemplate<
-        MiamNeutralCatalogPageTemplates,
+        MiamNeutralCatalogViewContent,
         MiamNeutralMealPlannerCallToAction,
-        MiamNeutralCatalogRecipesListTemplates
+        MiamNeutralCatalogRecipesListsViewContent
 >
     > {
         
@@ -42,9 +42,9 @@ class CatalogViewController: UIHostingController<
     
         required init?(coder aDecoder: NSCoder) {
             let catalogPage = CatalogViewTemplate(
-                catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
+                catalogViewContent: MiamNeutralCatalogViewContent(),
                 mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-                catalogRecipesListsTemplates: MiamNeutralCatalogRecipesListTemplates(),
+                catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
                 closeCatalogAction: {},
                 willNavigateTo: { _, _, _ in},
                 filtersTapped: {},
@@ -60,9 +60,9 @@ class CatalogViewController: UIHostingController<
         
         override init(rootView:
             CatalogViewTemplate<
-                      MiamNeutralCatalogPageTemplates,
+                      MiamNeutralCatalogViewContent,
                       MiamNeutralMealPlannerCallToAction,
-                      MiamNeutralCatalogRecipesListTemplates>
+                      MiamNeutralCatalogRecipesListsViewContent>
         ) {
             super.init(rootView: rootView)
             setupTabBarItem()
@@ -70,9 +70,9 @@ class CatalogViewController: UIHostingController<
         
         public init() {
             let catalogPage = CatalogViewTemplate.init(
-                catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
+                catalogViewContent: MiamNeutralCatalogViewContent(),
                 mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-                catalogRecipesListsTemplates: MiamNeutralCatalogRecipesListTemplates(),
+                catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
                 closeCatalogAction: {},
                 willNavigateTo: { _, _, _ in},
                 filtersTapped: {},
@@ -88,9 +88,9 @@ class CatalogViewController: UIHostingController<
         super.viewDidLoad()
         self.title = "Catalog"
         let catalogPage = CatalogViewTemplate.init(
-            catalogPageTemplates: MiamNeutralCatalogPageTemplates(),
+            catalogViewContent: MiamNeutralCatalogViewContent(),
             mealPlannerCTA: MiamNeutralMealPlannerCallToAction(),
-            catalogRecipesListsTemplates: MiamNeutralCatalogRecipesListTemplates(),
+            catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
             closeCatalogAction: {
                 print("closeCatalogAction")
             },
@@ -117,16 +117,4 @@ class CatalogViewController: UIHostingController<
         self.rootView = catalogPage
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
