@@ -44,10 +44,10 @@ public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
 }
 
 /// This sets the Templates for the CatalogRecipesList Overview
-public struct MiamNeutralCatalogRecipesListsViewContent: CatalogRecipesListViewContentParameters {
-    public var title = MiamNeutralCatalogRecipesListTitle()
+public struct MiamNeutralCatalogCarouselViewContent: CatalogCarouselViewContentParameters {
+    public var title = MiamNeutralCatalogCarouselTitle()
     public var recipeCard = MiamRecipeCard()
-    public var noResults = MiamNeutralCatalogRecipesListNoResults()
+    public var noResults = MiamNeutralCatalogCarouselNoResults()
     // use defaults
     @DefaultLoadingViewTemplate public var loading
     @DefaultEmptyViewTemplate public var empty
@@ -57,7 +57,7 @@ public struct MiamNeutralCatalogRecipesListsViewContent: CatalogRecipesListViewC
 class CatalogViewController: UIHostingController<
     CatalogViewTemplate<
         MiamNeutralCatalogViewContent,
-        MiamNeutralCatalogRecipesListsViewContent
+        MiamNeutralCatalogCarouselViewContent
 >
     > {
         
@@ -69,7 +69,7 @@ class CatalogViewController: UIHostingController<
         required init?(coder aDecoder: NSCoder) {
             let catalogPage = CatalogViewTemplate(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
-                catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
+                catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
                 closeCatalogAction: {}
             )
             super.init(coder: aDecoder, rootView: catalogPage)
@@ -80,7 +80,7 @@ class CatalogViewController: UIHostingController<
         override init(rootView:
             CatalogViewTemplate<
                       MiamNeutralCatalogViewContent,
-                      MiamNeutralCatalogRecipesListsViewContent>
+                      MiamNeutralCatalogCarouselViewContent>
         ) {
             super.init(rootView: rootView)
             setupTabBarItem()
@@ -89,7 +89,7 @@ class CatalogViewController: UIHostingController<
         public init() {
             let catalogPage = CatalogViewTemplate.init(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
-                catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
+                catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
                 closeCatalogAction: {}
             )
             super.init(rootView: catalogPage)
@@ -101,7 +101,7 @@ class CatalogViewController: UIHostingController<
         self.title = "Catalog"
         let catalogPage = CatalogViewTemplate.init(
             content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
-            catalogRecipesListsContent: MiamNeutralCatalogRecipesListsViewContent(),
+            catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
             closeCatalogAction: {
                 print("closeCatalogAction")
             }
