@@ -53,11 +53,23 @@ public struct MiamNeutralCatalogCarouselViewContent: CatalogCarouselViewContentP
     @DefaultEmptyViewTemplate public var empty
 }
 
+/// This sets the Templates for the CatalogRecipesList Overview
+public class MiamNeutralCatalogCarouselRowContent: CatalogCarouselRowContentParameters {
+    
+    public var title = MiamNeutralCatalogCarouselTitle()
+    public var recipeCard = MiamRecipeCard()
+    public var showAllButton = MiamNeutralCatalogCarouselShowAllButton()
+    
+    public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {_ in}
+    public lazy var onRecipeTapped: (String) -> Void = {_ in}
+}
+
 
 class CatalogViewController: UIHostingController<
     CatalogViewTemplate<
         MiamNeutralCatalogViewContent,
-        MiamNeutralCatalogCarouselViewContent
+        MiamNeutralCatalogCarouselViewContent,
+        MiamNeutralCatalogCarouselRowContent
 >
     > {
         
@@ -70,6 +82,7 @@ class CatalogViewController: UIHostingController<
             let catalogPage = CatalogViewTemplate(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
                 catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
+                catalogCarouselRowTemplates: MiamNeutralCatalogCarouselRowContent(),
                 closeCatalogAction: {}
             )
             super.init(coder: aDecoder, rootView: catalogPage)
@@ -80,7 +93,8 @@ class CatalogViewController: UIHostingController<
         override init(rootView:
             CatalogViewTemplate<
                       MiamNeutralCatalogViewContent,
-                      MiamNeutralCatalogCarouselViewContent>
+                      MiamNeutralCatalogCarouselViewContent,
+                      MiamNeutralCatalogCarouselRowContent>
         ) {
             super.init(rootView: rootView)
             setupTabBarItem()
@@ -90,6 +104,7 @@ class CatalogViewController: UIHostingController<
             let catalogPage = CatalogViewTemplate.init(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
                 catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
+                catalogCarouselRowTemplates: MiamNeutralCatalogCarouselRowContent(),
                 closeCatalogAction: {}
             )
             super.init(rootView: catalogPage)
@@ -102,6 +117,7 @@ class CatalogViewController: UIHostingController<
         let catalogPage = CatalogViewTemplate.init(
             content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
             catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
+            catalogCarouselRowTemplates: MiamNeutralCatalogCarouselRowContent(),
             closeCatalogAction: {
                 print("closeCatalogAction")
             }
