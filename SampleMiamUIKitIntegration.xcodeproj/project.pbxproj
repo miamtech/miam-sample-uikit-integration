@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26285D882A81415600E41EB7 /* CatalogFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */; };
 		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
 		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
 		264A36C52A7003CC00EA2D23 /* BasketPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* BasketPreviewViewController.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersViewController.swift; sourceTree = "<group>"; };
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
 		264A36C42A7003CC00EA2D23 /* BasketPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPreviewViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +40,6 @@
 		264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
 		264A36CE2A70045200EA2D23 /* RecapPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapPurchaseViewController.swift; sourceTree = "<group>"; };
 		264A36D02A70045E00EA2D23 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
-		AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleMiamUIKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1A8020287D913400F8FF9A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,7 +126,6 @@
 				264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */,
 				264A36D02A70045E00EA2D23 /* RecipeDetailsViewController.swift */,
 				264A36CE2A70045200EA2D23 /* RecapPurchaseViewController.swift */,
-				26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */,
 			);
 			path = SampleMiamUIKitIntegration;
 			sourceTree = "<group>";
@@ -225,7 +220,6 @@
 				BF59A48228D0DF4500882BA9 /* RecipesTableViewController.swift in Sources */,
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
 				BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */,
-				26285D882A81415600E41EB7 /* CatalogFiltersViewController.swift in Sources */,
 				BF8505932857955600651864 /* HostingViewController.swift in Sources */,
 				BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */,
 				BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */,
