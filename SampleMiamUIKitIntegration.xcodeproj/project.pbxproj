@@ -106,6 +106,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		26E0D9892A94E21400EA7DDD /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */,
+				26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +144,7 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				26E0D9892A94E21400EA7DDD /* Catalog */,
 				26DAB2C52A84F9A100C9BDBF /* Utils */,
 				26285D892A82B2EA00E41EB7 /* MealPlanner */,
 				BF85057A28578EF800651864 /* AppDelegate.swift */,
@@ -151,8 +161,6 @@
 				BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */,
 				BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */,
 				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
-				26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */,
-				26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */,
 			);
 			path = SampleMiamUIKitIntegration;
 			sourceTree = "<group>";

@@ -43,32 +43,40 @@ public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
 //    public var mealPlannerCTA = DefaultMealPlannerCTA()
 }
 
-/// This sets the Templates for the CatalogRecipesList Overview
-public struct MiamNeutralCatalogCarouselViewContent: CatalogCarouselViewContentParameters {
-    public var title = MiamNeutralCatalogCarouselTitle()
-    public var recipeCard = MiamRecipeCard()
-    public var noResults = MiamNeutralCatalogCarouselNoResults()
-    // use defaults
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultEmptyViewTemplate public var empty
-}
+/// This sets the Templates for the RecipesList Overview
+//public struct MiamNeutralCatalogCarouselViewContent: RecipesListViewContentParameters {
+//    public var title = MiamNeutralCatalogCarouselTitle()
+//    public var recipeCard = MiamRecipeCard()
+//    public var noResults = MiamNeutralCatalogCarouselNoResults()
+//    // use defaults
+//    @DefaultLoadingViewTemplate public var loading
+//    @DefaultEmptyViewTemplate public var empty
+//}
 
 /// This sets the Templates for the CatalogRecipesList Overview
 public class MiamNeutralCatalogPackageRowContent: CatalogPackageRowContentParameters {
+    weak var navigationController: UINavigationController?
+    public init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
     
     public var title = MiamNeutralCatalogCarouselTitle()
     public var recipeCard = MiamRecipeCard()
     public var showAllButton = MiamNeutralCatalogCarouselShowAllButton()
     
     public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {_ in}
-    public lazy var onRecipeTapped: (String) -> Void = {_ in}
+    public lazy var onRecipeTapped: (String) -> Void = { recipe in
+        print("on recipe tapped")
+        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
+      DispatchQueue.main.async {
+                self.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+        }}
 }
 
 
 class CatalogViewController: UIHostingController<
     CatalogViewTemplate<
         MiamNeutralCatalogViewContent,
-        MiamNeutralCatalogCarouselViewContent,
         MiamNeutralCatalogPackageRowContent
 >
     > {
@@ -81,8 +89,7 @@ class CatalogViewController: UIHostingController<
         required init?(coder aDecoder: NSCoder) {
             let catalogPage = CatalogViewTemplate(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
-                catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
-                catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(),
+                catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(navigationController: nil),
                 closeCatalogAction: {}
             )
             super.init(coder: aDecoder, rootView: catalogPage)
@@ -93,7 +100,6 @@ class CatalogViewController: UIHostingController<
         override init(rootView:
             CatalogViewTemplate<
                       MiamNeutralCatalogViewContent,
-                      MiamNeutralCatalogCarouselViewContent,
                       MiamNeutralCatalogPackageRowContent>
         ) {
             super.init(rootView: rootView)
@@ -103,8 +109,7 @@ class CatalogViewController: UIHostingController<
         public init() {
             let catalogPage = CatalogViewTemplate.init(
                 content: MiamNeutralCatalogViewContent(navigationController: nil), // NavC is nil before self is created
-                catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
-                catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(),
+                catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(navigationController: nil),
                 closeCatalogAction: {}
             )
             super.init(rootView: catalogPage)
@@ -116,8 +121,7 @@ class CatalogViewController: UIHostingController<
         self.title = "Catalog"
         let catalogPage = CatalogViewTemplate.init(
             content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
-            catalogCarouselContent: MiamNeutralCatalogCarouselViewContent(),
-            catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(),
+            catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(navigationController: self.navigationController),
             closeCatalogAction: {
                 print("closeCatalogAction")
             }
