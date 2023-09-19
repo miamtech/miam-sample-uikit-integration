@@ -12,10 +12,9 @@ import miamCore
 
 /// This sets the Templates for the CatalogFiltersPage Overview
 public struct MiamNeutralCatalogCatalogFilterViewParameters: CatalogFilterViewParameters {
-    public var titleAndClose = MiamNeutralCatalogFilterTitleAndClose()
-    public var filterSectionTitle = MiamNeutralCatalogFilterSectionTitle()
-    public var filterRow = MiamNeutralCatalogFilterRow()
-    public var finalButtons = MiamNeutralCatalogFilterSubmitAndClearButton()
+    public var header = MiamNeutralCatalogFilterHeader()
+    public var section = MiamNeutralCatalogFilterSection()
+    public var callToAction = MiamNeutralCatalogFiltersCallToAction()
     // Use defaults
     @DefaultBackgroundViewTemplate public var background
 }
