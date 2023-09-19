@@ -10,74 +10,51 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-
-// This view Controller is implemented in a static manner because when I was popping the view off, it was always firing twice.
-// My experience in UIKit is not great, so this is the solution I found that worked. You will probably have a better way
-// to handle this
-// TODO: add MiamNeutralRecipeCard
-class MealPlannerReplaceMealViewController: UIHostingController<MealPlannerRecipePickerView<
+class MealPlannerReplaceMealViewController: UIViewController {
+    deinit {
+        print("deinit: MealPlannerReplaceMealViewController is being deallocated")
+    }
+    // Your SwiftUI View
+    var swiftUIView:MealPlannerRecipePickerView<
         MiamNeutralMealPlannerSearch,
-        MiamRecipeCard>
-> {
-
-    var onRecipeSelectedAction: ((String) -> Void)?
-    var isPoppingViewController = false
-    var onRecipeTappedAction: ((String) -> Void)?
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
-        setupRecipeSelectedAction()
-        setupOnRecipeTappedAction()
+        MiamRecipeCard> {
+        return MealPlannerRecipePickerView(
+            searchTemplate: MiamNeutralMealPlannerSearch(),
+            cardTemplate: MiamRecipeCard(),
+            onRecipeSelected: { [weak self] _ in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.popViewController(animated: true)
+                
+            },
+            onRecipeTapped: { [weak self] recipe in
+                UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+                
+            })
     }
-
-    override init(rootView: MealPlannerRecipePickerView<
-          MiamNeutralMealPlannerSearch,
-          MiamRecipeCard>) {
-        super.init(rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
-        setupRecipeSelectedAction()
-        setupOnRecipeTappedAction()
-    }
-
-    public init() {
-        super.init(rootView: MealPlannerReplaceMealViewController.createRootView(onRecipeTapped: onRecipeTappedAction))
-        setupRecipeSelectedAction()
-        setupOnRecipeTappedAction()
-    }
+    // The hosting controller for your SwiftUI view
+    private var hostingController: UIHostingController<MealPlannerRecipePickerView<
+        MiamNeutralMealPlannerSearch,
+        MiamRecipeCard>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Ajouter une idée repas"
-        self.rootView = MealPlannerReplaceMealViewController.createRootView(onRecipeSelected: onRecipeSelectedAction, onRecipeTapped: onRecipeTappedAction)
-    }
-
-    private static func createRootView(onRecipeSelected: ((String) -> Void)? = nil, onRecipeTapped: ((String) -> Void)? = nil) -> MealPlannerRecipePickerView<
-            MiamNeutralMealPlannerSearch,
-            MiamRecipeCard> {
-        return MealPlannerRecipePickerView(
-            searchTemplate: MiamNeutralMealPlannerSearch(),
-            cardTemplate: MiamRecipeCard(), maxBudget: 23.2,
-            onRecipeSelected: onRecipeSelected ?? { _ in },
-            onRecipeTapped: onRecipeTapped ?? { _ in }
-        )
-    }
-
-    private func setupRecipeSelectedAction() {
-        onRecipeSelectedAction = { _ in
-            DispatchQueue.main.async { [weak self] in
-                // because its popping 2 screens at a time
-                guard let self = self, !self.isPoppingViewController else { return }
-                self.isPoppingViewController = true
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
-    }
-    
-    private func setupOnRecipeTappedAction() {
-        onRecipeTappedAction = { recipe in
-            UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-            DispatchQueue.main.async { [weak self] in
-                self?.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
-            }
-        }
+        self.title = "Mon assistant Budget repas"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
+        hostingController = UIHostingController(rootView: swiftUIView)
+        guard let hostingController = hostingController, let hcView = hostingController.view
+        else { return }
+        // Since hostingController is optional, using guard to safely unwrap its view
+        hcView.translatesAutoresizingMaskIntoConstraints = false
+        addChild(hostingController)
+        view.addSubview(hcView)
+        NSLayoutConstraint.activate([
+            hcView.topAnchor.constraint(equalTo: view.topAnchor),
+            hcView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hcView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hcView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
 }

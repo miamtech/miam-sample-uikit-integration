@@ -98,6 +98,14 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		2672B0242AB9CB31008D2327 /* GeneralViews */ = {
+			isa = PBXGroup;
+			children = (
+				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
+			);
+			path = GeneralViews;
+			sourceTree = "<group>";
+		};
 		26DAB2C52A84F9A100C9BDBF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +152,7 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				2672B0242AB9CB31008D2327 /* GeneralViews */,
 				26E0D9892A94E21400EA7DDD /* Catalog */,
 				26DAB2C52A84F9A100C9BDBF /* Utils */,
 				26285D892A82B2EA00E41EB7 /* MealPlanner */,
@@ -160,7 +169,6 @@
 				BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */,
 				BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */,
 				BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */,
-				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
 			);
 			path = SampleMiamUIKitIntegration;
 			sourceTree = "<group>";

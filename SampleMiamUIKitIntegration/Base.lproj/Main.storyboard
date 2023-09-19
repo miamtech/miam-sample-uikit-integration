@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="-825" y="-626"/>
         </scene>
-        <!--Recipe suggestion-->
+        <!--Catalog-->
         <scene sceneID="7lA-wd-dDU">
             <objects>
-                <viewController title="Recipe suggestion" id="GFT-kg-Axc" customClass="CatalogViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Catalog" id="GFT-kg-Axc" customClass="CatalogFiltersViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XNw-sd-w26">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="1347.8260869565217" y="333.48214285714283"/>
         </scene>
-        <!--Catalo-->
+        <!--Catalog-->
         <scene sceneID="1DP-S6-w3s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fNK-15-XhO" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GFT-kg-Axc" kind="relationship" relationship="rootViewController" id="Ws0-cc-wpY"/>
+                        <segue destination="GFT-kg-Axc" kind="relationship" relationship="rootViewController" id="kjl-R6-xa9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHL-7Q-5se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

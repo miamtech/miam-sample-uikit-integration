@@ -10,64 +10,50 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-class MealPlannerFormViewController: UIHostingController<MealPlannerFormView<MiamNeutralMealPlannerForm>> {
-    // Initialize our controller with RecipeCardView as a root view and show
-    // recipe 1.
-//    required init?(coder aDecoder: NSCoder) {
-//        let budgetForm = BudgetFormView.init(
-//            budgetForm: MiamNeutralBudgetForm(),
-//            budgetInfos: BudgetInfos(moneyBudget: 0.0, numberOfGuests: 0, numberOfMeals: 0),
-//            onBudgetValidated: {_ in print("this will nav")}
-//        )
-//        super.init(coder: aDecoder, rootView: budgetForm)
-//    }
-    
-    required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-        }
-
-    override init(rootView: MealPlannerFormView<MiamNeutralMealPlannerForm>) {
-        super.init(rootView: rootView)
+class MealPlannerFormViewController: UIViewController {
+    deinit {
+        print("deinit: MealPlannerFormViewController is being deallocated")
     }
-    
-    public init() {
-        let budgetForm = MealPlannerFormView.init(
+    // Your SwiftUI View
+    var swiftUIView: MealPlannerFormView<MiamNeutralMealPlannerForm> {
+        return MealPlannerFormView(
             budgetForm: MiamNeutralMealPlannerForm(),
-                    budgetInfos: BudgetInfos(moneyBudget: 0.0, numberOfGuests: 0, numberOfMeals: 0),
-                    onBudgetValidated: {_ in print("this will nav")}
-                )
-                super.init(rootView: budgetForm)
+            budgetInfos: nil,
+            onBudgetValidated: { [weak self] recipe in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(MealPlannerViewController(), animated: true)
+            })
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor(red: 0/255, green: 85/255, blue: 98/255, alpha: 1.0)
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-
-        navigationController?.navigationBar.standardAppearance = appearance
-          navigationController?.navigationBar.compactAppearance = appearance
-          navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        navigationController?.navigationBar.tintColor = UIColor.white
-    }
+    // The hosting controller for your SwiftUI view
+    private var hostingController: UIHostingController<MealPlannerFormView<MiamNeutralMealPlannerForm>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            self.title = "Mon assistant Budget repas"
-        let budgetForm = MealPlannerFormView.init(
-            budgetForm: MiamNeutralMealPlannerForm(),
-            budgetInfos: BudgetInfos(moneyBudget: 0.0, numberOfGuests: 0, numberOfMeals: 0),
-            onBudgetValidated: {_ in
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(MealPlannerViewController(), animated: true)
-                }
-            }
-        )
-        self.rootView = budgetForm
+        self.title = "Mon assistant Budget repas"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 0/255, green: 85/255, blue: 98/255, alpha: 1.0)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
+
+        // Initialize the hosting controller with your SwiftUI view
+        hostingController = UIHostingController(rootView: swiftUIView)
+        guard let hostingController = hostingController, let hcView = hostingController.view
+        else { return }
+        // Since hostingController is optional, using guard to safely unwrap its view
+        hcView.translatesAutoresizingMaskIntoConstraints = false
+        addChild(hostingController)
+        view.addSubview(hcView)
+        NSLayoutConstraint.activate([
+            hcView.topAnchor.constraint(equalTo: view.topAnchor),
+            hcView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hcView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hcView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
-    
-    
 }

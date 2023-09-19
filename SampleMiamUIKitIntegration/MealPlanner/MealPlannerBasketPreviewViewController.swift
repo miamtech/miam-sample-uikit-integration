@@ -9,34 +9,22 @@ import UIKit
 import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
-//
-class MealPlannerBasketPreviewViewController: UIHostingController<MealPlannerBasketPreviewView<
-    MiamNeutralMealPlannerBasketPreviewLoading,
-    MiamNeutralMealPlannerBasketPreviewRecipeOverview,
-    MiamNeutralMealPlannerRecipeCardLoading,
-    MiamNeutralMealPlannerBasketPreviewProduct,
-    MiamNeutralMealPlannerBasketPreviewFooter,
-    MiamNeutralMealPlannerBasketPreviewSectionTitle,
-    MiamNeutralMealPlannerBasketPreviewSectionProduct>
-> {
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+class MealPlannerBasketPreviewViewController: UIViewController {
+    deinit {
+        print("deinit: MealPlannerBasketPreviewViewController is being deallocated")
     }
-
-    override init(rootView: MealPlannerBasketPreviewView<
-                  MiamNeutralMealPlannerBasketPreviewLoading,
-                  MiamNeutralMealPlannerBasketPreviewRecipeOverview,
-                  MiamNeutralMealPlannerRecipeCardLoading,
-                  MiamNeutralMealPlannerBasketPreviewProduct,
-                  MiamNeutralMealPlannerBasketPreviewFooter,
-                  MiamNeutralMealPlannerBasketPreviewSectionTitle,
-                  MiamNeutralMealPlannerBasketPreviewSectionProduct>) {
-        super.init(rootView: rootView)
-    }
-
-    public init() {
-        let budgetPreview = MealPlannerBasketPreviewView.init(
+    // Your SwiftUI View
+    var swiftUIView: MealPlannerBasketPreviewView<
+        MiamNeutralMealPlannerBasketPreviewLoading,
+        MiamNeutralMealPlannerBasketPreviewRecipeOverview,
+        MiamNeutralMealPlannerRecipeCardLoading,
+        MiamNeutralMealPlannerBasketPreviewProduct,
+        MiamNeutralMealPlannerBasketPreviewFooter,
+        MiamNeutralMealPlannerBasketPreviewSectionTitle,
+        MiamNeutralMealPlannerBasketPreviewSectionProduct
+    > {
+        return MealPlannerBasketPreviewView.init(
             loadingTemplate: MiamNeutralMealPlannerBasketPreviewLoading(),
             recipeOverviewTemplate: MiamNeutralMealPlannerBasketPreviewRecipeOverview(),
             recipeLoadingTemplate: MiamNeutralMealPlannerRecipeCardLoading(),
@@ -44,47 +32,52 @@ class MealPlannerBasketPreviewViewController: UIHostingController<MealPlannerBas
             footerTemplate: MiamNeutralMealPlannerBasketPreviewFooter(),
             sectionTitleTemplate: MiamNeutralMealPlannerBasketPreviewSectionTitle(),
             sectionProductTemplate: MiamNeutralMealPlannerBasketPreviewSectionProduct(),
-//            validateRecipes: {},
-            replaceProduct: {_ in},
-            continueShopping: {},
-            showBasket: {},
-            onRecipeTapped: {_ in}
+            replaceProduct: { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(ItemSelectorViewController(), animated: true)
+            },
+            continueShopping: { [weak self] in },
+            showBasket: { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(MealPlannerRecapPurchaseViewController(), animated: true)
+            },
+            onRecipeTapped: { [weak self] recipe in
+                UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+            }
         )
-        super.init(rootView: budgetPreview)
     }
+    
+    // The hosting controller for your SwiftUI view
+    private var hostingController: UIHostingController<MealPlannerBasketPreviewView<
+        MiamNeutralMealPlannerBasketPreviewLoading,
+        MiamNeutralMealPlannerBasketPreviewRecipeOverview,
+        MiamNeutralMealPlannerRecipeCardLoading,
+        MiamNeutralMealPlannerBasketPreviewProduct,
+        MiamNeutralMealPlannerBasketPreviewFooter,
+        MiamNeutralMealPlannerBasketPreviewSectionTitle,
+        MiamNeutralMealPlannerBasketPreviewSectionProduct
+>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Mon assistant Budget repas"
-        let budgetPreview = MealPlannerBasketPreviewView.init(
-            loadingTemplate: MiamNeutralMealPlannerBasketPreviewLoading(),
-            recipeOverviewTemplate: MiamNeutralMealPlannerBasketPreviewRecipeOverview(),
-            recipeLoadingTemplate: MiamNeutralMealPlannerRecipeCardLoading(),
-            productTemplate: MiamNeutralMealPlannerBasketPreviewProduct(),
-            footerTemplate: MiamNeutralMealPlannerBasketPreviewFooter(),
-            sectionTitleTemplate: MiamNeutralMealPlannerBasketPreviewSectionTitle(),
-            sectionProductTemplate: MiamNeutralMealPlannerBasketPreviewSectionProduct(),
-            replaceProduct: { recipe in
-                UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(ItemSelectorViewController(), animated: true)
-                }
-            },
-            continueShopping: {},
-            showBasket: {
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(MealPlannerRecapPurchaseViewController(), animated: true)
-                }
-            },
-            onRecipeTapped: { recipe in
-                UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
-                DispatchQueue.main.async { self.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
-                }
-            }
-        )
-        self.rootView = budgetPreview
-        // Do any additional setup after loading the view.
-
-
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
+        // Initialize the hosting controller with your SwiftUI view
+        hostingController = UIHostingController(rootView: swiftUIView)
+        guard let hostingController = hostingController, let hcView = hostingController.view
+        else { return }
+        // Since hostingController is optional, using guard to safely unwrap its view
+        hcView.translatesAutoresizingMaskIntoConstraints = false
+        addChild(hostingController)
+        view.addSubview(hcView)
+        NSLayoutConstraint.activate([
+            hcView.topAnchor.constraint(equalTo: view.topAnchor),
+            hcView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hcView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hcView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
 }
