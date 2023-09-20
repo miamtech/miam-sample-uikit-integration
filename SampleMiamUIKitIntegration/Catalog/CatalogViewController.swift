@@ -45,16 +45,6 @@ public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
 //    public var mealPlannerCTA = DefaultMealPlannerCTA()
 }
 
-/// This sets the Templates for the RecipesList Overview
-//public struct MiamNeutralCatalogCarouselViewContent: RecipesListViewContentParameters {
-//    public var title = MiamNeutralCatalogCarouselTitle()
-//    public var recipeCard = MiamRecipeCard()
-//    public var noResults = MiamNeutralCatalogCarouselNoResults()
-//    // use defaults
-//    @DefaultLoadingViewTemplate public var loading
-//    @DefaultEmptyViewTemplate public var empty
-//}
-
 /// This sets the Templates for the CatalogRecipesList Overview
 public class MiamNeutralCatalogPackageRowContent: CatalogPackageRowContentParameters {
     weak var navigationController: UINavigationController?
