@@ -32,6 +32,13 @@ public class MiamNeutralRecipesListContent: RecipesListViewContentParameters {
     }
 }
 
+var MiamCatalogListViewConfig = CatalogListViewConfig(
+    recipesListColumns: 2,
+    recipesListSpacing: 8,
+    recipeCardHeight: 300)
+
+
+
 class CatalogResultsViewController: UIViewController {
     deinit {
         print("deinit: CatalogViewController is being deallocated")
@@ -43,8 +50,10 @@ class CatalogResultsViewController: UIViewController {
             return CatalogResultsViewTemplate.init(
                 content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
                 recipesListContent: MiamNeutralRecipesListContent(navigationController: self.navigationController),
-                closeCatalogAction: {
-                    print("closeCatalogAction")
+                config: MiamCatalogListViewConfig,
+                closeCatalogAction: { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.popViewController(animated: true)
                 }
             )
         }
@@ -55,7 +64,7 @@ class CatalogResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Filters"
+        self.title = "Results"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)

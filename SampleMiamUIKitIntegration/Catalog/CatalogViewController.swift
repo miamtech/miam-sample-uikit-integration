@@ -76,6 +76,7 @@ class CatalogViewController: UIViewController {
         return CatalogViewTemplate.init(
             content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
             catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(navigationController: self.navigationController),
+            config: MiamCatalogListViewConfig,
             closeCatalogAction: {
                 print("closeCatalogAction")
             }

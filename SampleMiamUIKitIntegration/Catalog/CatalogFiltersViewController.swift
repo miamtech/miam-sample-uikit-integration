@@ -31,7 +31,7 @@ class CatalogFiltersViewController: UIViewController {
             singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel,
             apply: { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.navigationController?.popViewController(animated: true)
+                strongSelf.navigationController?.pushViewController(CatalogResultsViewController(),animated: true)
             }, close: { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.popViewController(animated: true)
