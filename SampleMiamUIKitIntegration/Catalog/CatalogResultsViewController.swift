@@ -1,0 +1,78 @@
+//
+//  CatalogResultsViewController.swift
+//  SampleMiamUIKitIntegration
+//
+//  Created by didi on 21/09/2023.
+//
+
+import UIKit
+import SwiftUI
+import MiamIOSFramework
+import MiamNeutraliOSFramework
+
+/// This sets the Templates for the CatalogRecipesList Overview
+public class MiamNeutralRecipesListContent: RecipesListViewContentParameters {
+    weak var navigationController: UINavigationController?
+    public init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    public var title = MiamNeutralCatalogPackageTitle()
+    public var recipeCard = MiamRecipeCard()
+    public var recipeCardLoading = MiamRecipeCardLoading()
+    public var noResults = MiamNeutralCatalogEmpty()
+    @DefaultLoadingViewTemplate public var loading
+    @DefaultEmptyViewTemplate public var empty
+    
+    public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
+    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
+        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
+        guard let strongSelf = self else { return }
+        strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+    }
+}
+
+class CatalogResultsViewController: UIViewController {
+    deinit {
+        print("deinit: CatalogViewController is being deallocated")
+    }
+    // Your SwiftUI View
+    var swiftUIView: CatalogResultsViewTemplate<
+        MiamNeutralCatalogViewContent,
+        MiamNeutralRecipesListContent> {
+            return CatalogResultsViewTemplate.init(
+                content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
+                recipesListContent: MiamNeutralRecipesListContent(navigationController: self.navigationController),
+                closeCatalogAction: {
+                    print("closeCatalogAction")
+                }
+            )
+        }
+    // The hosting controller for your SwiftUI view
+    private var hostingController: UIHostingController<CatalogResultsViewTemplate<
+        MiamNeutralCatalogViewContent,
+        MiamNeutralRecipesListContent>>?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Filters"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
+        // Initialize the hosting controller with your SwiftUI view
+        hostingController = UIHostingController(rootView: swiftUIView)
+        guard let hostingController = hostingController, let hcView = hostingController.view
+        else { return }
+        // Since hostingController is optional, using guard to safely unwrap its view
+        hcView.translatesAutoresizingMaskIntoConstraints = false
+        addChild(hostingController)
+        view.addSubview(hcView)
+        NSLayoutConstraint.activate([
+            hcView.topAnchor.constraint(equalTo: view.topAnchor),
+            hcView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hcView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hcView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        hostingController.didMove(toParent: self)
+    }
+}
+
+
