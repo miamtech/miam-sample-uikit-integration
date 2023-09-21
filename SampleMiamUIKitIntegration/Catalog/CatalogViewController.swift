@@ -29,7 +29,11 @@ public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(CatalogFiltersViewController(), animated: true)
         }}()
-    public lazy var searchTapped: () -> Void = {}
+    public lazy var searchTapped: () -> Void = { [weak self] in
+        return {
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
+        }}()
     public lazy var favoritesTapped: () -> Void = {}
     public lazy var preferencesTapped: () -> Void = {}
     
