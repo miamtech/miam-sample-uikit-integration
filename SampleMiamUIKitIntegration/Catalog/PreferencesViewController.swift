@@ -19,7 +19,6 @@ public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
         self.navigationController = navigationController
     }
     
-    public var title = MiamNeutralPreferencesTitle()
     public var guestSection = MiamNeutralPreferencesGuest()
     public var dietSection = MiamNeutralPreferencesDiet()
     public var ingredientsSection = MiamNeutralPreferencesIngredients()
