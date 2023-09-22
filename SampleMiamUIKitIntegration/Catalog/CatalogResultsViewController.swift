@@ -11,7 +11,7 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 /// This sets the Templates for the CatalogRecipesList Overview
-public class MiamNeutralRecipesListContent: RecipesListViewContentParameters {
+public class MiamNeutralRecipesListParams: RecipesListViewParameters {
     weak var navigationController: UINavigationController?
     public init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -46,11 +46,11 @@ class CatalogResultsViewController: UIViewController {
     }
     // Your SwiftUI View
     var swiftUIView: CatalogResultsViewTemplate<
-        MiamNeutralCatalogViewContent,
-        MiamNeutralRecipesListContent> {
+        MiamNeutralCatalogViewParams,
+        MiamNeutralRecipesListParams> {
             return CatalogResultsViewTemplate.init(
-                content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
-                recipesListContent: MiamNeutralRecipesListContent(navigationController: self.navigationController),
+                params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
+                recipesListParams: MiamNeutralRecipesListParams(navigationController: self.navigationController),
                 config: MiamCatalogListViewConfig,
                 closeCatalogAction: { [weak self] in
                     guard let strongSelf = self else { return }
@@ -60,8 +60,8 @@ class CatalogResultsViewController: UIViewController {
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResultsViewTemplate<
-        MiamNeutralCatalogViewContent,
-        MiamNeutralRecipesListContent>>?
+        MiamNeutralCatalogViewParams,
+        MiamNeutralRecipesListParams>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

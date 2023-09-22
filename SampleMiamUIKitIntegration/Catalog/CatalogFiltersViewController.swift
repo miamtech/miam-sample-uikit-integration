@@ -11,12 +11,30 @@ import MiamNeutraliOSFramework
 import miamCore
 
 /// This sets the Templates for the CatalogFiltersPage Overview
-public struct MiamNeutralCatalogFilterViewParameters: CatalogFilterViewParameters {
+public class MiamNeutralCatalogFilterViewParameters: CatalogFilterViewParameters {
+    
+    weak var navigationController: UINavigationController?
+    public init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
     public var header = MiamNeutralCatalogFilterHeader()
     public var section = MiamNeutralCatalogFilterSection()
     public var callToAction = MiamNeutralCatalogFiltersCallToAction()
     // Use defaults
     @DefaultBackgroundViewTemplate public var background
+    
+    public lazy var applyFilters: () -> Void = { [weak self] in
+        return {
+            guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
+            let viewB = CatalogResultsViewController()
+            strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+        }}()
+    public lazy var closeFilters: () -> Void = { [weak self] in
+        return {
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.popViewController(animated: true)
+        }}()
 }
 
 class CatalogFiltersViewController: UIViewController {
@@ -27,16 +45,8 @@ class CatalogFiltersViewController: UIViewController {
     var swiftUIView: CatalogFilterViewTemplate<
         MiamNeutralCatalogFilterViewParameters> {
         return CatalogFilterViewTemplate.init(
-            viewParameters: MiamNeutralCatalogFilterViewParameters(),
-            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel,
-            apply: { [weak self] in
-                guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
-                let viewB = CatalogResultsViewController()
-                strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
-            }, close: { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.navigationController?.popViewController(animated: true)
-            }
+            params: MiamNeutralCatalogFilterViewParameters(navigationController: self.navigationController),
+            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel
         )
     }
     // The hosting controller for your SwiftUI view

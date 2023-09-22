@@ -11,7 +11,7 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 /// This sets the Templates for the CatalogPage Overview
-public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
+public class MiamNeutralCatalogViewParams: CatalogViewParameters {
     
     weak var navigationController: UINavigationController?
     public init(navigationController: UINavigationController?) {
@@ -50,7 +50,7 @@ public class MiamNeutralCatalogViewContent: CatalogViewContentParameters {
 }
 
 /// This sets the Templates for the CatalogRecipesList Overview
-public class MiamNeutralCatalogPackageRowContent: CatalogPackageRowContentParameters {
+public class MiamNeutralCatalogPackageRowParams: CatalogPackageRowParameters {
     weak var navigationController: UINavigationController?
     public init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -75,11 +75,11 @@ class CatalogViewController: UIViewController {
     }
     // Your SwiftUI View
     var swiftUIView: CatalogViewTemplate<
-        MiamNeutralCatalogViewContent,
-        MiamNeutralCatalogPackageRowContent> {
+        MiamNeutralCatalogViewParams,
+        MiamNeutralCatalogPackageRowParams> {
         return CatalogViewTemplate.init(
-            content: MiamNeutralCatalogViewContent(navigationController: self.navigationController),
-            catalogPackageRowTemplates: MiamNeutralCatalogPackageRowContent(navigationController: self.navigationController),
+            params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
+            catalogPackageRowParams: MiamNeutralCatalogPackageRowParams(navigationController: self.navigationController),
             config: MiamCatalogListViewConfig,
             closeCatalogAction: {
                 print("closeCatalogAction")
@@ -88,8 +88,8 @@ class CatalogViewController: UIViewController {
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogViewTemplate<
-        MiamNeutralCatalogViewContent,
-        MiamNeutralCatalogPackageRowContent>>?
+        MiamNeutralCatalogViewParams,
+        MiamNeutralCatalogPackageRowParams>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
