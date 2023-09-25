@@ -18,7 +18,8 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
         self.navigationController = navigationController
     }
 // CONTENT
-    public var toolbar = MiamNeutralCatalogToolbar()
+    public var catalogToolbar = MiamNeutralCatalogToolbar()
+    public var resultsToolbar = MiamNeutralCatalogResultsToolbar()
     // Use defaults
     @DefaultBackgroundViewTemplate public var background
     @DefaultLoadingViewTemplate public var loading
@@ -34,8 +35,16 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
         }}()
-    public lazy var favoritesTapped: () -> Void = {}
-    public lazy var preferencesTapped: () -> Void = {}
+    public lazy var favoritesTapped: () -> Void = { [weak self] in
+        return {
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
+        }}()
+    public lazy var preferencesTapped: () -> Void = { [weak self] in
+        return {
+//            guard let strongSelf = self else { return }
+//            strongSelf.navigationController?.pushViewController(PreferencesViewController(), animated: true)
+        }}()
     
     // if you WANT the meal Planner:
     public var mealPlannerCTA = MiamNeutralMealPlannerCallToAction() // your CTA
