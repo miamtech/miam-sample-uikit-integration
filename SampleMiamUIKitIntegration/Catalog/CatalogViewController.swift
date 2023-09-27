@@ -66,8 +66,8 @@ public class MiamNeutralCatalogPackageRowParams: CatalogPackageRowParameters {
     }
     
     public var title = MiamNeutralCatalogPackageTitle()
-    public var recipeCard = MiamRecipeCard()
-    public var recipeCardLoading = MiamRecipeCardLoading()
+    public var recipeCard = MiamNeutralRecipeCard()
+    public var recipeCardLoading = MiamNeutralRecipeCardLoading()
     public var callToAction = MiamNeutralCatalogPackageCallToAction()
     
     public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}

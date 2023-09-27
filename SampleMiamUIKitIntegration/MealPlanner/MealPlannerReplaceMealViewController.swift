@@ -15,7 +15,7 @@ class MealPlannerReplaceMealViewController: UIViewController {
         print("deinit: MealPlannerReplaceMealViewController is being deallocated")
     }
     // Your SwiftUI View
-    var swiftUIView:MealPlannerRecipePickerView<
+    var swiftUIView: MealPlannerRecipePickerView<
         MiamNeutralMealPlannerSearch,
         MiamRecipeCard> {
         return MealPlannerRecipePickerView(

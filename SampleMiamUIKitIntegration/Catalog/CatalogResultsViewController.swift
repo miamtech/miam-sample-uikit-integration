@@ -18,8 +18,8 @@ public class MiamNeutralRecipesListParams: RecipesListViewParameters {
     }
     
     public var title = MiamNeutralCatalogPackageTitle()
-    public var recipeCard = MiamRecipeCard()
-    public var recipeCardLoading = MiamRecipeCardLoading()
+    public var recipeCard = MiamNeutralRecipeCard()
+    public var recipeCardLoading = MiamNeutralRecipeCardLoading()
     public var noResults = MiamNeutralRecipesListNoResults()
     @DefaultLoadingViewTemplate public var loading
     @DefaultEmptyViewTemplate public var empty

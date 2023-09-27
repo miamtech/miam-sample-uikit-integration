@@ -29,11 +29,6 @@ public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
     @DefaultEmptyViewTemplate public var empty
     @DefaultBackgroundViewTemplate public var background
     
-    public lazy var applyPreferences: () -> Void = { [weak self] in
-        return {
-            guard let strongSelf = self else { return }
-            strongSelf.navigationController?.popViewController(animated: true)
-        }}()
     public lazy var closePreferences: () -> Void = { [weak self] in
         return {
             guard let strongSelf = self else { return }

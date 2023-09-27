@@ -40,7 +40,8 @@ class FavoritesViewController: UIViewController {
     var swiftUIView: FavoritesViewTemplate<
         MiamNeutralFavoritesParams> {
         return FavoritesViewTemplate.init(
-            params: MiamNeutralFavoritesParams(navigationController: self.navigationController)
+            params: MiamNeutralFavoritesParams(navigationController: self.navigationController),
+            config: FavoritesPageRecipesListViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
