@@ -49,7 +49,7 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Filters"
+        self.title = "Favorites"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)

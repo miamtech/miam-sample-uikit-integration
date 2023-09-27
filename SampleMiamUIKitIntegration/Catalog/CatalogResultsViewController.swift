@@ -33,7 +33,7 @@ public class MiamNeutralRecipesListParams: RecipesListViewParameters {
     }
 }
 
-var MiamCatalogListViewConfig = CatalogListViewConfig(
+var MiamRecipesListViewConfig = RecipesListViewConfig(
     recipesListColumns: 2,
     recipesListSpacing: 8,
     recipeCardHeight: 300)
@@ -51,7 +51,7 @@ class CatalogResultsViewController: UIViewController {
             return CatalogResultsViewTemplate.init(
                 params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
                 recipesListParams: MiamNeutralRecipesListParams(navigationController: self.navigationController),
-                config: MiamCatalogListViewConfig,
+                config: MiamRecipesListViewConfig,
                 closeCatalogAction: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)

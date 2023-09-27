@@ -42,8 +42,8 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
         }}()
     public lazy var preferencesTapped: () -> Void = { [weak self] in
         return {
-//            guard let strongSelf = self else { return }
-//            strongSelf.navigationController?.pushViewController(PreferencesViewController(), animated: true)
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(PreferencesViewController(), animated: true)
         }}()
     
     // if you WANT the meal Planner:
@@ -89,7 +89,7 @@ class CatalogViewController: UIViewController {
         return CatalogViewTemplate.init(
             params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
             catalogPackageRowParams: MiamNeutralCatalogPackageRowParams(navigationController: self.navigationController),
-            config: MiamCatalogListViewConfig,
+            config: MiamRecipesListViewConfig,
             closeCatalogAction: {
                 print("closeCatalogAction")
             }
