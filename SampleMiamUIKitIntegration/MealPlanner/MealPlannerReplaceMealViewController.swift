@@ -27,7 +27,7 @@ class MealPlannerReplaceMealViewController: UIViewController {
                 
             },
             onRecipeTapped: { [weak self] recipe in
-                UserDefaults.standard.set(recipe, forKey: "miam_mealplanner_recipeId")
+                UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
                 

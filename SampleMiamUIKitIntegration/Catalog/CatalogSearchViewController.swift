@@ -12,7 +12,19 @@ import MiamNeutraliOSFramework
 import miamCore
 
 /// This sets the Templates for the CatalogFiltersPage Overview
-public struct MiamNeutralCatalogSearchViewParameters: CatalogSearchViewParameters {}
+public class MiamNeutralCatalogSearchViewParameters: CatalogSearchViewParameters {
+    
+    weak var navigationController: UINavigationController?
+    public init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    public lazy var applySearch: () -> Void = { [weak self] in
+        guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
+        let viewB = CatalogResultsViewController()
+        strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+    }
+}
 
 class CatalogSearchViewController: UIViewController {
     deinit {
@@ -22,13 +34,8 @@ class CatalogSearchViewController: UIViewController {
     var swiftUIView: CatalogSearchViewTemplate<
         MiamNeutralCatalogSearchViewParameters> {
         return CatalogSearchViewTemplate.init(
-            viewParameters: MiamNeutralCatalogSearchViewParameters(),
-            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel,
-            apply: { [weak self] in
-                guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
-                let viewB = CatalogResultsViewController()
-                strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
-            }
+            params: MiamNeutralCatalogSearchViewParameters(navigationController: self.navigationController),
+            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel
         )
     }
     // The hosting controller for your SwiftUI view

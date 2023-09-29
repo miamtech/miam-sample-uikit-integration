@@ -14,7 +14,7 @@ class MealPlannerRecipeDetailsViewController: UIViewController {
     deinit {
         print("deinit: MealPlannerRecipeDetailsViewController is being deallocated")
     }
-    let recipeId = UserDefaults.standard.value(forKey: "miam_mealplanner_recipeId") as? String ?? ""
+    let recipeId = UserDefaults.standard.value(forKey: "miam_catalog_recipeId") as? String ?? ""
     // Your SwiftUI View
     var swiftUIView: RecipeDetailsViewTemplate<
         MiamNeutralRecipeDetailsHeaderView,

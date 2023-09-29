@@ -26,8 +26,8 @@ public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
         }}()
     public lazy var goToSearchView: () -> Void = { [weak self] in
         return {
-//            guard let strongSelf = self else { return }
-//            strongSelf.navigationController?.pushViewController(PreferencesSearchVie(), animated: true)
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
         }}()
 }
 

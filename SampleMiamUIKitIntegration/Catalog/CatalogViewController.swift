@@ -16,6 +16,9 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
     public init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
+    
+    // if you WANT the meal Planner:
+    public var mealPlannerCTA = MiamNeutralMealPlannerCallToAction() // your CTA
 
 // ACTIONS
     public lazy var filtersTapped: () -> Void = { [weak self] in
@@ -39,16 +42,11 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
             strongSelf.navigationController?.pushViewController(PreferencesViewController(), animated: true)
         }}()
     
-    // if you WANT the meal Planner:
-    public var mealPlannerCTA = MiamNeutralMealPlannerCallToAction() // your CTA
     public lazy var launchMealPlanner: (() -> Void)? = { [weak self] in
         return {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
         }}()
-    // if you do NOT want the mealPlanner
-//    public lazy var launchMealPlanner: (() -> Void)? = nil
-//    public var mealPlannerCTA = DefaultMealPlannerCTA()
 }
 
 /// This sets the Templates for the CatalogRecipesList Overview
@@ -63,7 +61,10 @@ public class MiamNeutralCatalogPackageRowParams: CatalogPackageRowParameters {
     public var recipeCardLoading = MiamNeutralRecipeCardLoading()
     public var callToAction = MiamNeutralCatalogPackageCallToAction()
     
-    public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
+    public lazy var showRecipes: () -> Void = { [weak self] in
+        guard let strongSelf = self else { return }
+        strongSelf.navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
+    }
     public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
         UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
         guard let strongSelf = self else { return }
@@ -82,10 +83,7 @@ class CatalogViewController: UIViewController {
         return CatalogViewTemplate.init(
             params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
             catalogPackageRowParams: MiamNeutralCatalogPackageRowParams(navigationController: self.navigationController),
-            config: MiamRecipesListViewConfig,
-            closeCatalogAction: {
-                print("closeCatalogAction")
-            }
+            config: MiamRecipesListViewConfig
         )
     }
     // The hosting controller for your SwiftUI view

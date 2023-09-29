@@ -30,7 +30,7 @@ public class MiamNeutralFavoritesParams: FavoritesViewParameters {
 var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
     recipesListColumns: 2,
     recipesListSpacing: 8,
-    recipeCardDimensions: CGSize(width: 300, height: 250),
+    recipeCardDimensions: CGSize(width: 300, height: 300),
     recipeCardFillMaxWidth: true
 )
 
