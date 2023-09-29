@@ -18,12 +18,6 @@ public class MiamNeutralCatalogFilterViewParameters: CatalogFilterViewParameters
         self.navigationController = navigationController
     }
     
-    public var header = MiamNeutralCatalogFilterHeader()
-    public var section = MiamNeutralCatalogFilterSection()
-    public var callToAction = MiamNeutralCatalogFiltersCallToAction()
-    // Use defaults
-    @DefaultBackgroundViewTemplate public var background
-    
     public lazy var applyFilters: () -> Void = { [weak self] in
         return {
             guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }

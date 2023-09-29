@@ -12,18 +12,11 @@ import MiamNeutraliOSFramework
 
 /// This sets the Templates for the CatalogPage Overview
 public class MiamNeutralCatalogViewParams: CatalogViewParameters {
-    
     weak var navigationController: UINavigationController?
     public init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
-// CONTENT
-    public var catalogToolbar = MiamNeutralCatalogToolbar()
-    public var resultsToolbar = MiamNeutralCatalogResultsToolbar()
-    // Use defaults
-    @DefaultBackgroundViewTemplate public var background
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultEmptyViewTemplate public var empty
+
 // ACTIONS
     public lazy var filtersTapped: () -> Void = { [weak self] in
         return {

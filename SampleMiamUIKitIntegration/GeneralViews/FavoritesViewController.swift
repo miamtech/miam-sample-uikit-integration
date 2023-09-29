@@ -17,12 +17,7 @@ public class MiamNeutralFavoritesParams: FavoritesViewParameters {
     public init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
-    
-    public var recipeCard = MiamNeutralRecipeCard()
-    public var recipeCardLoading = MiamNeutralRecipeCardLoading()
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultEmptyViewTemplate public var empty
-    
+
     public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
     public lazy var noResultsRedirect: () -> Void = {[weak self] in}
     public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
@@ -33,13 +28,14 @@ public class MiamNeutralFavoritesParams: FavoritesViewParameters {
 }
 
 var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
-    recipesListColumns: 5,
+    recipesListColumns: 2,
     recipesListSpacing: 8,
-    recipeCardDimensions: CGSize(width: 300, height: 380),
+    recipeCardDimensions: CGSize(width: 300, height: 250),
     recipeCardFillMaxWidth: true
 )
 
 class FavoritesViewController: UIViewController {
+    
     deinit {
         print("deinit: FavoritesViewController is being deallocated")
     }

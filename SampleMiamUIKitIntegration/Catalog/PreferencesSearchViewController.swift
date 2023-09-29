@@ -19,13 +19,6 @@ public class MiamNeutralPreferencesSearchViewParameters: PreferencesSearchViewPa
         self.navigationController = navigationController
     }
     
-    public var tagButton = MiamNeutralPreferencesSearchTag()
-    public var search = MiamNeutralGeneralSearch(hasButton: false)
-    public var empty = MiamNeutralGeneralEmpty()
-    // Use defaults
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultBackgroundViewTemplate public var background
-    
     public lazy var closeSearch: () -> Void = { [weak self] in
         return {
             guard let strongSelf = self else { return }

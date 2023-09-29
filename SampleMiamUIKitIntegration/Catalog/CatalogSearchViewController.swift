@@ -12,11 +12,7 @@ import MiamNeutraliOSFramework
 import miamCore
 
 /// This sets the Templates for the CatalogFiltersPage Overview
-public struct MiamNeutralCatalogSearchViewParameters: CatalogSearchViewParameters {
-    public var search = MiamNeutralGeneralSearch()
-    // Use defaults
-    @DefaultBackgroundViewTemplate public var background
-}
+public struct MiamNeutralCatalogSearchViewParameters: CatalogSearchViewParameters {}
 
 class CatalogSearchViewController: UIViewController {
     deinit {

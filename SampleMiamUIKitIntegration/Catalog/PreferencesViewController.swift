@@ -19,16 +19,6 @@ public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
         self.navigationController = navigationController
     }
     
-    public var guestSection = MiamNeutralPreferencesGuest()
-    public var dietSection = MiamNeutralPreferencesDiet()
-    public var ingredientsSection = MiamNeutralPreferencesIngredients()
-    public var equipmentSection = MiamNeutralPreferencesEquipment()
-    public var footer = MiamNeutralPreferencesFooter()
-    // Use defaults
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultEmptyViewTemplate public var empty
-    @DefaultBackgroundViewTemplate public var background
-    
     public lazy var closePreferences: () -> Void = { [weak self] in
         return {
             guard let strongSelf = self else { return }
@@ -37,7 +27,7 @@ public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
     public lazy var goToSearchView: () -> Void = { [weak self] in
         return {
 //            guard let strongSelf = self else { return }
-//            strongSelf.navigationController?.popViewController(animated: true)
+//            strongSelf.navigationController?.pushViewController(PreferencesSearchVie(), animated: true)
         }}()
 }
 

@@ -17,13 +17,6 @@ public class MiamNeutralRecipesListParams: RecipesListViewParameters {
         self.navigationController = navigationController
     }
     
-    public var title = MiamNeutralCatalogPackageTitle()
-    public var recipeCard = MiamNeutralRecipeCard()
-    public var recipeCardLoading = MiamNeutralRecipeCardLoading()
-    public var noResults = MiamNeutralRecipesListNoResults()
-    @DefaultLoadingViewTemplate public var loading
-    @DefaultEmptyViewTemplate public var empty
-    
     public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
     public lazy var noResultsRedirect: () -> Void = {[weak self] in}
     public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
