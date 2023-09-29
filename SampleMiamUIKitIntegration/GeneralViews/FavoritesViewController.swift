@@ -18,8 +18,8 @@ public class MiamNeutralFavoritesParams: FavoritesViewParameters {
         self.navigationController = navigationController
     }
     
-    public var recipeCard = MiamRecipeCard()
-    public var recipeCardLoading = MiamRecipeCardLoading()
+    public var recipeCard = MiamNeutralRecipeCard()
+    public var recipeCardLoading = MiamNeutralRecipeCardLoading()
     @DefaultLoadingViewTemplate public var loading
     @DefaultEmptyViewTemplate public var empty
     
@@ -31,6 +31,13 @@ public class MiamNeutralFavoritesParams: FavoritesViewParameters {
         strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
     }
 }
+
+var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
+    recipesListColumns: 5,
+    recipesListSpacing: 8,
+    recipeCardDimensions: CGSize(width: 300, height: 380),
+    recipeCardFillMaxWidth: true
+)
 
 class FavoritesViewController: UIViewController {
     deinit {

@@ -36,9 +36,9 @@ public class MiamNeutralRecipesListParams: RecipesListViewParameters {
 var MiamRecipesListViewConfig = RecipesListViewConfig(
     recipesListColumns: 2,
     recipesListSpacing: 8,
-    recipeCardHeight: 300)
-
-
+    recipeCardDimensions: CGSize(width: 300, height: 380),
+    recipeCardFillMaxWidth: true
+)
 
 class CatalogResultsViewController: UIViewController {
     deinit {
