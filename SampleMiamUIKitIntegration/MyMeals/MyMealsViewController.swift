@@ -12,9 +12,6 @@ import MiamNeutraliOSFramework
 import miamCore
 
 /// This sets the Templates for the MyMeals Overview
-public class MiamNeutralMyMealsParams: MyMealsViewParameters {}
-
-/// This sets the Templates for the MyMeals Overview
 public class MiamNeutralBasketRecipeParams: BasketRecipeViewParameters {
     weak var navigationController: UINavigationController?
     public init(navigationController: UINavigationController?) {
@@ -45,18 +42,18 @@ class MyMealsViewController: UIViewController {
     }
     // Your SwiftUI View
     var swiftUIView: MyMealsViewTemplate<
-        MiamNeutralMyMealsParams,
+        DefaultBaseViewParams,
         MiamNeutralBasketRecipeParams
     > {
         return MyMealsViewTemplate.init(
-            params: MiamNeutralMyMealsParams(),
+            params: DefaultBaseViewParams(),
             basketRecipesParams: MiamNeutralBasketRecipeParams(navigationController: self.navigationController),
             config: MyMealsBasketViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMealsViewTemplate<
-        MiamNeutralMyMealsParams,
+        DefaultBaseViewParams,
         MiamNeutralBasketRecipeParams>>?
 
     override func viewDidLoad() {

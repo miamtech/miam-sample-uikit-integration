@@ -29,7 +29,9 @@ class MealPlannerRecipeDetailsViewController: UIViewController {
             footerContent: MiamNeutralRecipeDetailsFooterView(),
             recipeId: recipeId,
             isForMealPlanner: true,
-            sponsorDetailsTapped: { [weak self] recipe in
+            sponsorDetailsTapped: { [weak self] sponsor in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
             },
             close: { [weak self] in
                 guard let strongSelf = self else { return }
