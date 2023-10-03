@@ -47,6 +47,12 @@ public class MiamNeutralCatalogViewParams: CatalogViewParameters {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
         }}()
+    
+    public lazy var myMealsButtonTapped: () -> Void = { [weak self] in
+        return {
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+        }}()
 }
 
 /// This sets the Templates for the CatalogRecipesList Overview
