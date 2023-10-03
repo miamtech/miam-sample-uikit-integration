@@ -156,7 +156,7 @@
         <!--Favorites View Controller-->
         <scene sceneID="YourSceneIDForFavorites">
             <objects>
-                <viewController title="Favorites" id="57d-He-gfx" customClass="FavoritesViewController" customModule="YourModuleName" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorites" id="57d-He-gfx" customClass="MyMealsViewController" customModule="YourModuleName" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bi-yu-ypz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
