@@ -26,11 +26,12 @@ class MealPlannerReplaceMealViewController: UIViewController {
                 strongSelf.navigationController?.popViewController(animated: true)
                 
             },
-            onRecipeTapped: { [weak self] recipe in
-                UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
+            onRecipeTapped: { [weak self] recipeId in
                 guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
-                
+                strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(
+                    recipeId,
+                    isForMealPlanner: true
+                ), animated: true)
             })
     }
     // The hosting controller for your SwiftUI view

@@ -11,23 +11,6 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-/// This sets the Templates for the MyMeals Overview
-public class MiamNeutralBasketRecipeParams: BasketRecipeViewParameters {
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-
-    public lazy var replaceRecipe: () -> Void = {[weak self] in
-            // item selector
-    }
-    public lazy var showRecipeDetails: (String) -> Void = { [weak self] recipe in
-        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
-        guard let strongSelf = self else { return }
-        strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
-    }
-}
-
 var MyMealsBasketViewConfig = BasketRecipesViewConfig(
     recipesSpacing: 8.0,
     productsSpacing: 8.0,
@@ -37,24 +20,29 @@ var MyMealsBasketViewConfig = BasketRecipesViewConfig(
 
 class MyMealsViewController: UIViewController {
     
-    deinit {
-        print("deinit: MyMealsViewController is being deallocated")
-    }
+    deinit { print("deinit: MyMealsViewController") }
     // Your SwiftUI View
     var swiftUIView: MyMealsViewTemplate<
         DefaultBaseViewParams,
-        MiamNeutralBasketRecipeParams
+        DefaultBasketRecipeParams
     > {
         return MyMealsViewTemplate.init(
             params: DefaultBaseViewParams(),
-            basketRecipesParams: MiamNeutralBasketRecipeParams(navigationController: self.navigationController),
+            basketRecipesParams: DefaultBasketRecipeParams(
+                replaceRecipe: { [weak self] in
+                    // item selector
+            },
+            showRecipeDetails: { [weak self] recipeId in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+            }),
             config: MyMealsBasketViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMealsViewTemplate<
         DefaultBaseViewParams,
-        MiamNeutralBasketRecipeParams>>?
+        DefaultBasketRecipeParams>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

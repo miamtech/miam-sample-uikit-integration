@@ -11,35 +11,21 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-/// This sets the Templates for the CatalogFiltersPage Overview
-public class MiamNeutralPreferencesSearchViewParameters: PreferencesSearchViewParameters {
-    
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    public lazy var closeSearch: () -> Void = { [weak self] in
-        return {
-            guard let strongSelf = self else { return }
-            strongSelf.navigationController?.popViewController(animated: true)
-        }}()
-}
-
 class PreferencesSearchViewController: UIViewController {
-    deinit {
-        print("deinit: PreferencesSearchViewController is being deallocated")
-    }
+    deinit { print("deinit: PreferencesSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: PreferencesSearchViewTemplate<
-        MiamNeutralPreferencesSearchViewParameters> {
+        DefaultPreferencesSearchParameters> {
         return PreferencesSearchViewTemplate.init(
-            params: MiamNeutralPreferencesSearchViewParameters(navigationController: self.navigationController)
+            params: DefaultPreferencesSearchParameters(closeSearch: { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.popViewController(animated: true)
+                })
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<PreferencesSearchViewTemplate<
-        MiamNeutralPreferencesSearchViewParameters>>?
+        DefaultPreferencesSearchParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

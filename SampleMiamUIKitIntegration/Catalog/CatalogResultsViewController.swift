@@ -19,10 +19,9 @@ public class MiamNeutralRecipesListParams: RecipesListViewParameters {
     
     public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
     public lazy var noResultsRedirect: () -> Void = {[weak self] in}
-    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
-        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
+    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipeId in
         guard let strongSelf = self else { return }
-        strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
     }
 }
 
@@ -44,11 +43,11 @@ class CatalogResultsViewController: UIViewController {
             return CatalogResultsViewTemplate.init(
                 params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
                 recipesListParams: MiamNeutralRecipesListParams(navigationController: self.navigationController),
-                config: MiamRecipesListViewConfig,
-                closeCatalogAction: { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.popViewController(animated: true)
-                }
+                config: MiamRecipesListViewConfig
+//                closeCatalogAction: { [weak self] in
+//                    guard let strongSelf = self else { return }
+//                    strongSelf.navigationController?.popViewController(animated: true)
+//                }
             )
         }
     // The hosting controller for your SwiftUI view

@@ -71,10 +71,9 @@ public class MiamNeutralCatalogPackageRowParams: CatalogPackageRowParameters {
         guard let strongSelf = self else { return }
         strongSelf.navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
     }
-    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
-        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
+    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipeId in
         guard let strongSelf = self else { return }
-        strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
         }
 }
 

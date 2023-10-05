@@ -26,11 +26,10 @@ class MealPlannerViewController: UIViewController {
             recipeCardTemplate: MiamNeutralMealPlannerRecipeCard(),
             loadingCardTemplate: MiamNeutralMealPlannerRecipeCardLoading(),
             placeholderCardTemplate: MiamNeutralMealPlannerRecipePlaceholder(),
-            showRecipe: { [weak self] recipe in
+            showRecipe: { [weak self] recipeId in
                 guard let strongSelf = self else { return }
-                UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
                 DispatchQueue.main.async {
-                    strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 }
             },
             validateRecipes: { [weak self] in

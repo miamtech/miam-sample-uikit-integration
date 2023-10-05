@@ -12,7 +12,7 @@ import MiamNeutraliOSFramework
 import miamCore
 
 class SponsorDetailsViewController: UIViewController {
-    let sponsor: Sponsor
+    public let sponsor: Sponsor
     
     init(sponsor: Sponsor) {
         self.sponsor = sponsor

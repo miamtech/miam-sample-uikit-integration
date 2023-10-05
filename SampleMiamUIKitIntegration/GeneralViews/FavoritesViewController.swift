@@ -11,22 +11,6 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-/// This sets the Templates for the Favorites Overview
-public class MiamNeutralFavoritesParams: FavoritesViewParameters {
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-
-    public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
-    public lazy var noResultsRedirect: () -> Void = {[weak self] in}
-    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipe in
-        UserDefaults.standard.set(recipe, forKey: "miam_catalog_recipeId")
-        guard let strongSelf = self else { return }
-        strongSelf.navigationController?.pushViewController(MealPlannerRecipeDetailsViewController(), animated: true)
-    }
-}
-
 var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
     recipesListColumns: 2,
     recipesListSpacing: 8,
@@ -35,21 +19,24 @@ var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
 )
 
 class FavoritesViewController: UIViewController {
-    
-    deinit {
-        print("deinit: FavoritesViewController is being deallocated")
-    }
+    deinit { print("deinit: FavoritesViewController") }
     // Your SwiftUI View
     var swiftUIView: FavoritesViewTemplate<
-        MiamNeutralFavoritesParams> {
+        DefaultFavoritesParams> {
         return FavoritesViewTemplate.init(
-            params: MiamNeutralFavoritesParams(navigationController: self.navigationController),
+            params: DefaultFavoritesParams(
+                showRecipes: { [weak self] _ in },
+                noResultsRedirect: { [weak self] in },
+                onRecipeTapped: { [weak self] recipeId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                }),
             config: FavoritesPageRecipesListViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<FavoritesViewTemplate<
-        MiamNeutralFavoritesParams>>?
+        DefaultFavoritesParams>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
