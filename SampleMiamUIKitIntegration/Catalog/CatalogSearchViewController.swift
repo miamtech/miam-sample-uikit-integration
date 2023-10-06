@@ -11,36 +11,26 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-/// This sets the Templates for the CatalogFiltersPage Overview
-public class MiamNeutralCatalogSearchViewParameters: CatalogSearchViewParameters {
-    
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    public lazy var applySearch: () -> Void = { [weak self] in
-        guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
-        let viewB = CatalogResultsViewController()
-        strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
-    }
-}
-
 class CatalogSearchViewController: UIViewController {
-    deinit {
-        print("deinit: CatalogSearchViewController is being deallocated")
-    }
+    deinit { print("deinit: CatalogSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogSearchViewTemplate<
-        MiamNeutralCatalogSearchViewParameters> {
+        DefaultCatalogSearchParams> {
         return CatalogSearchViewTemplate.init(
-            params: MiamNeutralCatalogSearchViewParameters(navigationController: self.navigationController),
+            params: DefaultCatalogSearchParams(
+                applySearch: { [weak self] in
+                    // complex to remove this view from stack after redirecting to Results page so Results can directly navigate back to CatalogView
+                    guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
+                    let viewB = CatalogResultsViewController()
+                    strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+                }
+            ),
             singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogSearchViewTemplate<
-        MiamNeutralCatalogSearchViewParameters>>?
+        DefaultCatalogSearchParams>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

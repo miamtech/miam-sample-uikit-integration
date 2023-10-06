@@ -10,21 +10,6 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-/// This sets the Templates for the CatalogRecipesList Overview
-public class MiamNeutralRecipesListParams: RecipesListViewParameters {
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    public lazy var showRecipes: (MiamIOSFramework.CatalogPackage) -> Void = {[weak self] _ in}
-    public lazy var noResultsRedirect: () -> Void = {[weak self] in}
-    public lazy var onRecipeTapped: (String) -> Void = { [weak self] recipeId in
-        guard let strongSelf = self else { return }
-        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-    }
-}
-
 var MiamRecipesListViewConfig = RecipesListViewConfig(
     recipesListColumns: 2,
     recipesListSpacing: 8,
@@ -33,16 +18,20 @@ var MiamRecipesListViewConfig = RecipesListViewConfig(
 )
 
 class CatalogResultsViewController: UIViewController {
-    deinit {
-        print("deinit: CatalogViewController is being deallocated")
-    }
+    deinit { print("deinit: CatalogViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogResultsViewTemplate<
-        MiamNeutralCatalogViewParams,
-        MiamNeutralRecipesListParams> {
+        DefaultCatalogViewParamsWithMealPlanner,
+        DefaultRecipesListParameters> {
             return CatalogResultsViewTemplate.init(
-                params: MiamNeutralCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: MiamNeutralRecipesListParams(navigationController: self.navigationController),
+                params: sharedCatalogViewParams(navigationController: self.navigationController),
+                recipesListParams: DefaultRecipesListParameters(
+                    showRecipes: { [weak self] _ in },
+                    noResultsRedirect: { [weak self] in },
+                    onRecipeTapped: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                    }),
                 config: MiamRecipesListViewConfig
 //                closeCatalogAction: { [weak self] in
 //                    guard let strongSelf = self else { return }
@@ -52,8 +41,8 @@ class CatalogResultsViewController: UIViewController {
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResultsViewTemplate<
-        MiamNeutralCatalogViewParams,
-        MiamNeutralRecipesListParams>>?
+        DefaultCatalogViewParamsWithMealPlanner,
+        DefaultRecipesListParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

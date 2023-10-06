@@ -23,9 +23,7 @@ class SponsorDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        print("deinit: SponsorDetailsViewController is being deallocated")
-    }
+    deinit { print("deinit: SponsorDetailsViewController") }
     // Your SwiftUI View
     var swiftUIView: SponsorDetailViewTemplate<
         DefaultBaseViewParams
@@ -41,7 +39,7 @@ class SponsorDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Meals"
+        self.title = "\(sponsor.name)"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)

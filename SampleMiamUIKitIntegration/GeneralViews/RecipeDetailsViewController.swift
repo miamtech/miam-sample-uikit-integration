@@ -12,7 +12,6 @@ import MiamNeutraliOSFramework
 import miamCore
 
 class RecipeDetailsViewController: UIViewController {
-    
     public let recipeId: String
     public let isForMealPlanner: Bool
     

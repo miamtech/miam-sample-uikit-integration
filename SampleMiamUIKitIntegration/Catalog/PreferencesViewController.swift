@@ -11,41 +11,29 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-/// This sets the Templates for the CatalogFiltersPage Overview
-public class MiamNeutralPreferencesViewParameters: PreferencesViewParameters {
-    
-    weak var navigationController: UINavigationController?
-    public init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    public lazy var closePreferences: () -> Void = { [weak self] in
-        return {
-            guard let strongSelf = self else { return }
-            strongSelf.navigationController?.popViewController(animated: true)
-        }}()
-    public lazy var goToSearchView: () -> Void = { [weak self] in
-        return {
-            guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
-        }}()
-}
-
 class PreferencesViewController: UIViewController {
-    deinit {
-        print("deinit: PreferencesViewController is being deallocated")
-    }
+    deinit { print("deinit: PreferencesViewController") }
     // Your SwiftUI View
     var swiftUIView: PreferencesViewTemplate<
-        MiamNeutralPreferencesViewParameters> {
-        return PreferencesViewTemplate.init(
-            params: MiamNeutralPreferencesViewParameters(navigationController: self.navigationController)
-        )
-    }
+        DefaultPreferencesParameters
+    > {
+            return PreferencesViewTemplate.init(
+                params: DefaultPreferencesParameters(
+                    closePreferences: { [weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.popViewController(animated: true)
+                    },
+                    goToSearchView: { [weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
+                    })
+            )
+        }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<PreferencesViewTemplate<
-        MiamNeutralPreferencesViewParameters>>?
-
+    private var hostingController: UIHostingController<
+        PreferencesViewTemplate<DefaultPreferencesParameters>
+    >?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Preferences"
