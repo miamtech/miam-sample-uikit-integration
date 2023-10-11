@@ -16,6 +16,8 @@ class RecipesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarItem.title = "Recipes"
+        self.tabBarItem.image = UIImage(systemName: "questionmark.square.fill")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
