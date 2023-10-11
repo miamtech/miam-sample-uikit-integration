@@ -144,7 +144,6 @@
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB036B30C5A317953D0804CA /* Pods_SampleMiamUIKitIntegration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
