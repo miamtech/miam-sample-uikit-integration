@@ -15,10 +15,10 @@ class CatalogSearchViewController: UIViewController {
     deinit { print("deinit: CatalogSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogSearchViewTemplate<
-        DefaultCatalogSearchParams> {
+        CatalogSearchParameters> {
         return CatalogSearchViewTemplate.init(
-            params: DefaultCatalogSearchParams(
-                applySearch: { [weak self] in
+            params: CatalogSearchParameters(
+                onApplied: { [weak self] in
                     // complex to remove this view from stack after redirecting to Results page so Results can directly navigate back to CatalogView
                     guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
                     let viewB = CatalogResultsViewController()
@@ -30,7 +30,7 @@ class CatalogSearchViewController: UIViewController {
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogSearchViewTemplate<
-        DefaultCatalogSearchParams>>?
+        CatalogSearchParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,26 +9,27 @@ import UIKit
 import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
+import miamCore
 
 // simple function to share navigation between CatalogView & CatalogResultsView
-public func sharedCatalogViewParams(navigationController: UINavigationController?) -> DefaultCatalogViewParamsWithMealPlanner {
-    return DefaultCatalogViewParamsWithMealPlanner(
-        filtersTapped: {
+public func sharedCatalogViewParams(navigationController: UINavigationController?) -> CatalogParameters {
+    return CatalogParameters(
+        onFiltersTapped: {
+            navigationController?.pushViewController(FiltersViewController(MiamDI.shared.recipeFilterViewModel), animated: true)
+        },
+        onSearchTapped: {
             navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
         },
-        searchTapped: {
-            navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
-        },
-        favoritesTapped: {
+        onFavoritesTapped: {
             navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
         },
-        preferencesTapped: {
+        onPreferencesTapped: {
             navigationController?.pushViewController(PreferencesViewController(), animated: true)
         },
-        launchMealPlanner: {
+        onLaunchMealPlanner: {
             navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
         },
-        myMealsButtonTapped: {
+        onMealsInBasketButtonTapped: {
             navigationController?.pushViewController(MyMealsViewController(), animated: true)
         })
 }
@@ -37,12 +38,12 @@ class CatalogViewController: UIViewController {
     deinit { print("deinit: CatalogViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogViewTemplate<
-        DefaultCatalogViewParamsWithMealPlanner,
-        DefaultCatalogPackageRowParams> {
+        CatalogParameters,
+        CatalogPackageRowParameters> {
             return CatalogViewTemplate.init(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
-                catalogPackageRowParams: DefaultCatalogPackageRowParams(
-                    showRecipes: { [weak self] in
+                catalogPackageRowParams: CatalogPackageRowParameters(
+                    onSeeAllRecipes: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
                     },
@@ -55,8 +56,8 @@ class CatalogViewController: UIViewController {
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogViewTemplate<
-        DefaultCatalogViewParamsWithMealPlanner,
-        DefaultCatalogPackageRowParams>>?
+        CatalogParameters,
+        CatalogPackageRowParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

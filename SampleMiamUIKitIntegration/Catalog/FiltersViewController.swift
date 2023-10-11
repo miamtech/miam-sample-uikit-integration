@@ -10,31 +10,40 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-class CatalogFiltersViewController: UIViewController {
-    deinit {
-        print("deinit: CatalogFiltersViewController is being deallocated")
+class FiltersViewController: UIViewController {
+    public let singletonFilterViewModel: SingletonFilterViewModel
+    
+    init(_ singletonFilterViewModel: SingletonFilterViewModel) {
+        self.singletonFilterViewModel = singletonFilterViewModel
+        super.init(nibName: nil, bundle: nil)
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit { print("deinit: FiltersViewController")}
     // Your SwiftUI View
-    var swiftUIView: CatalogFilterViewTemplate<
-        DefaultFiltersParameters> {
-        return CatalogFilterViewTemplate.init(
-            params: DefaultFiltersParameters(
-                applyFilters: { [weak self] in
+    var swiftUIView: FiltersView<
+        FiltersParameters> {
+        return FiltersView.init(
+            params: FiltersParameters(
+                onApplied: { [weak self] in
                     // this is overly complex so that when the user taps the apply button,
                     // the next return will take them to Catalog, instead of back to filters
                      guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
                      let viewB = CatalogResultsViewController()
                      strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
-                }, closeFilters: { [weak self] in
+                }, onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 }),
-            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel
+            singletonFilterViewModel: singletonFilterViewModel
         )
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<CatalogFilterViewTemplate<
-        DefaultFiltersParameters>>?
+    private var hostingController: UIHostingController<FiltersView<
+        FiltersParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

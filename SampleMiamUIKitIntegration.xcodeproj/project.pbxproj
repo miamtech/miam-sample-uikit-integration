@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26285D882A81415600E41EB7 /* CatalogFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */; };
+		26285D882A81415600E41EB7 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D872A81415500E41EB7 /* FiltersViewController.swift */; };
 		26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */; };
 		262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */; };
 		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
 		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
-		264A36C52A7003CC00EA2D23 /* MealPlannerBasketPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketPreviewViewController.swift */; };
-		264A36C72A7003E300EA2D23 /* MealPlannerReplaceMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* MealPlannerReplaceMealViewController.swift */; };
+		264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */; };
+		264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */; };
 		264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */; };
-		264A36CC2A7003F200EA2D23 /* MealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */; };
+		264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */; };
 		264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */; };
 		264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */; };
 		266175292ACAF3B400D89390 /* MyMealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175282ACAF3B400D89390 /* MyMealsViewController.swift */; };
@@ -40,15 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersViewController.swift; sourceTree = "<group>"; };
+		26285D872A81415500E41EB7 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesSearchViewController.swift; sourceTree = "<group>"; };
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
-		264A36C42A7003CC00EA2D23 /* MealPlannerBasketPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerBasketPreviewViewController.swift; sourceTree = "<group>"; };
-		264A36C62A7003E300EA2D23 /* MealPlannerReplaceMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerReplaceMealViewController.swift; sourceTree = "<group>"; };
+		264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerBasketViewController.swift; sourceTree = "<group>"; };
+		264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecipePickerViewController.swift; sourceTree = "<group>"; };
 		264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerFormViewController.swift; sourceTree = "<group>"; };
-		264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerViewController.swift; sourceTree = "<group>"; };
+		264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerResultsViewController.swift; sourceTree = "<group>"; };
 		264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
 		264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecapPurchaseViewController.swift; sourceTree = "<group>"; };
 		266175282ACAF3B400D89390 /* MyMealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMealsViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +91,11 @@
 		26285D892A82B2EA00E41EB7 /* MealPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				264A36C92A7003F200EA2D23 /* MealPlannerViewController.swift */,
-				264A36C42A7003CC00EA2D23 /* MealPlannerBasketPreviewViewController.swift */,
+				264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */,
+				264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */,
 				264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */,
 				264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */,
-				264A36C62A7003E300EA2D23 /* MealPlannerReplaceMealViewController.swift */,
+				264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */,
-				26285D872A81415500E41EB7 /* CatalogFiltersViewController.swift */,
+				26285D872A81415500E41EB7 /* FiltersViewController.swift */,
 				26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */,
 				26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */,
 				26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */,
@@ -274,17 +274,17 @@
 				264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */,
 				266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */,
 				264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */,
-				264A36CC2A7003F200EA2D23 /* MealPlannerViewController.swift in Sources */,
+				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
 				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
-				264A36C72A7003E300EA2D23 /* MealPlannerReplaceMealViewController.swift in Sources */,
+				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
 				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
-				264A36C52A7003CC00EA2D23 /* MealPlannerBasketPreviewViewController.swift in Sources */,
+				264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */,
 				BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */,
 				BF59A48228D0DF4500882BA9 /* RecipesTableViewController.swift in Sources */,
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
 				BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */,
 				266175292ACAF3B400D89390 /* MyMealsViewController.swift in Sources */,
-				26285D882A81415600E41EB7 /* CatalogFiltersViewController.swift in Sources */,
+				26285D882A81415600E41EB7 /* FiltersViewController.swift in Sources */,
 				26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */,
 				BF8505932857955600651864 /* HostingViewController.swift in Sources */,
 				BF1A8021287D913400F8FF9A /* MealViewController.swift in Sources */,

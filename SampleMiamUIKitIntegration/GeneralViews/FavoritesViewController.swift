@@ -22,9 +22,9 @@ class FavoritesViewController: UIViewController {
     deinit { print("deinit: FavoritesViewController") }
     // Your SwiftUI View
     var swiftUIView: FavoritesViewTemplate<
-        DefaultFavoritesParams> {
+        FavoritesParams> {
         return FavoritesViewTemplate.init(
-            params: DefaultFavoritesParams(
+            params: FavoritesParams(
                 showRecipes: { [weak self] _ in },
                 noResultsRedirect: { [weak self] in },
                 onRecipeTapped: { [weak self] recipeId in
@@ -36,7 +36,7 @@ class FavoritesViewController: UIViewController {
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<FavoritesViewTemplate<
-        DefaultFavoritesParams>>?
+        FavoritesParams>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

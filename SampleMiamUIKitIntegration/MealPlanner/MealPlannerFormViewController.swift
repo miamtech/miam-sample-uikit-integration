@@ -11,21 +11,19 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class MealPlannerFormViewController: UIViewController {
-    deinit {
-        print("deinit: MealPlannerFormViewController is being deallocated")
-    }
+    deinit { print("deinit: MealPlannerFormViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerFormView<MiamNeutralMealPlannerForm> {
-        return MealPlannerFormView(
-            budgetForm: MiamNeutralMealPlannerForm(),
-            budgetInfos: nil,
-            onBudgetValidated: { [weak self] recipe in
+    var swiftUIView: MealPlannerFormPageViewTemplate<MealPlannerFormParameters> {
+        return MealPlannerFormPageViewTemplate(
+            params: MealPlannerFormParameters(
+                onNavigateToMealPlannerResults: { [weak self] recipes in
                 guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(MealPlannerViewController(), animated: true)
-            })
+                strongSelf.navigationController?.pushViewController(MealPlannerResultsViewController(), animated: true)
+                }))
+           
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerFormView<MiamNeutralMealPlannerForm>>?
+    private var hostingController: UIHostingController<MealPlannerFormPageViewTemplate<MealPlannerFormParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,52 +1,55 @@
 //
-//  MyMealsViewController.swift
-//  SampleMiamUIKitIntegration
+//  MealPlannerBasketViewController.swift
+//  SampleUIKitIntegration
 //
-//  Created by didi on 02/10/2023.
+//  Created by didi on 6/21/23.
 //
 
 import UIKit
 import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
-import miamCore
 
-var MyMealsBasketViewConfig = BasketRecipesViewConfig(
-    recipesSpacing: 8.0,
-    productsSpacing: 8.0,
-    recipeOverviewDimensions: CGSize(width: 150, height: 150),
-    isExpandable: true
-)
-
-class MyMealsViewController: UIViewController {
-    
-    deinit { print("deinit: MyMealsViewController") }
+class MealPlannerBasketViewController: UIViewController {
+    deinit { print("deinit: MealPlannerBasketViewController") }
     // Your SwiftUI View
-    var swiftUIView: MyMealsViewTemplate<
-        DefaultBaseViewParams,
+    var swiftUIView: MealPlannerBasketView<
+        MealPlannerBasketParameters,
         BasketRecipeParameters
     > {
-        return MyMealsViewTemplate.init(
-            params: DefaultBaseViewParams(),
+        return MealPlannerBasketView(
+            params: MealPlannerBasketParameters(
+                onNavigateToRecap: { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(MealPlannerRecapPurchaseViewController(), animated: true)
+                },
+                onNavigateToBasket: { [weak self] in }),
             basketRecipesParams: BasketRecipeParameters(
                 onReplaceRecipe: { [weak self] in
-                    // item selector
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(), animated: true)
                 },
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-            }),
-            config: MyMealsBasketViewConfig
+                }),
+            config: BasketRecipesViewConfig(
+                recipesSpacing: 6.0,
+                productsSpacing: 6.0,
+                recipeOverviewDimensions: CGSize(width: 300, height: 150),
+                isExpandable: true)
         )
     }
+    
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MyMealsViewTemplate<
-        DefaultBaseViewParams,
-        BasketRecipeParameters>>?
+    private var hostingController: UIHostingController<MealPlannerBasketView<
+        MealPlannerBasketParameters,
+        BasketRecipeParameters
+>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Meals"
+        self.title = "Mon assistant Budget repas"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)

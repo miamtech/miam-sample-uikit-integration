@@ -29,15 +29,15 @@ class RecipeDetailsViewController: UIViewController {
     
     // Your SwiftUI View
     var swiftUIView: RecipeDetails<
-        DefaultRecipeDetailParams
+        RecipeDetailParameters
     > {
         return RecipeDetails.init(
-            params: DefaultRecipeDetailParams(
-                closeRecipeDetails: { [weak self] in
+            params: RecipeDetailParameters(
+                onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 },
-                sponsorDetailsTapped: { [weak self] sponsor in
+                onSponsorDetailsTapped: { [weak self] sponsor in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
                 }),
@@ -47,7 +47,7 @@ class RecipeDetailsViewController: UIViewController {
     
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<RecipeDetails<
-        DefaultRecipeDetailParams
+        RecipeDetailParameters
 >>?
 
     override func viewDidLoad() {

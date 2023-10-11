@@ -15,15 +15,15 @@ class PreferencesViewController: UIViewController {
     deinit { print("deinit: PreferencesViewController") }
     // Your SwiftUI View
     var swiftUIView: PreferencesViewTemplate<
-        DefaultPreferencesParameters
+        PreferencesParameters
     > {
             return PreferencesViewTemplate.init(
-                params: DefaultPreferencesParameters(
-                    closePreferences: { [weak self] in
+                params: PreferencesParameters(
+                    onClosed: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.popViewController(animated: true)
                     },
-                    goToSearchView: { [weak self] in
+                    onGoToSearch: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
                     })
@@ -31,7 +31,7 @@ class PreferencesViewController: UIViewController {
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<
-        PreferencesViewTemplate<DefaultPreferencesParameters>
+        PreferencesViewTemplate<PreferencesParameters>
     >?
     
     override func viewDidLoad() {

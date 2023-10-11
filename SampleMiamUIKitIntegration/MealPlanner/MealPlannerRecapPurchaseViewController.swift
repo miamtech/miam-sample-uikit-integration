@@ -11,16 +11,17 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class MealPlannerRecapPurchaseViewController: UIViewController {
-    var swiftUIView: MealPlannerRecapView<MiamNeutralMealPlannerRecap> {
+    var swiftUIView: MealPlannerRecapView<MealPlannerRecapParameters> {
         return MealPlannerRecapView(
-            template: MiamNeutralMealPlannerRecap(),
-            onTapGesture: { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.navigationController?.popToRootViewController(animated: true)
-            })
+            params: MealPlannerRecapParameters(
+                onNavigateAwayFromMealPlanner: { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.popToRootViewController(animated: true)
+                }
+            ))
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerRecapView<MiamNeutralMealPlannerRecap>>?
+    private var hostingController: UIHostingController<MealPlannerRecapView<MealPlannerRecapParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

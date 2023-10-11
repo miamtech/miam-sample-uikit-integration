@@ -15,9 +15,10 @@ class PreferencesSearchViewController: UIViewController {
     deinit { print("deinit: PreferencesSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: PreferencesSearchViewTemplate<
-        DefaultPreferencesSearchParameters> {
+        PreferencesSearchParameters> {
         return PreferencesSearchViewTemplate.init(
-            params: DefaultPreferencesSearchParameters(closeSearch: { [weak self] in
+            params: PreferencesSearchParameters(
+                onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 })
@@ -25,7 +26,7 @@ class PreferencesSearchViewController: UIViewController {
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<PreferencesSearchViewTemplate<
-        DefaultPreferencesSearchParameters>>?
+        PreferencesSearchParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

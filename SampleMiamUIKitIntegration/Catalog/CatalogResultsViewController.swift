@@ -21,11 +21,11 @@ class CatalogResultsViewController: UIViewController {
     deinit { print("deinit: CatalogViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogResultsViewTemplate<
-        DefaultCatalogViewParamsWithMealPlanner,
-        DefaultRecipesListParameters> {
+        CatalogParameters,
+        RecipesListParams> {
             return CatalogResultsViewTemplate.init(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: DefaultRecipesListParameters(
+                recipesListParams: RecipesListParams(
                     showRecipes: { [weak self] _ in },
                     noResultsRedirect: { [weak self] in },
                     onRecipeTapped: { [weak self] recipeId in
@@ -33,16 +33,12 @@ class CatalogResultsViewController: UIViewController {
                         strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                     }),
                 config: MiamRecipesListViewConfig
-//                closeCatalogAction: { [weak self] in
-//                    guard let strongSelf = self else { return }
-//                    strongSelf.navigationController?.popViewController(animated: true)
-//                }
             )
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResultsViewTemplate<
-        DefaultCatalogViewParamsWithMealPlanner,
-        DefaultRecipesListParameters>>?
+        CatalogParameters,
+        RecipesListParams>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
