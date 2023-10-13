@@ -40,6 +40,10 @@ class RecipeDetailsViewController: UIViewController {
                 onSponsorDetailsTapped: { [weak self] sponsor in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
+                },
+                onContinueToBasket: { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                 }),
             recipeId: recipeId,
             isForMealPlanner: isForMealPlanner)

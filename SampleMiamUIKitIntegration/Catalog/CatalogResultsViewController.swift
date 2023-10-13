@@ -10,35 +10,54 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-var MiamRecipesListViewConfig = RecipesListViewConfig(
-    recipesListColumns: 2,
-    recipesListSpacing: 8,
+public var localRecipesListViewConfig = RecipesListGridConfig(
+    columns: 2,
+    horizontalSpacing: 6,
+    verticalSpacing: 6,
     recipeCardDimensions: CGSize(width: 300, height: 380),
-    recipeCardFillMaxWidth: true
-)
+    recipeCardFillMaxWidth: true)
 
 class CatalogResultsViewController: UIViewController {
-    deinit { print("deinit: CatalogViewController") }
+    public let categoryId: String?
+    public let categoryTitle: String?
+    
+    init(_ categoryId: String? = nil, categoryTitle: String? = nil) {
+        self.categoryId = categoryId
+        self.categoryTitle = categoryTitle
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    deinit { print("deinit: CatalogResultsViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogResultsViewTemplate<
         CatalogParameters,
-        RecipesListParams> {
-            return CatalogResultsViewTemplate.init(
+        RecipesListParameters> {
+            return CatalogResultsViewTemplate(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: RecipesListParams(
-                    showRecipes: { [weak self] _ in },
-                    noResultsRedirect: { [weak self] in },
-                    onRecipeTapped: { [weak self] recipeId in
+                recipesListParams: RecipesListParameters(
+                    onShowRecipes: { [weak self] _ in },
+                    onNoResultsRedirect: { [weak self] in },
+                    onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                    }),
-                config: MiamRecipesListViewConfig
+                    },
+                    onRecipeCallToActionTapped: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+                    }
+                ),
+                categoryId: categoryId,
+                title: categoryTitle,
+                gridConfig: localRecipesListViewConfig
             )
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResultsViewTemplate<
         CatalogParameters,
-        RecipesListParams>>?
+        RecipesListParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

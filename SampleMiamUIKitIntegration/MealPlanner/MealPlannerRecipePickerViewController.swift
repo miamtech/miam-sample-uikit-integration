@@ -34,12 +34,7 @@ class MealPlannerRecipePickerViewController: UIViewController {
                         strongSelf.navigationController?.pushViewController(
                             FiltersViewController(filtersInstance), animated: true)
                 }),
-            config: RecipesListViewConfig(
-                recipesListColumns: 2,
-                recipesListSpacing: 6.0,
-                recipeCardDimensions: CGSize(width: 300, height: 380),
-                recipeCardFillMaxWidth: true)
-            )
+            gridConfig: localRecipesListViewConfig)
             
     }
     // The hosting controller for your SwiftUI view

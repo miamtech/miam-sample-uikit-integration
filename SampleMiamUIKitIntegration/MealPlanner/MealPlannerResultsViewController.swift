@@ -37,8 +37,9 @@ class MealPlannerResultsViewController: UIViewController {
                             strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
                         }
                     }),
-            config: MealPlannerRecipesViewConfig(
-                recipesListSpacing: 6.0,
+            gridConfig: MealPlannerRecipesListGridConfig(
+                horizontalSpacing: 6.0,
+                verticalSpacing: 6.0,
                 recipeCardDimensions: CGSize(width: 300, height: 300)))
     }
     

@@ -10,6 +10,14 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
+public var localBasketGridConfig = BasketRecipesGridConfig(
+    recipeHorizontalSpacing: 6,
+    recipeVerticalSpacing: 6,
+    productHorizontalSpacing: 6,
+    productVerticalSpacing: 6,
+    recipeOverviewDimensions: CGSize(width: 300, height: 150),
+    isExpandable: true)
+
 class MealPlannerBasketViewController: UIViewController {
     deinit { print("deinit: MealPlannerBasketViewController") }
     // Your SwiftUI View
@@ -25,19 +33,15 @@ class MealPlannerBasketViewController: UIViewController {
                 },
                 onNavigateToBasket: { [weak self] in }),
             basketRecipesParams: BasketRecipeParameters(
-                onReplaceRecipe: { [weak self] in
+                onReplaceProduct: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(), animated: true)
+                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(recipeId), animated: true)
                 },
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 }),
-            config: BasketRecipesViewConfig(
-                recipesSpacing: 6.0,
-                productsSpacing: 6.0,
-                recipeOverviewDimensions: CGSize(width: 300, height: 150),
-                isExpandable: true)
+            gridConfig: localBasketGridConfig
         )
     }
     

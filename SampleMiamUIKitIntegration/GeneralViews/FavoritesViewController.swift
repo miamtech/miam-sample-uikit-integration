@@ -11,32 +11,27 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-var FavoritesPageRecipesListViewConfig = RecipesListViewConfig(
-    recipesListColumns: 2,
-    recipesListSpacing: 8,
-    recipeCardDimensions: CGSize(width: 300, height: 300),
-    recipeCardFillMaxWidth: true
-)
-
 class FavoritesViewController: UIViewController {
     deinit { print("deinit: FavoritesViewController") }
     // Your SwiftUI View
     var swiftUIView: FavoritesViewTemplate<
-        FavoritesParams> {
+        FavoritesParameters> {
         return FavoritesViewTemplate.init(
-            params: FavoritesParams(
-                showRecipes: { [weak self] _ in },
-                noResultsRedirect: { [weak self] in },
-                onRecipeTapped: { [weak self] recipeId in
+            params: FavoritesParameters(
+                onNoResultsRedirect: { [weak self] in },
+                onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                }, onRecipeCallToActionTapped: { [weak self] recipeId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                 }),
-            config: FavoritesPageRecipesListViewConfig
+            gridConfig: localRecipesListViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<FavoritesViewTemplate<
-        FavoritesParams>>?
+        FavoritesParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

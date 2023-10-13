@@ -14,8 +14,8 @@ import miamCore
 // simple function to share navigation between CatalogView & CatalogResultsView
 public func sharedCatalogViewParams(navigationController: UINavigationController?) -> CatalogParameters {
     return CatalogParameters(
-        onFiltersTapped: {
-            navigationController?.pushViewController(FiltersViewController(MiamDI.shared.recipeFilterViewModel), animated: true)
+        onFiltersTapped: { filterVM in
+            navigationController?.pushViewController(FiltersViewController(filterVM), animated: true)
         },
         onSearchTapped: {
             navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
@@ -43,15 +43,22 @@ class CatalogViewController: UIViewController {
             return CatalogViewTemplate.init(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 catalogPackageRowParams: CatalogPackageRowParameters(
-                    onSeeAllRecipes: { [weak self] in
+                    onSeeAllRecipes: { [weak self] categoryId, categoryTitle in
                         guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
+                        strongSelf.navigationController?.pushViewController(
+                            CatalogResultsViewController(
+                                categoryId,
+                                categoryTitle: categoryTitle
+                            ), animated: true)
                     },
-                    onRecipeTapped: { [weak self] recipeId in
+                    onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                    }, onRecipeCallToActionTapped: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                     }),
-                config: MiamRecipesListViewConfig
+                gridConfig: localRecipesListViewConfig
             )
         }
     // The hosting controller for your SwiftUI view

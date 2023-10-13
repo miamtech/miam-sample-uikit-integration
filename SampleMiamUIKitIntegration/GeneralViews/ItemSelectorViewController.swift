@@ -11,24 +11,32 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class ItemSelectorViewController: UIViewController {
-    deinit {
-        print("deinit: ItemSelectorViewController is being deallocated")
+    public let recipeId: String
+    
+    init(_ recipeId: String) {
+        self.recipeId = recipeId
+        super.init(nibName: nil, bundle: nil)
     }
-    let recipeId = UserDefaults.standard.value(forKey: "miam_mealplanner_recipeId") as? String ?? ""
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit { print("deinit: ItemSelectorViewController")}
+
     // Your SwiftUI View
-    var swiftUIView: ItemSelector {
+    var swiftUIView: ItemSelector<ItemSelectorParameters> {
         return ItemSelector(
-            recipeId: recipeId,
-            onItemSelected: { [weak self] in
+            params: ItemSelectorParameters(onItemSelected: { [weak self] in
                 // added small delay to ensure image reloads
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 }
-            })
+            }), recipeId: recipeId)
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<ItemSelector>?
+    private var hostingController: UIHostingController<ItemSelector<ItemSelectorParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
