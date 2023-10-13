@@ -23,33 +23,33 @@ class RecipesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.tableView.register(RecipeCardHostingTableViewCell<RecipeCardView>.self, forCellReuseIdentifier: "recipeCard")
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contentConfiguration")
-        self.tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "productCell")
+//        self.tableView.register(RecipeCardHostingTableViewCell<RecipeCardView>.self, forCellReuseIdentifier: "recipeCard")
+//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contentConfiguration")
+//        self.tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "productCell")
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return products.count
+//    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var cell: UITableViewCell
         
-        if indexPath.row % 5 == 0 {
-            let recipeCardCell = tableView.dequeueReusableCell(withIdentifier: "recipeCard", for: indexPath) as! RecipeCardHostingTableViewCell<RecipeCardView>
-            recipeCardCell.set(rootView: RecipeCardView(recipeId: ingredients[0]), parentController: self)
-            cell = recipeCardCell
-        } else {
-            let productCell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductTableViewCell
-            productCell.setTitle(products[indexPath.row])
-            cell = productCell
-        }
+//        if indexPath.row % 5 == 0 {
+//            let recipeCardCell = tableView.dequeueReusableCell(withIdentifier: "recipeCard", for: indexPath) as! RecipeCardHostingTableViewCell<RecipeCardView>
+//            recipeCardCell.set(rootView: RecipeCardView(recipeId: ingredients[0]), parentController: self)
+//            cell = recipeCardCell
+//        } else {
+//            let productCell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductTableViewCell
+//            productCell.setTitle(products[indexPath.row])
+//            cell = productCell
+//        }
         
 //        if #available(iOS 16.0, *) {
 //            cell = tableView.dequeueReusableCell(withIdentifier: "contentConfiguration", for: indexPath)
@@ -63,10 +63,10 @@ class RecipesTableViewController: UITableViewController {
 //            cell = recipeCardCell
 //        }
         
-        return cell
-    }
+//        return cell
+//    }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
 }
