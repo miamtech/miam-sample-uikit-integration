@@ -22,6 +22,7 @@
 		266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */; };
 		2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */; };
 		2684C6652ADD2E920030B844 /* BasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684C6642ADD2E920030B844 /* BasketTagViewController.swift */; };
+		2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */; };
 		26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */; };
 		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
 		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
@@ -54,6 +55,7 @@
 		266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorDetailsViewController.swift; sourceTree = "<group>"; };
 		2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		2684C6642ADD2E920030B844 /* BasketTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTagViewController.swift; sourceTree = "<group>"; };
+		2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCarouselViewController.swift; sourceTree = "<group>"; };
 		26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSearchViewController.swift; sourceTree = "<group>"; };
 		26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */,
 				2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */,
 				2684C6642ADD2E920030B844 /* BasketTagViewController.swift */,
+				2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */,
 			);
 			path = GeneralViews;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
 				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
 				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
+				2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */,
 				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
 				264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */,
 				BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */,

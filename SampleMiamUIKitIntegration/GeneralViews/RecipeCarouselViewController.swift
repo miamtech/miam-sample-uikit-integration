@@ -1,8 +1,8 @@
 //
-//  RecipeDetailsViewController.swift
+//  RecipeCarouselViewController.swift
 //  SampleMiamUIKitIntegration
 //
-//  Created by didi on 05/10/2023.
+//  Created by didi on 16/10/2023.
 //
 
 import UIKit
@@ -11,13 +11,25 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
-class RecipeDetailsViewController: UIViewController {
-    public let recipeId: String
-    public let isForMealPlanner: Bool
+public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
+    rows: 2,
+    horizontalSpacing: 6,
+    verticalSpacing: 6,
+    recipeCardDimensions: CGSize(width: 200, height: 300))
+
+class RecipeCarouselViewController: UIViewController {
+    public let productId: String?
+    public let criteria: SuggestionsCriteria?
+    public let numberOfResults: Int
     
-    init(_ recipeId: String, isForMealPlanner: Bool = false) {
-        self.recipeId = recipeId
-        self.isForMealPlanner = isForMealPlanner
+    init(
+        productId: String? = nil,
+        criteria: SuggestionsCriteria? = nil,
+        numberOfResults: Int
+    ) {
+        self.productId = productId
+        self.criteria = criteria
+        self.numberOfResults = numberOfResults
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,38 +37,37 @@ class RecipeDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit { print("deinit: RecipeDetailsViewController") }
+    deinit { print("deinit: RecipeCarouselViewController") }
     
     // Your SwiftUI View
-    var swiftUIView: RecipeDetails<
-        RecipeDetailParameters
+    var swiftUIView: RecipeCarousel<
+        RecipeCarouselParameters
     > {
-        return RecipeDetails.init(
-            params: RecipeDetailParameters(
-                onClosed: { [weak self] in
+        return RecipeCarousel.init(
+            params: RecipeCarouselParameters(
+                onNoResultsRedirect: { [weak self] in },
+                onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.popViewController(animated: true)
-                },
-                onSponsorDetailsTapped: { [weak self] sponsor in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
-                },
-                onContinueToBasket: { [weak self] in
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                }, onRecipeCallToActionTapped: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                 }),
-            recipeId: recipeId,
-            isForMealPlanner: isForMealPlanner)
+            gridConfig: localRecipesCarouselViewConfig,
+            productId: productId,
+            criteria: criteria,
+            numberOfResults: numberOfResults
+            )
     }
     
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<RecipeDetails<
-        RecipeDetailParameters
+    private var hostingController: UIHostingController<RecipeCarousel<
+        RecipeCarouselParameters
 >>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Recipe Details"
+        self.title = "Recipe Carousel"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)
