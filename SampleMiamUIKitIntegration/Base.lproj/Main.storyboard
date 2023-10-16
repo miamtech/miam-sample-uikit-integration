@@ -89,9 +89,9 @@
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iaF-qE-ohF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="miamPrimaryText"/>
+                        <color key="backgroundColor" name="miamPrimaryDark"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="miamPrimary"/>
+                        <color key="barTintColor" name="miamPrimaryDark"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -220,11 +220,8 @@
         <image name="miamCart" width="24" height="24"/>
         <image name="miamHeart" width="17" height="16"/>
         <image name="miamIdeeRepas" width="26" height="25"/>
-        <namedColor name="miamPrimary">
-            <color red="0.012000000104308128" green="0.49399998784065247" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="miamPrimaryText">
-            <color red="0.0" green="0.49399998784065247" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="miamPrimaryDark">
+            <color red="0.0" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="miamWhite">
             <color red="0.98000001907348633" green="0.98799997568130493" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
