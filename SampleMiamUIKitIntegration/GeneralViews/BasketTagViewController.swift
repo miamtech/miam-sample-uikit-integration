@@ -26,10 +26,10 @@ class BasketTagViewController: UIViewController {
     deinit { print("deinit: BasketTagViewController") }
     
     // Your SwiftUI View
-    var swiftUIView: BasketTagViewTemplate<
+    var swiftUIView: BasketTag<
         BasketTagParameters
     > {
-        return BasketTagViewTemplate.init(
+        return BasketTag.init(
             params: BasketTagParameters(
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
@@ -39,7 +39,7 @@ class BasketTagViewController: UIViewController {
     }
     
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<BasketTagViewTemplate<
+    private var hostingController: UIHostingController<BasketTag<
         BasketTagParameters
 >>?
 
