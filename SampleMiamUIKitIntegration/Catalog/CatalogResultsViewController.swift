@@ -10,7 +10,7 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-public var localRecipesListViewConfig = RecipesListGridConfig(
+public var localRecipesListViewConfig = CatalogRecipesListGridConfig(
     columns: 2,
     horizontalSpacing: 6,
     verticalSpacing: 6,
