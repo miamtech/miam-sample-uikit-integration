@@ -14,10 +14,10 @@ import miamCore
 class PreferencesViewController: UIViewController {
     deinit { print("deinit: PreferencesViewController") }
     // Your SwiftUI View
-    var swiftUIView: PreferencesViewTemplate<
+    var swiftUIView: Preferences<
         PreferencesParameters
     > {
-            return PreferencesViewTemplate.init(
+            return Preferences.init(
                 params: PreferencesParameters(
                     onClosed: { [weak self] in
                         guard let strongSelf = self else { return }
@@ -31,7 +31,7 @@ class PreferencesViewController: UIViewController {
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<
-        PreferencesViewTemplate<PreferencesParameters>
+        Preferences<PreferencesParameters>
     >?
     
     override func viewDidLoad() {

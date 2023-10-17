@@ -14,9 +14,9 @@ import miamCore
 class PreferencesSearchViewController: UIViewController {
     deinit { print("deinit: PreferencesSearchViewController") }
     // Your SwiftUI View
-    var swiftUIView: PreferencesSearchViewTemplate<
+    var swiftUIView: PreferencesSearch<
         PreferencesSearchParameters> {
-        return PreferencesSearchViewTemplate.init(
+        return PreferencesSearch.init(
             params: PreferencesSearchParameters(
                 onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
@@ -25,7 +25,7 @@ class PreferencesSearchViewController: UIViewController {
         )
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<PreferencesSearchViewTemplate<
+    private var hostingController: UIHostingController<PreferencesSearch<
         PreferencesSearchParameters>>?
 
     override func viewDidLoad() {
