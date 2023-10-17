@@ -37,10 +37,10 @@ public func sharedCatalogViewParams(navigationController: UINavigationController
 class CatalogViewController: UIViewController {
     deinit { print("deinit: CatalogViewController") }
     // Your SwiftUI View
-    var swiftUIView: CatalogViewTemplate<
+    var swiftUIView: CatalogView<
         CatalogParameters,
         CatalogPackageRowParameters> {
-            return CatalogViewTemplate.init(
+            return CatalogView.init(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 catalogPackageRowParams: CatalogPackageRowParameters(
                     onSeeAllRecipes: { [weak self] categoryId, categoryTitle in
@@ -62,7 +62,7 @@ class CatalogViewController: UIViewController {
             )
         }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<CatalogViewTemplate<
+    private var hostingController: UIHostingController<CatalogView<
         CatalogParameters,
         CatalogPackageRowParameters>>?
     

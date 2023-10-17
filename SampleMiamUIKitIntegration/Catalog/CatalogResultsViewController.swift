@@ -32,10 +32,10 @@ class CatalogResultsViewController: UIViewController {
     }
     deinit { print("deinit: CatalogResultsViewController") }
     // Your SwiftUI View
-    var swiftUIView: CatalogResultsViewTemplate<
+    var swiftUIView: CatalogResults<
         CatalogParameters,
         RecipesListParameters> {
-            return CatalogResultsViewTemplate(
+            return CatalogResults(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 recipesListParams: RecipesListParameters(
                     onShowRecipes: { [weak self] _ in },
@@ -55,7 +55,7 @@ class CatalogResultsViewController: UIViewController {
             )
         }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<CatalogResultsViewTemplate<
+    private var hostingController: UIHostingController<CatalogResults<
         CatalogParameters,
         RecipesListParameters>>?
     
