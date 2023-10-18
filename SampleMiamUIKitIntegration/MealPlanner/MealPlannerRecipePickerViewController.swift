@@ -11,11 +11,21 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class MealPlannerRecipePickerViewController: UIViewController {
+    public let indexOfRecipe: Int
+    
+    init(_ indexOfRecipe: Int) {
+        self.indexOfRecipe = indexOfRecipe
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     deinit { print("deinit: MealPlannerRecipePickerViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerRecipePickerView<
+    var swiftUIView: MealPlannerRecipePicker<
         MealPlannerRecipePickerParameters> {
-        return MealPlannerRecipePickerView(
+        return MealPlannerRecipePicker(
             params:
                 MealPlannerRecipePickerParameters(
                     onShowRecipeDetails: { [weak self] recipeId in
@@ -34,11 +44,12 @@ class MealPlannerRecipePickerViewController: UIViewController {
                         strongSelf.navigationController?.pushViewController(
                             FiltersViewController(filtersInstance), animated: true)
                 }),
-            gridConfig: localRecipesListViewConfig)
+            gridConfig: localRecipesListViewConfig,
+            indexOfReplacedRecipe: indexOfRecipe)
             
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerRecipePickerView<
+    private var hostingController: UIHostingController<MealPlannerRecipePicker<
         MealPlannerRecipePickerParameters>>?
 
     override func viewDidLoad() {
