@@ -34,10 +34,10 @@ class CatalogResultsViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: CatalogResults<
         CatalogParameters,
-        RecipesListParameters> {
+        CatalogRecipesListParameters> {
             return CatalogResults(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: RecipesListParameters(
+                recipesListParams: CatalogRecipesListParameters(
                     onShowRecipes: { [weak self] _ in },
                     onNoResultsRedirect: { [weak self] in },
                     onShowRecipeDetails: { [weak self] recipeId in
@@ -57,7 +57,7 @@ class CatalogResultsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResults<
         CatalogParameters,
-        RecipesListParameters>>?
+        CatalogRecipesListParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
