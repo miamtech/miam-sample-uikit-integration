@@ -21,11 +21,11 @@ public var localBasketGridConfig = BasketRecipesGridConfig(
 class MealPlannerBasketViewController: UIViewController {
     deinit { print("deinit: MealPlannerBasketViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerBasketView<
+    var swiftUIView: MealPlannerBasket<
         MealPlannerBasketParameters,
         BasketRecipeParameters
     > {
-        return MealPlannerBasketView(
+        return MealPlannerBasket(
             params: MealPlannerBasketParameters(
                 onNavigateToRecap: { [weak self] in
                     guard let strongSelf = self else { return }
@@ -46,7 +46,7 @@ class MealPlannerBasketViewController: UIViewController {
     }
     
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerBasketView<
+    private var hostingController: UIHostingController<MealPlannerBasket<
         MealPlannerBasketParameters,
         BasketRecipeParameters
 >>?

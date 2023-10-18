@@ -11,8 +11,8 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class MealPlannerRecapPurchaseViewController: UIViewController {
-    var swiftUIView: MealPlannerRecapView<MealPlannerRecapParameters> {
-        return MealPlannerRecapView(
+    var swiftUIView: MealPlannerRecap<MealPlannerRecapParameters> {
+        return MealPlannerRecap(
             params: MealPlannerRecapParameters(
                 onNavigateAwayFromMealPlanner: { [weak self] in
                     guard let strongSelf = self else { return }
@@ -21,7 +21,7 @@ class MealPlannerRecapPurchaseViewController: UIViewController {
             ))
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerRecapView<MealPlannerRecapParameters>>?
+    private var hostingController: UIHostingController<MealPlannerRecap<MealPlannerRecapParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
