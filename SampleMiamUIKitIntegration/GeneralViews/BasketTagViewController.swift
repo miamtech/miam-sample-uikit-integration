@@ -35,7 +35,9 @@ class BasketTagViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 }),
-            retailerProductId: retailerProductId)
+            retailerProductId: retailerProductId,
+            scrollAlignment: .horizontal
+        )
     }
     
     // The hosting controller for your SwiftUI view

@@ -18,16 +18,23 @@ public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
     recipeCardDimensions: CGSize(width: 200, height: 300))
 
 class RecipeCarouselViewController: UIViewController {
-    public let productId: String?
-    public let criteria: SuggestionsCriteria?
+    public var productId: String? = nil
+    public var criteria: SuggestionsCriteria? = nil
     public let numberOfResults: Int
     
     init(
-        productId: String? = nil,
-        criteria: SuggestionsCriteria? = nil,
+        productId: String,
         numberOfResults: Int
     ) {
         self.productId = productId
+        self.numberOfResults = numberOfResults
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(
+        criteria: SuggestionsCriteria,
+        numberOfResults: Int
+    ) {
         self.criteria = criteria
         self.numberOfResults = numberOfResults
         super.init(nibName: nil, bundle: nil)
@@ -43,21 +50,33 @@ class RecipeCarouselViewController: UIViewController {
     var swiftUIView: RecipeCarousel<
         RecipeCarouselParameters
     > {
-        return RecipeCarousel.init(
-            params: RecipeCarouselParameters(
-                onNoResultsRedirect: { [weak self] in },
-                onShowRecipeDetails: { [weak self] recipeId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                }, onRecipeCallToActionTapped: { [weak self] recipeId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
-                }),
-            gridConfig: localRecipesCarouselViewConfig,
-            productId: productId,
-            criteria: criteria,
-            numberOfResults: numberOfResults
-            )
+        let params = RecipeCarouselParameters(
+            onNoResultsRedirect: { [weak self] in },
+            onShowRecipeDetails: { [weak self] recipeId in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+            }, onRecipeCallToActionTapped: { [weak self] recipeId in
+                guard let strongSelf = self else { return }
+                strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+            })
+        if let productId {
+            return RecipeCarousel.init(
+                params: params,
+                gridConfig: localRecipesCarouselViewConfig,
+                numberOfResults: numberOfResults,
+                productId: productId
+                )
+        } else if let criteria {
+            return RecipeCarousel.init(
+                params: params,
+                gridConfig: localRecipesCarouselViewConfig,
+                numberOfResults: numberOfResults,
+                criteria: criteria
+                )
+        } else {
+            fatalError("Neither productId nor criteria are available")
+        }
+        
     }
     
     // The hosting controller for your SwiftUI view
