@@ -11,6 +11,9 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
+/**
+ This is a sample UIKit implementation of Sponsor Details
+ */
 class SponsorDetailsViewController: UIViewController {
     public let sponsor: Sponsor
     
