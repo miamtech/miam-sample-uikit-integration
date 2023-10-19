@@ -12,9 +12,8 @@ import MiamNeutraliOSFramework
 import miamCore
 
 public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
-    rows: 2,
-    horizontalSpacing: 6,
-    verticalSpacing: 6,
+    numberOfRows: 2,
+    spacing: CGSize(width: 6, height: 6),
     recipeCardDimensions: CGSize(width: 200, height: 300))
 
 class RecipeCarouselViewController: UIViewController {
