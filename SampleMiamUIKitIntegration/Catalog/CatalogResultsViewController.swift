@@ -10,7 +10,7 @@ import SwiftUI
 import MiamIOSFramework
 import MiamNeutraliOSFramework
 
-public var localRecipesListViewConfig = RecipesListGridConfig(
+public var localRecipesListViewConfig = CatalogRecipesListGridConfig(
     columns: 2,
     horizontalSpacing: 6,
     verticalSpacing: 6,
@@ -32,12 +32,12 @@ class CatalogResultsViewController: UIViewController {
     }
     deinit { print("deinit: CatalogResultsViewController") }
     // Your SwiftUI View
-    var swiftUIView: CatalogResultsViewTemplate<
+    var swiftUIView: CatalogResults<
         CatalogParameters,
-        RecipesListParameters> {
-            return CatalogResultsViewTemplate(
+        CatalogRecipesListParameters> {
+            return CatalogResults(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: RecipesListParameters(
+                recipesListParams: CatalogRecipesListParameters(
                     onShowRecipes: { [weak self] _ in },
                     onNoResultsRedirect: { [weak self] in },
                     onShowRecipeDetails: { [weak self] recipeId in
@@ -55,9 +55,9 @@ class CatalogResultsViewController: UIViewController {
             )
         }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<CatalogResultsViewTemplate<
+    private var hostingController: UIHostingController<CatalogResults<
         CatalogParameters,
-        RecipesListParameters>>?
+        CatalogRecipesListParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

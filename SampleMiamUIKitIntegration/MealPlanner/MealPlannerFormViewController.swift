@@ -13,8 +13,8 @@ import MiamNeutraliOSFramework
 class MealPlannerFormViewController: UIViewController {
     deinit { print("deinit: MealPlannerFormViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerFormPageViewTemplate<MealPlannerFormParameters> {
-        return MealPlannerFormPageViewTemplate(
+    var swiftUIView: MealPlannerForm<MealPlannerFormParameters> {
+        return MealPlannerForm(
             params: MealPlannerFormParameters(
                 onNavigateToMealPlannerResults: { [weak self] recipes in
                 guard let strongSelf = self else { return }
@@ -23,7 +23,7 @@ class MealPlannerFormViewController: UIViewController {
            
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerFormPageViewTemplate<MealPlannerFormParameters>>?
+    private var hostingController: UIHostingController<MealPlannerForm<MealPlannerFormParameters>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

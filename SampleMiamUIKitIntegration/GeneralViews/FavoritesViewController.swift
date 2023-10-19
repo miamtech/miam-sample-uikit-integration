@@ -14,9 +14,9 @@ import miamCore
 class FavoritesViewController: UIViewController {
     deinit { print("deinit: FavoritesViewController") }
     // Your SwiftUI View
-    var swiftUIView: FavoritesViewTemplate<
+    var swiftUIView: Favorites<
         FavoritesParameters> {
-        return FavoritesViewTemplate.init(
+        return Favorites.init(
             params: FavoritesParameters(
                 onNoResultsRedirect: { [weak self] in },
                 onShowRecipeDetails: { [weak self] recipeId in
@@ -30,7 +30,7 @@ class FavoritesViewController: UIViewController {
         )
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<FavoritesViewTemplate<
+    private var hostingController: UIHostingController<Favorites<
         FavoritesParameters>>?
 
     override func viewDidLoad() {

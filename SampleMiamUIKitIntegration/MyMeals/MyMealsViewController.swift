@@ -23,11 +23,11 @@ class MyMealsViewController: UIViewController {
     
     deinit { print("deinit: MyMealsViewController") }
     // Your SwiftUI View
-    var swiftUIView: MyMealsViewTemplate<
+    var swiftUIView: MyMeals<
         MyMealsParameters,
         BasketRecipeParameters
     > {
-        return MyMealsViewTemplate.init(
+        return MyMeals.init(
             params: MyMealsParameters(
                 onNoResultsRedirect: { [weak self] in
                 
@@ -46,7 +46,7 @@ class MyMealsViewController: UIViewController {
         )
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MyMealsViewTemplate<
+    private var hostingController: UIHostingController<MyMeals<
         MyMealsParameters,
         BasketRecipeParameters>>?
 

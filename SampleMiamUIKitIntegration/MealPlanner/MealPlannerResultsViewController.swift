@@ -13,10 +13,10 @@ import MiamNeutraliOSFramework
 class MealPlannerResultsViewController: UIViewController {
     deinit { print("deinit: MealPlannerResultsViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerResultsViewTemplate<
+    var swiftUIView: MealPlannerResults<
         MealPlannerResultsParameters
     > {
-        return MealPlannerResultsViewTemplate(
+        return MealPlannerResults(
             params:
                 MealPlannerResultsParameters(
                     onShowRecipeDetails: { [weak self] recipeId in
@@ -25,10 +25,10 @@ class MealPlannerResultsViewController: UIViewController {
                             strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                         }
                     },
-                    onOpenReplaceRecipe: { [weak self] _ in
+                    onOpenReplaceRecipe: { [weak self] indexOfRecipe in
                         DispatchQueue.main.async {
                             guard let strongSelf = self else { return }
-                            strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(), animated: true)
+                            strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(indexOfRecipe), animated: true)
                         }
                     },
                     onNavigateToBasket: {[weak self] in
@@ -44,7 +44,7 @@ class MealPlannerResultsViewController: UIViewController {
     }
     
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerResultsViewTemplate<
+    private var hostingController: UIHostingController<MealPlannerResults<
         MealPlannerResultsParameters
 >>?
 
