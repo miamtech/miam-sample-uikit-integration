@@ -11,6 +11,9 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
+/**
+ This is a sample UIKit implementation of Preferences
+ */
 class PreferencesViewController: UIViewController {
     deinit { print("deinit: PreferencesViewController") }
     // Your SwiftUI View
