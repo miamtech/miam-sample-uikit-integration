@@ -10,6 +10,9 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 import miamCore
 
+/**
+ This is a sample UIKit implementation of Filters
+ */
 class FiltersViewController: UIViewController {
     public let singletonFilterViewModel: SingletonFilterViewModel
     
