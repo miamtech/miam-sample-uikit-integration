@@ -10,93 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profil-->
-        <scene sceneID="d1E-uQ-MW2">
+        <!--Components View Controller-->
+        <scene sceneID="Olt-kC-koe">
             <objects>
-                <navigationController extendedLayoutIncludesOpaqueBars="YES" id="4pz-3o-mJo" userLabel="Profil" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="miamCart" id="VGg-hq-7cz">
-                        <color key="badgeColor" name="miamWhite"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ljc-7v-7eW">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="dTb-M6-eu6" kind="relationship" relationship="rootViewController" id="A2m-gf-WtZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZpI-qm-z3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="523" y="-551"/>
-        </scene>
-        <!--Favorites View Controller-->
-        <scene sceneID="c2X-DK-dI1">
-            <objects>
-                <viewController id="sdq-ZD-igQ" customClass="FavoritesViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5vc-IW-DAz">
+                <viewController id="eGL-Sn-D2r" customClass="ComponentsViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VjM-i1-Q7o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Upg-nz-Rmx"/>
+                        <viewLayoutGuide key="safeArea" id="vru-hw-2XA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wei-al-Xdl"/>
+                    <navigationItem key="navigationItem" id="mcc-r1-cSC"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OX6-Id-nqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3l-HF-BwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-1290"/>
-        </scene>
-        <!--Disclose View Controller-->
-        <scene sceneID="UdN-8N-BGa">
-            <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="dTb-M6-eu6" customClass="DiscloseViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8xf-cC-gb5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHj-sV-yZB">
-                                <rect key="frame" x="107" y="425.5" width="200" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="yRx-Q2-Jiz"/>
-                                    <constraint firstAttribute="width" constant="200" id="yeN-7D-XtT"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Navigate"/>
-                                <connections>
-                                    <segue destination="BHm-S2-5ly" kind="show" id="q5K-KS-yRP"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8ST-Zd-Tk1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="CHj-sV-yZB" firstAttribute="centerX" secondItem="8xf-cC-gb5" secondAttribute="centerX" id="0ju-qk-F4p"/>
-                            <constraint firstItem="CHj-sV-yZB" firstAttribute="centerY" secondItem="8xf-cC-gb5" secondAttribute="centerY" id="8cZ-tk-8sF"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="juC-UB-nml"/>
-                    <connections>
-                        <outlet property="actionButton" destination="CHj-sV-yZB" id="aS1-iO-wpa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qEI-YI-dhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1438" y="-551"/>
-        </scene>
-        <!--Budget Form View Controller-->
-        <scene sceneID="9Ku-Sd-xTv">
-            <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BHm-S2-5ly" customClass="BudgetFormViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hzH-lL-m6U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SDl-79-MAV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="V9v-C4-rqC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="78W-Ih-nhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2271" y="-551"/>
+            <point key="canvasLocation" x="-1040.5797101449275" y="277.90178571428572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HkC-UL-pEn">
@@ -111,10 +39,9 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4pz-3o-mJo" kind="relationship" relationship="viewControllers" id="FWz-F1-ujq"/>
                         <segue destination="fNK-15-XhO" kind="relationship" relationship="viewControllers" id="5gb-xW-8B4"/>
                         <segue destination="sCq-IA-sQq" kind="relationship" relationship="viewControllers" id="fT5-a4-xyA"/>
-                        <segue destination="F4Y-56-j2C" kind="relationship" relationship="viewControllers" id="LJ5-Ia-O2I"/>
+                        <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="lvh-2H-36a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxY-MG-qus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwi-cO-BFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347.8260869565217" y="333.48214285714283"/>
+            <point key="canvasLocation" x="2256.521739130435" y="333.48214285714283"/>
         </scene>
         <!--Catalog-->
         <scene sceneID="1DP-S6-w3s">
@@ -156,7 +83,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHL-7Q-5se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437.68115942028987" y="333.48214285714283"/>
+            <point key="canvasLocation" x="1347.8260869565217" y="333.48214285714283"/>
         </scene>
         <!--My Meals View Controller-->
         <scene sceneID="imP-Pj-XkE">
@@ -195,35 +122,31 @@
             </objects>
             <point key="canvasLocation" x="-594" y="-2197"/>
         </scene>
-        <!--Favorites-->
-        <scene sceneID="9yd-b0-DC1">
+        <!--Components-->
+        <scene sceneID="Y6G-AD-JnG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F4Y-56-j2C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="miamHeart" id="CWg-Zx-V7g"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yXg-WC-YW0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Components" id="GeF-d0-Okf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rnc-Zz-d6z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4U-t2-a7r">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sdq-ZD-igQ" kind="relationship" relationship="rootViewController" id="K0B-db-HbF"/>
+                        <segue destination="eGL-Sn-D2r" kind="relationship" relationship="rootViewController" id="yhL-vr-S2N"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8YZ-Bc-wTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40m-1c-3mU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="522" y="-1290"/>
+            <point key="canvasLocation" x="-1950.7246376811595" y="277.90178571428572"/>
         </scene>
     </scenes>
     <resources>
         <image name="miamCart" width="24" height="24"/>
-        <image name="miamHeart" width="17" height="16"/>
         <image name="miamIdeeRepas" width="26" height="25"/>
         <namedColor name="miamPrimaryDark">
             <color red="0.0" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="miamWhite">
-            <color red="0.98000001907348633" green="0.98799997568130493" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
