@@ -15,7 +15,7 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            title = "Options"
+            title = "Components"
             
             // Configure the tableView
             tableView.delegate = self
@@ -51,8 +51,8 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
             viewController = FavoritesViewController()
         case "Meal Planner":
             viewController = MealPlannerFormViewController()
-//        case "Carousel":
-//            viewController = RecipeCarouselViewController()
+        case "Carousel":
+            viewController = ExplainCarouselViewController()
         default:
             break
         }

@@ -12,30 +12,35 @@ import MiamNeutraliOSFramework
 import miamCore
 
 public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
-    numberOfRows: 2,
+    numberOfRows: 1,
     spacing: CGSize(width: 6, height: 6),
-    recipeCardDimensions: CGSize(width: 200, height: 300))
+    recipeCardDimensions: CGSize(width: 200, height: 360))
 
 class RecipeCarouselViewController: UIViewController {
     public var productId: String? = nil
     public var criteria: SuggestionsCriteria? = nil
     public let numberOfResults: Int
+    public let gridConfig: RecipesCarouselGridConfig
     
     init(
         productId: String,
-        numberOfResults: Int
+        numberOfResults: Int,
+        gridConfig: RecipesCarouselGridConfig = localRecipesCarouselViewConfig
     ) {
         self.productId = productId
         self.numberOfResults = numberOfResults
+        self.gridConfig = gridConfig
         super.init(nibName: nil, bundle: nil)
     }
     
     init(
         criteria: SuggestionsCriteria,
-        numberOfResults: Int
+        numberOfResults: Int,
+        gridConfig: RecipesCarouselGridConfig = localRecipesCarouselViewConfig
     ) {
         self.criteria = criteria
         self.numberOfResults = numberOfResults
+        self.gridConfig = gridConfig
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -61,14 +66,14 @@ class RecipeCarouselViewController: UIViewController {
         if let productId {
             return RecipeCarousel.init(
                 params: params,
-                gridConfig: localRecipesCarouselViewConfig,
+                gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 productId: productId
                 )
         } else if let criteria {
             return RecipeCarousel.init(
                 params: params,
-                gridConfig: localRecipesCarouselViewConfig,
+                gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 criteria: criteria
                 )
