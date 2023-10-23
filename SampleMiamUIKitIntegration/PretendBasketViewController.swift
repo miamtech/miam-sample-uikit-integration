@@ -9,24 +9,21 @@ import UIKit
 import Combine
 
 class PretendBasketViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     private let tableView = UITableView()
     private var cancellables: Set<AnyCancellable> = []
     
-    deinit {
-        cancellables.forEach { $0.cancel() }
-    }
+    deinit { cancellables.forEach { $0.cancel() } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Pretend Basket"
-        
         // Observe changes in PretendBasket.shared.items
         PretendBasket.shared.$items
             .sink { [weak self] _ in
-                // This will be called every time items changes
-                self?.tableView.reloadData()
+                guard let strongSelf = self else { return }
+                strongSelf.tableView.reloadData() // This will be called every time items changes
             }
             .store(in: &cancellables)
         
@@ -34,10 +31,11 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
+        tableView.rowHeight = 75
         view.addSubview(tableView)
         
-        // Register a basic UITableViewCell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(PretendBasketTableViewCell.self, forCellReuseIdentifier: "pretendBasketCell")
+
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -54,11 +52,53 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
         return PretendBasket.shared.items.count
     }
     
-    // Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pretendBasketCell", for: indexPath) as! PretendBasketTableViewCell
         cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name
-
+        let url = URL(string: PretendBasket.shared.items[indexPath.row].imageUrl ?? "")
+        cell.cellImageView.image = UIImage(named: "")
+        DispatchQueue.global().async {
+            if let url = url {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.cellImageView.image = UIImage(data: data!)
+                }
+            }
+        }
         return cell
+    }
+}
+
+class PretendBasketTableViewCell: UITableViewCell {
+    let cellImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupViews() {
+        addSubview(cellImageView)
+        NSLayoutConstraint.activate([
+            cellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            cellImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            cellImageView.heightAnchor.constraint(equalToConstant: 60),
+            cellImageView.widthAnchor.constraint(equalToConstant: 60)
+        ])
+
+        textLabel?.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            textLabel!.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10), // 10 point gap between image and text
+            textLabel!.centerYAnchor.constraint(equalTo: centerYAnchor),
+            textLabel!.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -10)
+        ])
     }
 }
