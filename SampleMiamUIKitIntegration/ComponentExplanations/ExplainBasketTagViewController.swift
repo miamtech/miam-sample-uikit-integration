@@ -9,6 +9,7 @@ import UIKit
 import MiamIOSFramework
 import SwiftUI
 import MiamNeutraliOSFramework
+import miamCore
 
 class ExplainBasketTagViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class ExplainBasketTagViewController: UIViewController {
         text.textColor = UIColor(Color.miamColor(.primaryDark))
         self.view.addSubview(text)
         
-        let buttonText = createLabel(text: "You can launch the Basket Tag on another page", alignment: .center, fontSize: 16, isBold: true)
+        let buttonText = createLabel(text: "You can launch the Basket Tag on another page: ", alignment: .center, fontSize: 16, isBold: true)
         self.view.addSubview(buttonText)
         
         let sampleBasketProduct = MiamNeutralBasketProduct()
@@ -33,16 +34,22 @@ class ExplainBasketTagViewController: UIViewController {
             quantity: .constant(4),
             data: BasketProductData(
                 price: 4.23,
-                name: "Gouda",
+                name: "Mozzarella",
                 description: "Fresh cheese from southern France",
-                pictureURL: (URL(string: "https://picsum.photos/400/300") ?? URL(string: ""))!,
+                pictureURL: (URL(string: "https://storage.googleapis.com/assets.miam.tech/pictures/recipes/studios-fg/14654-quiche-courgettes-et-mozzarella/14654-quiche-courgettes-et-mozzarella_1280x853.jpg") ?? URL(string: ""))!,
                 sharedRecipeCount: 0,
                 isSubstitutable: false,
                 pricePerUnit: 4.23,
                 isLoading: false),
             actions: BasketProductActions(onDeleteProduct: {}, onUpdateGuests: { _ in }, onChangeProduct: {})).onTapGesture { [weak self] in
+                BasketHandlerInstance.shared.instance.pushProductsToMiamBasket(retailerBasket: [
+                    RetailerProduct(retailerId:"239658", quantity:1, name:nil, productIdentifier:nil),
+                    RetailerProduct(retailerId:"5029492", quantity:1, name:nil, productIdentifier: nil),
+                    RetailerProduct(retailerId: "5203411", quantity: 1, name: nil, productIdentifier: nil),
+                    RetailerProduct(retailerId: "6739239", quantity: 1, name: nil, productIdentifier: nil)])
+                
                 guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
+                strongSelf.navigationController?.pushViewController(BasketTagViewController("239658"), animated: true)
             }
         let sampleProduct = UIHostingController(rootView: sampleBasketProductView)
 

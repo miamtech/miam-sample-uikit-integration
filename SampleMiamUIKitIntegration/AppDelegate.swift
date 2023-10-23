@@ -15,22 +15,10 @@ import MiamNeutraliOSFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-//        let supplierKey = "ewoJInN1cHBsaWVyX2lkIjogIjE0IiwKCSJwbGF1c2libGVfZG9tYWluZSI6ICJtaWFtLnRlc3QiLAoJIm1pYW1fb3JpZ2luIjogIm1pYW0iLAoJIm9yaWdpbiI6ICJtaWFtIiwKCSJtaWFtX2Vudmlyb25tZW50IjogIlVBVCIsCiJob3N0IjoibWlhbS1zYW1wbGUiCn0="
-        let supplierKey = "ewoJInN1cHBsaWVyX2lkIjogIjciLAoJInBsYXVzaWJsZV9kb21haW5lIjogIm1pYW0uY291cnNlc3UuYXBwIiwKCSJtaWFtX29yaWdpbiI6ICJjb3Vyc2VzdSIsCgkib3JpZ2luIjogIm1pYW0uY291cnNlc3UuYXBwIiwKCSJtaWFtX2Vudmlyb25tZW50IjogIlBST0QiCiJob3N0IjoiY29jbyIKfQ=="
-       
-        BasketHandlerInstance.shared.instance.setListenToRetailerBasket(func: {})
-        BasketHandlerInstance.shared.instance.setPushProductsToRetailerBasket(func: {_ in})
-        BasketHandlerInstance.shared.instance.pushProductsToMiamBasket(retailerBasket: [])
         
-        PointOfSaleHandler.shared.updateStoreId(storeId: "25910")
-        ContextHandlerInstance.shared.instance
-         .doInitMiam(base64_key: supplierKey)
-        UserHandler.shared.updateUserId(userId: "test_\(UUID())")
-
-        // resets grocery cart - good for testing, do NOT include on actual production
-        BasketHandlerInstance.shared.instance.clear()
-
+        // moved all the Miam Init logic to another file, MiamManager
+        _ = MiamManager.sharedInstance
+        
         return true
     }
 
