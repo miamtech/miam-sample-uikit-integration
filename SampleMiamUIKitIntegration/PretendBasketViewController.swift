@@ -58,6 +58,7 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name
+
         return cell
     }
 }

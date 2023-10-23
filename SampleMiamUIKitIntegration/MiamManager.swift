@@ -56,7 +56,8 @@ public class MiamManager: ObservableObject {
                 retailerId: $0.id,
                 quantity: Int32($0.quantity),
                 name: $0.name,
-                productIdentifier: nil
+                productIdentifier: nil,
+                imageURL: $0.imageUrl
             )
         }
     }
@@ -98,7 +99,7 @@ public class MiamManager: ObservableObject {
         return products.map {
             return   PretendProduct(
                 id: $0.retailerId,
-                name: "\(String(describing: $0.name))",
+                name: $0.name ?? "Product",
                 quantity: Int($0.quantity)
             )
         }
@@ -119,13 +120,15 @@ public class PretendProduct: Identifiable {
     var quantity: Int
     var price: Double?
     var identifier: String?
+    var imageUrl: String?
 
-    init (id: String, name: String, quantity: Int, price: Double, identifier: String) {
-      self.id = id
-      self.name = name
-      self.quantity = quantity
-      self.price = price
-      self.identifier = identifier
+    init (id: String, name: String, quantity: Int, price: Double, identifier: String, imageUrl: String? = nil) {
+        self.id = id
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+        self.identifier = identifier
+        self.imageUrl = imageUrl
   }
 
     init (id: String, name: String, quantity: Int) {
