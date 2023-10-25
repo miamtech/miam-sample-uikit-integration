@@ -20,11 +20,12 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
         
         title = NSLocalizedString("tab_basket", comment: "")
 
-        // Observe changes in PretendBasket.shared.items
         PretendBasket.shared.$items
-            .sink { [weak self] _ in
+            .sink { [weak self] items in
                 guard let strongSelf = self else { return }
-                strongSelf.tableView.reloadData() // This will be called every time items changes
+                DispatchQueue.main.async {
+                    strongSelf.tableView.reloadData()
+                }
             }
             .store(in: &cancellables)
         
@@ -45,6 +46,13 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.tintColor = UIColor.white
+        // Add trash bin button to the top right
+            let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didTapTrashButton))
+            navigationItem.rightBarButtonItem = trashButton
+    }
+    
+    @objc func didTapTrashButton() {
+        PretendBasket.shared.removeAll()
     }
     
     // Number of rows

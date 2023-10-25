@@ -114,39 +114,3 @@ public class MiamManager: ObservableObject {
         }
     }
 }
-
-public class PretendProduct: Identifiable {
-    public var id: String
-    var name: String
-    var quantity: Int
-    var price: Double?
-    var identifier: String?
-    var imageUrl: String?
-
-    init (id: String, name: String, quantity: Int, price: Double? = nil, identifier: String? = nil, imageUrl: String? = nil) {
-        self.id = id
-        self.name = name
-        self.quantity = quantity
-        self.price = price
-        self.identifier = identifier
-        self.imageUrl = imageUrl
-  }
-}
-
-class PretendBasket: ObservableObject {
-    static let shared = PretendBasket(
-        items: [
-            PretendProduct(id: "970417", name: "Beurre doux U, 125", quantity: 1, price: 2.12, identifier: "id_970417", imageUrl: "https://www.coursesu.com/dw/image/v2/BBQX_PRD/on/demandware.static/-/Sites-digitalu-master-catalog/default/dwec5f37b0/3256224252139_A_970417_S01.png?sw=388&sh=388&sm=fit"),
-            PretendProduct(id: "42851844", name: "Curry tradition en poudre DUCROS, 53g", quantity: 1, price: 3.40, identifier: "id_6511680", imageUrl: "https://mccormick.widen.net/content/vgtrna5yxy/original/3166291744645_curry_saveur_brute.png")
-        ])
-    @Published var items = [PretendProduct]()
-
-    private init(items: [PretendProduct]) {
-        self.items = items
-    }
-
-    func removeAll() {
-        items.removeAll()
-        BasketHandlerInstance.shared.instance.clear()
-    }
-}
