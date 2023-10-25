@@ -1,15 +1,15 @@
 
 /* Class = "UIViewController"; title = "Catalog"; ObjectID = "GFT-kg-Axc"; */
-"GFT-kg-Axc.title" = "Meal ideas";
+"GFT-kg-Axc.title" = "Idées repas";
 
 /* Class = "UITabBarItem"; title = "Components"; ObjectID = "GeF-d0-Okf"; */
-"GeF-d0-Okf.title" = "Components";
+"GeF-d0-Okf.title" = "User";
 
 /* Class = "UITabBarItem"; title = "MyMeals"; ObjectID = "H25-8x-DYY"; */
-"H25-8x-DYY.title" = "MyMeals";
+"H25-8x-DYY.title" = "Accueil";
 
 /* Class = "UITabBarItem"; title = "Basket"; ObjectID = "TF4-ET-eqx"; */
-"TF4-ET-eqx.title" = "Panier";
+"TF4-ET-eqx.title" = "Rayons";
 
 /* Class = "UITabBarItem"; title = "Catalog"; ObjectID = "pR4-ux-lhF"; */
-"pR4-ux-lhF.title" = "Meal ideas";
+"pR4-ux-lhF.title" = "Favoris";

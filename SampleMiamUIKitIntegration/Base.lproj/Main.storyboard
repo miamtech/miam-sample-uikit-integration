@@ -33,16 +33,17 @@
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iaF-qE-ohF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="miamPrimaryDark"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="miamPrimaryDark"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="miamWhite"/>
+                        <color key="barTintColor" name="miamWhite"/>
+                        <color key="selectedImageTintColor" name="miamPrimaryDark"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fNK-15-XhO" kind="relationship" relationship="viewControllers" id="5gb-xW-8B4"/>
-                        <segue destination="sCq-IA-sQq" kind="relationship" relationship="viewControllers" id="fT5-a4-xyA"/>
-                        <segue destination="hbC-wm-In2" kind="relationship" relationship="viewControllers" id="sUv-6W-fEZ"/>
-                        <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="tYW-Vk-Dgw"/>
+                        <segue destination="sCq-IA-sQq" kind="relationship" relationship="viewControllers" id="4Jc-fK-YCm"/>
+                        <segue destination="hbC-wm-In2" kind="relationship" relationship="viewControllers" id="RYF-xA-UlH"/>
+                        <segue destination="fNK-15-XhO" kind="relationship" relationship="viewControllers" id="Zwj-Lv-DMg"/>
+                        <segue destination="Rbv-Lk-sMO" kind="relationship" relationship="viewControllers" id="FIh-Lc-iku"/>
+                        <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="HSM-Q2-Ady"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxY-MG-qus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyQ-Ow-y14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="-473"/>
+            <point key="canvasLocation" x="3028.985507246377" y="-473.4375"/>
         </scene>
         <!--Catalog-->
         <scene sceneID="7lA-wd-dDU">
@@ -79,14 +80,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwi-cO-BFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="240"/>
+            <point key="canvasLocation" x="3028.985507246377" y="239.73214285714283"/>
         </scene>
-        <!--Catalog-->
+        <!--Meal Ideas-->
         <scene sceneID="1DP-S6-w3s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fNK-15-XhO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Catalog" image="miamCart" id="pR4-ux-lhF">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <tabBarItem key="tabBarItem" title="Meal Ideas" image="Fork" id="pR4-ux-lhF">
+                        <color key="badgeColor" name="miamPrimaryDark"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cpy-fm-VpG">
@@ -100,7 +101,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHL-7Q-5se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="240"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="239.73214285714283"/>
         </scene>
         <!--My Meals View Controller-->
         <scene sceneID="imP-Pj-XkE">
@@ -122,8 +123,8 @@
         <scene sceneID="SJq-rj-gCr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCq-IA-sQq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyMeals" image="miamIdeeRepas" id="H25-8x-DYY">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <tabBarItem key="tabBarItem" title="MyMeals" image="Home" id="H25-8x-DYY">
+                        <color key="badgeColor" name="miamPrimary"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xPc-ve-HgE">
@@ -143,7 +144,9 @@
         <scene sceneID="Y6G-AD-JnG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yXg-WC-YW0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Components" image="miamPlus" id="GeF-d0-Okf"/>
+                    <tabBarItem key="tabBarItem" title="Components" image="Account" id="GeF-d0-Okf">
+                        <color key="badgeColor" name="miamPrimaryDark"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4U-t2-a7r">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -162,7 +165,9 @@
         <scene sceneID="OiE-GJ-1lv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hbC-wm-In2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Basket" image="miamCart" id="TF4-ET-eqx"/>
+                    <tabBarItem key="tabBarItem" title="Basket" image="Rayons" id="TF4-ET-eqx">
+                        <color key="badgeColor" name="miamPrimary"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VAB-G2-VZj">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -175,15 +180,58 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRp-wi-lnv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="-473"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="-473.4375"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="LIh-t1-QoW">
+            <objects>
+                <viewController id="oUp-uP-BPk" customClass="FavoritesViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aEP-Go-Uim">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mvL-v4-pLJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zin-YA-hgb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-7k-IJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="402"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="TIj-Oh-8hb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rbv-Lk-sMO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="Heart" id="n2h-d3-kwl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g0C-c9-shR">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oUp-uP-BPk" kind="relationship" relationship="rootViewController" id="Son-vs-adI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UTb-uK-UPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="402"/>
         </scene>
     </scenes>
     <resources>
-        <image name="miamCart" width="24" height="24"/>
-        <image name="miamIdeeRepas" width="26" height="25"/>
-        <image name="miamPlus" width="18" height="18"/>
+        <image name="Account" width="30" height="29"/>
+        <image name="Fork" width="30" height="30"/>
+        <image name="Heart" width="30" height="30"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="Rayons" width="20" height="20"/>
+        <namedColor name="miamPrimary">
+            <color red="0.012000000104308128" green="0.49399998784065247" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="miamPrimaryDark">
             <color red="0.0" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="miamWhite">
+            <color red="0.98000001907348633" green="0.98799997568130493" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

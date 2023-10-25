@@ -18,7 +18,7 @@ class ExplainCarouselViewController: UIViewController {
         super.viewDidLoad()
         
         // Set the title of the ViewController
-        self.title = "Recipe Carousel"
+        navigationItem.title = "Recipe Carousel"
         
         // Set the view's background color
         self.view.backgroundColor = .white
