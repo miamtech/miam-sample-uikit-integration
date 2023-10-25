@@ -42,11 +42,6 @@ class ExplainBasketTagViewController: UIViewController {
                 pricePerUnit: 4.23,
                 isLoading: false),
             actions: BasketProductActions(onDeleteProduct: {}, onUpdateGuests: { _ in }, onChangeProduct: {})).onTapGesture { [weak self] in
-                BasketHandlerInstance.shared.instance.pushProductsToMiamBasket(retailerBasket: [
-                    RetailerProduct(retailerId:"239658", quantity:1, name:nil, productIdentifier:nil),
-                    RetailerProduct(retailerId:"5029492", quantity:1, name:nil, productIdentifier: nil),
-                    RetailerProduct(retailerId: "5203411", quantity: 1, name: nil, productIdentifier: nil),
-                    RetailerProduct(retailerId: "6739239", quantity: 1, name: nil, productIdentifier: nil)])
                 
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(BasketTagViewController("239658"), animated: true)
