@@ -3,10 +3,10 @@
 "GFT-kg-Axc.title" = "Catalog";
 
 /* Class = "UITabBarItem"; title = "Components"; ObjectID = "GeF-d0-Okf"; */
-"GeF-d0-Okf.title" = "Components";
+"GeF-d0-Okf.title" = "User";
 
 /* Class = "UITabBarItem"; title = "MyMeals"; ObjectID = "H25-8x-DYY"; */
-"H25-8x-DYY.title" = "MyMeals";
+"H25-8x-DYY.title" = "Home";
 
 /* Class = "UITabBarItem"; title = "Basket"; ObjectID = "TF4-ET-eqx"; */
 "TF4-ET-eqx.title" = "Basket";

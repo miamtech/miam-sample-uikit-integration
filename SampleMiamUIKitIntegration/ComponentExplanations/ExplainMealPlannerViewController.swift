@@ -15,7 +15,7 @@ class ExplainMealPlannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Meal Planner"
+        navigationItem.title = "Meal Planner"
         self.view.backgroundColor = .white
         
         let text = createLabel(text: "The Meal Planner is a Miam Feature where users enter a budget, number of guests, & number of meals they are looking for. Miam will then provide recipes for their selected criteria.", alignment: .left, fontSize: 16)

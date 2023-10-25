@@ -27,7 +27,7 @@ class MealPlannerFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Mon assistant Budget repas"
+        navigationItem.title = "Mon assistant Budget repas"
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
 

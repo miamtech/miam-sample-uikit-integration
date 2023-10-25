@@ -42,7 +42,7 @@ class SponsorDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "\(sponsor.name)"
+        navigationItem.title = "\(sponsor.name)"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)

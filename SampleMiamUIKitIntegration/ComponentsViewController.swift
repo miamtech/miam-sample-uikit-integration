@@ -15,7 +15,7 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            title = "Components"
+            navigationItem.title = "Components"
             
             // Configure the tableView
             tableView.delegate = self
@@ -25,15 +25,6 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
             
             // Register a basic UITableViewCell
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-            
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor(red: 0/255, green: 85/255, blue: 98/255, alpha: 1.0)
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navigationController?.navigationBar.standardAppearance = appearance
-            navigationController?.navigationBar.compactAppearance = appearance
-            navigationController?.navigationBar.scrollEdgeAppearance = appearance
-            navigationController?.navigationBar.tintColor = UIColor.white
         }
         
         // Number of rows
