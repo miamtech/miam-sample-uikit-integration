@@ -23,6 +23,7 @@
 		2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */; };
 		2684C6652ADD2E920030B844 /* BasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684C6642ADD2E920030B844 /* BasketTagViewController.swift */; };
 		2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */; };
+		268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */; };
 		26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */; };
 		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
 		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
@@ -31,7 +32,6 @@
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
 		BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */; };
 		BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59A47E28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift */; };
-		BF59A48228D0DF4500882BA9 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */; };
 		BF85057B28578EF800651864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057A28578EF800651864 /* AppDelegate.swift */; };
 		BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057C28578EF800651864 /* SceneDelegate.swift */; };
 		BF85058228578EF800651864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF85058028578EF800651864 /* Main.storyboard */; };
@@ -56,6 +56,7 @@
 		2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		2684C6642ADD2E920030B844 /* BasketTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTagViewController.swift; sourceTree = "<group>"; };
 		2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCarouselViewController.swift; sourceTree = "<group>"; };
+		268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsViewController.swift; sourceTree = "<group>"; };
 		26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSearchViewController.swift; sourceTree = "<group>"; };
 		26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
 		BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		BF59A47E28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardHostingTableViewCell.swift; sourceTree = "<group>"; };
-		BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMiamUIKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF85057A28578EF800651864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF85057C28578EF800651864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,9 +182,9 @@
 				BF85058828578EFA00651864 /* Info.plist */,
 				BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */,
 				BF59A47E28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift */,
-				BF59A48128D0DF4500882BA9 /* RecipesTableViewController.swift */,
 				BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */,
 				BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */,
+				268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */,
 			);
 			path = SampleMiamUIKitIntegration;
 			sourceTree = "<group>";
@@ -279,7 +279,6 @@
 				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
 				264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */,
 				BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */,
-				BF59A48228D0DF4500882BA9 /* RecipesTableViewController.swift in Sources */,
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
 				BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */,
 				2684C6652ADD2E920030B844 /* BasketTagViewController.swift in Sources */,
@@ -293,6 +292,7 @@
 				BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */,
 				26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */,
 				2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */,
+				268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
