@@ -66,15 +66,13 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pretendBasketCell", for: indexPath) as! PretendBasketTableViewCell
+        cell.delegate = self
+
         cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name
         let url = URL(string: PretendBasket.shared.items[indexPath.row].imageUrl ?? "")
         cell.cellImageView.image = UIImage(named: "")
-        let productId = PretendBasket.shared.items[indexPath.row].id
-        cell.onTrashButtonTapped = {
-            print("PretendBasket: cell")
-            PretendBasket.shared.remove(removedProductId: productId)
-        }
-        cell.productId = productId
+        cell.productId = PretendBasket.shared.items[indexPath.row].id
+        
         DispatchQueue.global().async {
             if let url = url {
                 let data = try? Data(contentsOf: url)
@@ -87,9 +85,19 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
     }
 }
 
+extension PretendBasketViewController: PretendBasketCellDelegate {
+    func didSelectRecipeDetail(with recipeId: String) {
+        print("PretendBasket: didSelectRecipeDetail")
+        let detailsVC = RecipeDetailsViewController(recipeId)
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
+}
+
+
 class PretendBasketTableViewCell: UITableViewCell {
     
     var onTrashButtonTapped: (() -> Void)?
+    weak var delegate: PretendBasketCellDelegate?
 
     var productId: String? {
            didSet {
@@ -98,9 +106,7 @@ class PretendBasketTableViewCell: UITableViewCell {
        }
     
     @objc func trashButtonAction() {
-        print("PretendBasket: trashButtonAction")
         if let id = productId {
-            print("PretendBasket: callback")
             PretendBasket.shared.remove(removedProductId: id)
         }
     }
@@ -129,37 +135,49 @@ class PretendBasketTableViewCell: UITableViewCell {
         let tags = BasketTag.init(
             params: BasketTagParameters(
                 onShowRecipeDetails: { [weak self] recipeId in
+                    print("PretendBasket: onShowRecipeDetails")
                     guard let strongSelf = self else { return }
-                    // You'll need to find a way to get navigationController here,
-                    // maybe using a delegate or another mechanism.
-                    // strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                    strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
                 }),
             retailerProductId: id,
             scrollAlignment: .horizontal)
 
         let hostingController = UIHostingController(rootView: tags)
-
         // Clear any previous tags or views in basketTags
         basketTags.subviews.forEach { $0.removeFromSuperview() }
-
         // Add the hosting controller's view to basketTags
         let tagView = hostingController.view!
         basketTags.addSubview(tagView)
         tagView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Add constraints for the tags view to fit in basketTags
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([ // Add constraints for the tags view to fit in basketTags
             tagView.leadingAnchor.constraint(equalTo: basketTags.leadingAnchor),
             tagView.trailingAnchor.constraint(equalTo: basketTags.trailingAnchor),
             tagView.topAnchor.constraint(equalTo: basketTags.topAnchor),
             tagView.bottomAnchor.constraint(equalTo: basketTags.bottomAnchor)
         ])
     }
-
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.isUserInteractionEnabled = true
         setupViews()
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if trashButton.frame.contains(point) {
+            return trashButton
+        }
+        if basketTags.frame.contains(point) {
+            for subview in basketTags.subviews {
+                if subview.frame.contains(point) {
+                    return subview
+                }
+            }
+            return basketTags
+        }
+
+        // Add similar checks for other buttons if necessary.
+        return super.hitTest(point, with: event)
     }
     
     required init?(coder: NSCoder) {
@@ -170,6 +188,7 @@ class PretendBasketTableViewCell: UITableViewCell {
         addSubview(trashButton)
         addSubview(cellImageView)
         addSubview(basketTags)
+        basketTags.isUserInteractionEnabled = true
         NSLayoutConstraint.activate([
             cellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             cellImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -201,4 +220,8 @@ class PretendBasketTableViewCell: UITableViewCell {
             basketTags.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10) // Ensure it doesn't extend beyond the bottom of the cell
         ])
     }
+}
+
+protocol PretendBasketCellDelegate: AnyObject {
+    func didSelectRecipeDetail(with id: String)
 }
