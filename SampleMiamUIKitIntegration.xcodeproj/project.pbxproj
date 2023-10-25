@@ -10,6 +10,8 @@
 		26285D882A81415600E41EB7 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D872A81415500E41EB7 /* FiltersViewController.swift */; };
 		26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */; };
 		262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */; };
+		263462872AE7CD90004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263462892AE7CD90004C1C63 /* Localizable.strings */; };
+		2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2634628E2AE7CDA4004C1C63 /* Localizable.strings */; };
 		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
 		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
 		264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */; };
@@ -48,6 +50,12 @@
 		26285D872A81415500E41EB7 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesSearchViewController.swift; sourceTree = "<group>"; };
+		263462802AE7B0D6004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		263462812AE7B0D6004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		263462822AE7B262004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		263462832AE7B262004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		263462882AE7CD90004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2634628D2AE7CDA4004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
 		264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerBasketViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +115,15 @@
 				264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */,
 			);
 			path = MealPlanner;
+			sourceTree = "<group>";
+		};
+		263462842AE7CD46004C1C63 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				263462892AE7CD90004C1C63 /* Localizable.strings */,
+				2634628E2AE7CDA4004C1C63 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		264A36B02A6FC39C00EA2D23 /* Packages */ = {
@@ -190,6 +207,7 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				263462842AE7CD46004C1C63 /* Localization */,
 				268CC3532AE286D60065FEFC /* ComponentExplanations */,
 				266175272ACAF3A200D89390 /* MyMeals */,
 				2672B0242AB9CB31008D2327 /* GeneralViews */,
@@ -256,8 +274,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				fr,
+				en,
 			);
 			mainGroup = BF85056E28578EF800651864;
 			packageReferences = (
@@ -278,7 +297,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */,
 				BF85058728578EFA00651864 /* LaunchScreen.storyboard in Resources */,
+				263462872AE7CD90004C1C63 /* Localizable.strings in Resources */,
 				BF85058428578EFA00651864 /* Assets.xcassets in Resources */,
 				BF85058228578EF800651864 /* Main.storyboard in Resources */,
 			);
@@ -327,10 +348,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		263462892AE7CD90004C1C63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				263462882AE7CD90004C1C63 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2634628E2AE7CDA4004C1C63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2634628D2AE7CDA4004C1C63 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BF85058028578EF800651864 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BF85058128578EF800651864 /* Base */,
+				263462802AE7B0D6004C1C63 /* fr */,
+				263462822AE7B262004C1C63 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -339,6 +378,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF85058628578EFA00651864 /* Base */,
+				263462812AE7B0D6004C1C63 /* fr */,
+				263462832AE7B262004C1C63 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -350,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -410,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

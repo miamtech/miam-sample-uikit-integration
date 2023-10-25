@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  SampleMiamUIKitIntegration
+
+  Created by didi on 24/10/2023.
+  
+*/
+// tabs
+"tab_products" = "Idées repas";
+"tab_meals" = "Mes Repas";
+"tab_basket" = "Mon panier";
+"tab_catalog" = "Catalog";
+"tab_favorites" = "Favorites";
+// auth
+"sign_in_page" = "Connexion";
+"must_sign_in" = "Vous Devez Vous Inscrire";
+"login_btn" = "Se Connecter";
+"not_logged_in" = "Vous n'êtes pas connecté";
+"enter_userID" = "Veuillez saisir un userID";
+"continue_as_anon" = "Continuer Comme Anonyme";
+"your_userID_is" = "Votre UserId est %@";
+"change_userId" = "Modifier UserID";
+"sign_out" = "S'inscrire";
+"delete_account" = "Supprimer le compte";
+"user" = "User";
+"confirm" = "Confirmer";
+// store
+"choose_store" = "Choisir un Magasin";
+"store" = "Magasin";
+"your_store_is" = "Votre Magasin est %@";
+"change_store" = "Modifier Magasin";
+// utils
+"account_settings" = "Paramètres du Compte";

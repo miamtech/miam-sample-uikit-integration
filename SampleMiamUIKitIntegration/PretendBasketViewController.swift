@@ -18,7 +18,8 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Pretend Basket"
+        title = NSLocalizedString("tab_basket", comment: "")
+
         // Observe changes in PretendBasket.shared.items
         PretendBasket.shared.$items
             .sink { [weak self] _ in
@@ -36,7 +37,6 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate, UITabl
         
         tableView.register(PretendBasketTableViewCell.self, forCellReuseIdentifier: "pretendBasketCell")
 
-        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0/255, green: 85/255, blue: 98/255, alpha: 1.0)
