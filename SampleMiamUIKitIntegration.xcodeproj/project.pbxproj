@@ -25,6 +25,7 @@
 		2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */; };
 		268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */; };
 		268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */; };
+		268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */; };
 		26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */; };
 		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
 		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
@@ -59,6 +60,7 @@
 		2684C6662ADD3F900030B844 /* RecipeCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCarouselViewController.swift; sourceTree = "<group>"; };
 		268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsViewController.swift; sourceTree = "<group>"; };
 		268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCarouselViewController.swift; sourceTree = "<group>"; };
+		268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainMealPlannerViewController.swift; sourceTree = "<group>"; };
 		26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSearchViewController.swift; sourceTree = "<group>"; };
 		26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */,
+				268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */,
 			);
 			path = ComponentExplanations;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */,
 				266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */,
 				264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */,
+				268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */,
 				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
 				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
 				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
