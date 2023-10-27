@@ -5,6 +5,8 @@
   Created by didi on 24/10/2023.
   
 */
+
+//----------------------------------------------- Demo App -----------------------------------------------
 // tabs
 "tab_products" = "Idées repas";
 "tab_meals" = "Mes Repas";

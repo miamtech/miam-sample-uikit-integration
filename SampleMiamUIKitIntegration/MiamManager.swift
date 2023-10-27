@@ -9,6 +9,7 @@ import Foundation
 import miamCore
 import MiamIOSFramework
 import SwiftUI
+import MiamNeutraliOSFramework
 import Combine
 
 @available(iOS 14, *)
@@ -46,6 +47,9 @@ public class MiamManager: ObservableObject {
         BasketHandlerInstance.shared.instance.clear()
 
         AnalyticsInstance.shared.instance.setOnEventEmitted( onEventEmittedCallBack: {event in  print("event Miam \(event.eventType)  \(event.path)  \(event.props)")})
+       
+//        I18nResolver.shared.registerAppBundle(bundle: .main)
+        I18nResolver.shared.registerAppBundle(bundle: MiamNeutraliOSFramework.bundle)
     }
 
     private func pretendProductsToRetailerProducts(
