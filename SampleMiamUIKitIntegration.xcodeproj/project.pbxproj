@@ -33,7 +33,6 @@
 		268CC3592AE2C52C0065FEFC /* ExplainBasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3582AE2C52C0065FEFC /* ExplainBasketTagViewController.swift */; };
 		26B8477B2AE90178000C9AF1 /* PretendProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477A2AE90178000C9AF1 /* PretendProduct.swift */; };
 		26B8477D2AE9018F000C9AF1 /* PretendBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */; };
-		26B847872AE96DF4000C9AF1 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 26B847862AE96DF4000C9AF1 /* FirebaseAppDistribution-Beta */; };
 		26B847892AE96E54000C9AF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */; };
 		26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */; };
 		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
@@ -106,7 +105,6 @@
 			files = (
 				264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */,
 				264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */,
-				26B847872AE96DF4000C9AF1 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +266,6 @@
 			packageProductDependencies = (
 				264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */,
 				264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */,
-				26B847862AE96DF4000C9AF1 /* FirebaseAppDistribution-Beta */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -645,11 +642,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */;
 			productName = MiamNeutraliOSFramework;
-		};
-		26B847862AE96DF4000C9AF1 /* FirebaseAppDistribution-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseAppDistribution-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
