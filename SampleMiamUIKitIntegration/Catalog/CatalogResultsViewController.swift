@@ -13,7 +13,7 @@ import MiamNeutraliOSFramework
 public var localRecipesListViewConfig = CatalogRecipesListGridConfig(
     numberOfColumns: 2,
     spacing: CGSize(width: 6, height: 6),
-    recipeCardDimensions: CGSize(width: 300, height: 380),
+    recipeCardDimensions: CGSize(width: 300, height: 340),
     recipeCardFillMaxWidth: true)
 
 class CatalogResultsViewController: UIViewController {
