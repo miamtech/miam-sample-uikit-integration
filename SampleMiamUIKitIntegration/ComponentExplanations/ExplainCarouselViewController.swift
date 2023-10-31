@@ -41,7 +41,7 @@ class ExplainCarouselViewController: UIViewController {
             let gridConfig = RecipesCarouselGridConfig(
                 numberOfRows: 2,
                 spacing: CGSize(width: 6, height: 6),
-                recipeCardDimensions: CGSize(width: 200, height: 250))
+                recipeCardDimensions: CGSize(width: 200, height: 260))
             self?.navigateProduct(withGridConfig: gridConfig)
         }
         
@@ -49,7 +49,7 @@ class ExplainCarouselViewController: UIViewController {
             let gridConfig = RecipesCarouselGridConfig(
                 numberOfRows: 3,
                 spacing: CGSize(width: 6, height: 6),
-                recipeCardDimensions: CGSize(width: 200, height: 170))
+                recipeCardDimensions: CGSize(width: 200, height: 200))
             self?.navigateProduct(withGridConfig: gridConfig)
         }
         
@@ -87,7 +87,7 @@ class ExplainCarouselViewController: UIViewController {
             let gridConfig = RecipesCarouselGridConfig(
                 numberOfRows: 2,
                 spacing: CGSize(width: 6, height: 6),
-                recipeCardDimensions: CGSize(width: 200, height: 250))
+                recipeCardDimensions: CGSize(width: 200, height: 260))
             self?.navigateCritera(withGridConfig: gridConfig)
         }
         
@@ -95,7 +95,7 @@ class ExplainCarouselViewController: UIViewController {
             let gridConfig = RecipesCarouselGridConfig(
                 numberOfRows: 3,
                 spacing: CGSize(width: 6, height: 6),
-                recipeCardDimensions: CGSize(width: 200, height: 170))
+                recipeCardDimensions: CGSize(width: 200, height: 200))
             self?.navigateCritera(withGridConfig: gridConfig)
         }
         

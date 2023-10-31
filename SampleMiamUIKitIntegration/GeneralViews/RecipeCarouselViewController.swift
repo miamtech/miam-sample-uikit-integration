@@ -14,7 +14,7 @@ import miamCore
 public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
     numberOfRows: 1,
     spacing: CGSize(width: 6, height: 6),
-    recipeCardDimensions: CGSize(width: 200, height: 360))
+    recipeCardDimensions: CGSize(width: 200, height: 320))
 
 class RecipeCarouselViewController: UIViewController {
     public var productId: String? = nil
