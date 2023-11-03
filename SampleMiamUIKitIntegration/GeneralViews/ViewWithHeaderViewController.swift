@@ -17,27 +17,14 @@ class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
 
-    var embeddedVC: UINavigationController? = nil
     private var cancellables: Set<AnyCancellable> = []
 
-    @IBAction func backOrMenu() {
-        self.embeddedVC?.popViewController(animated: true)
+    @IBAction func showMenu() {
+        
     }
     
     @IBAction func showBasket() {
-        guard  let embeddedVC = embeddedVC else { return }
-        if !embeddedVC.viewControllers.contains(where: { $0.isKind(of: PretendBasketViewController.self)
-        }) {
-            self.embeddedVC?.pushViewController(PretendBasketViewController(), animated: true)
-        }
-    }
-    
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let embeddedVC = segue.destination as? UINavigationController {
-            self.embeddedVC = embeddedVC
-            self.embeddedVC?.delegate = self
-        }
+        self.present(PretendBasketViewController(), animated: true)
     }
     
     override func viewDidLoad() {
@@ -62,17 +49,6 @@ class ViewWithHeaderViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-}
-
-extension ViewWithHeaderViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if self.embeddedVC?.viewControllers.count ?? 0 > 1 {
-            leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        }else{
-            leftButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
-        }
     }
     
 }
