@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NqM-Je-z8L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NqM-Je-z8L">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,7 +40,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sCq-IA-sQq" kind="relationship" relationship="viewControllers" id="4Jc-fK-YCm"/>
-                        <segue destination="hbC-wm-In2" kind="relationship" relationship="viewControllers" id="RYF-xA-UlH"/>
+                        <segue destination="PEE-Na-4zE" kind="relationship" relationship="viewControllers" id="fak-ga-ZWC"/>
                         <segue destination="fNK-15-XhO" kind="relationship" relationship="viewControllers" id="Zwj-Lv-DMg"/>
                         <segue destination="Rbv-Lk-sMO" kind="relationship" relationship="viewControllers" id="FIh-Lc-iku"/>
                         <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="HSM-Q2-Ady"/>
@@ -54,17 +54,17 @@
         <scene sceneID="Pkt-3N-z6N">
             <objects>
                 <viewController id="4VE-4d-Hzm" customClass="PretendBasketViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="urh-bA-qfs">
+                    <view key="view" contentMode="scaleToFill" id="Jbl-cg-ZDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jqr-mI-1dM"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pDY-bi-fCH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vES-EL-Dkg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyQ-Ow-y14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3028.985507246377" y="-473.4375"/>
+            <point key="canvasLocation" x="3604" y="-802"/>
         </scene>
         <!--Catalog-->
         <scene sceneID="7lA-wd-dDU">
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwi-cO-BFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3028.985507246377" y="239.73214285714283"/>
+            <point key="canvasLocation" x="2971" y="402"/>
         </scene>
         <!--Meal Ideas-->
         <scene sceneID="1DP-S6-w3s">
@@ -101,7 +101,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHL-7Q-5se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.7391304347827" y="239.73214285714283"/>
+            <point key="canvasLocation" x="1816" y="402"/>
         </scene>
         <!--My Meals View Controller-->
         <scene sceneID="imP-Pj-XkE">
@@ -164,23 +164,48 @@
         <!--Basket-->
         <scene sceneID="OiE-GJ-1lv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hbC-wm-In2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hbC-wm-In2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Basket" image="Rayons" id="TF4-ET-eqx">
                         <color key="badgeColor" name="miamPrimary"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VAB-G2-VZj">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4VE-4d-Hzm" kind="relationship" relationship="rootViewController" id="aag-QT-Kc7"/>
+                        <segue destination="7Ap-pp-9A9" kind="relationship" relationship="rootViewController" id="41l-MH-d9e"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRp-wi-lnv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.7391304347827" y="-473.4375"/>
+            <point key="canvasLocation" x="3606" y="-180"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SQE-MS-SQI">
+            <objects>
+                <viewController id="7Ap-pp-9A9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJ6-Hf-IbK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rayons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xD-4r-IGd">
+                                <rect key="frame" x="179" y="232" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6gr-fg-gkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KJq-Mx-O0S"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwu-Sf-oCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4597.1014492753629" y="-153.34821428571428"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="LIh-t1-QoW">
@@ -196,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-7k-IJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="402"/>
+            <point key="canvasLocation" x="264" y="623"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="TIj-Oh-8hb">
@@ -215,20 +240,154 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTb-uK-UPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="402"/>
+            <point key="canvasLocation" x="-678" y="623"/>
+        </scene>
+        <!--Rayons-->
+        <scene sceneID="O91-Jo-BTw">
+            <objects>
+                <viewController id="PEE-Na-4zE" customClass="ViewWithHeaderVIewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0nE-gW-hPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gud-ir-j9t">
+                                <rect key="frame" x="0.0" y="48" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slo-dF-x90">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="slo-dF-x90" secondAttribute="height" multiplier="1:1" id="Iae-gq-gL3"/>
+                                        </constraints>
+                                        <color key="tintColor" name="miamNeutralPrimary"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                                        <connections>
+                                            <action selector="backOrMenu" destination="PEE-Na-4zE" eventType="touchUpInside" id="cfW-h7-DOA"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StoreLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4eI-bP-yhM">
+                                        <rect key="frame" x="80" y="0.0" width="222" height="80"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ji-BN-ehl">
+                                        <rect key="frame" x="356" y="16" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="gi6-67-0Mg"/>
+                                            <constraint firstAttribute="width" constant="48" id="hHg-GM-bw1"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Basket" cornerStyle="small">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" name="miamNeutralPrimary"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showBasket" destination="PEE-Na-4zE" eventType="touchUpInside" id="kvq-ok-dxk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyO-LP-EoZ">
+                                        <rect key="frame" x="302" y="18" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Cns-Ob-ZwX"/>
+                                            <constraint firstAttribute="height" constant="44" id="XhE-dv-voY"/>
+                                        </constraints>
+                                        <color key="tintColor" name="miamNeutralPrimary"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-gX-5ys">
+                                        <rect key="frame" x="364" y="54" width="32.5" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-4B-Mvc">
+                                                <rect key="frame" x="4" y="0.0" width="24.5" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" name="miamSecondary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Pdi-4B-Mvc" secondAttribute="bottom" id="8yV-ht-sa0"/>
+                                            <constraint firstItem="Pdi-4B-Mvc" firstAttribute="leading" secondItem="Z3n-gX-5ys" secondAttribute="leading" constant="4" id="Dzx-P8-fjg"/>
+                                            <constraint firstItem="Pdi-4B-Mvc" firstAttribute="top" secondItem="Z3n-gX-5ys" secondAttribute="top" id="JwA-XR-vXt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pdi-4B-Mvc" secondAttribute="trailing" constant="4" id="VFX-pN-hkP"/>
+                                            <constraint firstAttribute="height" constant="20" id="cW2-Vq-M7D"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="miamWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Z3n-gX-5ys" firstAttribute="centerX" secondItem="5Ji-BN-ehl" secondAttribute="centerX" id="6wj-Dx-iIB"/>
+                                    <constraint firstItem="4eI-bP-yhM" firstAttribute="leading" secondItem="slo-dF-x90" secondAttribute="trailing" id="AGE-aG-eJc"/>
+                                    <constraint firstItem="xyO-LP-EoZ" firstAttribute="centerY" secondItem="Gud-ir-j9t" secondAttribute="centerY" id="DsE-mc-ZT1"/>
+                                    <constraint firstItem="xyO-LP-EoZ" firstAttribute="leading" secondItem="4eI-bP-yhM" secondAttribute="trailing" id="ERb-vR-lmi"/>
+                                    <constraint firstItem="5Ji-BN-ehl" firstAttribute="leading" secondItem="xyO-LP-EoZ" secondAttribute="trailing" constant="10" id="PJT-jK-XU8"/>
+                                    <constraint firstAttribute="bottom" secondItem="slo-dF-x90" secondAttribute="bottom" id="Qld-XA-j16"/>
+                                    <constraint firstAttribute="height" constant="80" id="YXN-pa-gpO"/>
+                                    <constraint firstItem="Z3n-gX-5ys" firstAttribute="centerY" secondItem="5Ji-BN-ehl" secondAttribute="bottom" id="bYh-84-tIl"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Ji-BN-ehl" secondAttribute="trailing" constant="10" id="hs1-23-mIO"/>
+                                    <constraint firstItem="slo-dF-x90" firstAttribute="leading" secondItem="Gud-ir-j9t" secondAttribute="leading" id="iZJ-PU-63j"/>
+                                    <constraint firstItem="slo-dF-x90" firstAttribute="top" secondItem="Gud-ir-j9t" secondAttribute="top" id="k9W-CU-vV8"/>
+                                    <constraint firstItem="5Ji-BN-ehl" firstAttribute="centerY" secondItem="Gud-ir-j9t" secondAttribute="centerY" id="mHE-Mb-sVH"/>
+                                    <constraint firstItem="4eI-bP-yhM" firstAttribute="top" secondItem="Gud-ir-j9t" secondAttribute="top" id="u6i-di-U0t"/>
+                                    <constraint firstAttribute="bottom" secondItem="4eI-bP-yhM" secondAttribute="bottom" id="zoq-3G-EdJ"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-Hl-yGg">
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <connections>
+                                    <segue destination="hbC-wm-In2" kind="embed" id="l7q-B3-Tyo"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bVa-Md-3a0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gud-ir-j9t" secondAttribute="trailing" id="6Yg-Wk-DwH"/>
+                            <constraint firstAttribute="bottom" secondItem="mdR-Hl-yGg" secondAttribute="bottom" id="NMo-HH-m0M"/>
+                            <constraint firstItem="mdR-Hl-yGg" firstAttribute="top" secondItem="Gud-ir-j9t" secondAttribute="bottom" id="Rbv-0q-bjT"/>
+                            <constraint firstItem="Gud-ir-j9t" firstAttribute="top" secondItem="0nE-gW-hPJ" secondAttribute="topMargin" id="coe-1F-DeT"/>
+                            <constraint firstAttribute="trailing" secondItem="mdR-Hl-yGg" secondAttribute="trailing" id="ePQ-8d-0Nn"/>
+                            <constraint firstItem="mdR-Hl-yGg" firstAttribute="leading" secondItem="0nE-gW-hPJ" secondAttribute="leading" id="oDp-uZ-ZaF"/>
+                            <constraint firstItem="Gud-ir-j9t" firstAttribute="leading" secondItem="0nE-gW-hPJ" secondAttribute="leading" id="tIJ-DL-ObJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rayons" image="Rayons" id="wfW-fa-Sex">
+                        <color key="badgeColor" name="miamPrimary"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="cartButton" destination="5Ji-BN-ehl" id="BI1-Af-Lwj"/>
+                        <outlet property="leftButton" destination="slo-dF-x90" id="3XF-4n-AHE"/>
+                        <outlet property="totalAmountBackground" destination="Z3n-gX-5ys" id="mv9-B6-VZB"/>
+                        <outlet property="totalAmountLabel" destination="Pdi-4B-Mvc" id="QdI-dt-w8u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53i-Du-GtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847.82608695652175" y="-523.66071428571422"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Account" width="30" height="29"/>
-        <image name="Fork" width="30" height="30"/>
-        <image name="Heart" width="30" height="30"/>
-        <image name="Home" width="30" height="30"/>
+        <image name="Account" width="20" height="19"/>
+        <image name="Basket" width="24" height="24"/>
+        <image name="Fork" width="20" height="20"/>
+        <image name="Heart" width="20" height="20"/>
+        <image name="Home" width="20" height="20"/>
         <image name="Rayons" width="20" height="20"/>
+        <image name="StoreLogo" width="139" height="34"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="miamNeutralPrimary">
+            <color red="0.14100000262260437" green="0.45500001311302185" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="miamPrimary">
             <color red="0.012000000104308128" green="0.49399998784065247" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="miamPrimaryDark">
             <color red="0.0" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="miamSecondary">
+            <color red="0.90200001001358032" green="0.093999996781349182" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="miamWhite">
             <color red="0.98000001907348633" green="0.98799997568130493" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
