@@ -11,7 +11,7 @@ import UIKit
 import MiamNeutraliOSFramework
 import SwiftUI
 
-class ViewWithHeaderVIewController: UIViewController {
+class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountBackground: UIView!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
@@ -66,7 +66,7 @@ class ViewWithHeaderVIewController: UIViewController {
     
 }
 
-extension ViewWithHeaderVIewController: UINavigationControllerDelegate {
+extension ViewWithHeaderViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if self.embeddedVC?.viewControllers.count ?? 0 > 1 {
             leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)

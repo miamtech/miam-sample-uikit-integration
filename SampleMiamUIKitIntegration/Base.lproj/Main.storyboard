@@ -245,7 +245,7 @@
         <!--Rayons-->
         <scene sceneID="O91-Jo-BTw">
             <objects>
-                <viewController id="PEE-Na-4zE" customClass="ViewWithHeaderVIewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PEE-Na-4zE" customClass="ViewWithHeaderViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nE-gW-hPJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

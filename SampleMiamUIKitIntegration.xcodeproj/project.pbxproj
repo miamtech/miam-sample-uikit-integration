@@ -38,7 +38,7 @@
 		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
 		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
 		26F51A322ABC487C00DCD031 /* CatalogResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */; };
-		395BE8E92AF15A2600079746 /* ViewWithHeaderVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE8E82AF15A2600079746 /* ViewWithHeaderVIewController.swift */; };
+		395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
 		BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */; };
@@ -86,7 +86,7 @@
 		26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResultsViewController.swift; sourceTree = "<group>"; };
-		395BE8E82AF15A2600079746 /* ViewWithHeaderVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithHeaderVIewController.swift; sourceTree = "<group>"; };
+		395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithHeaderViewController.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
 		BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
-				395BE8E82AF15A2600079746 /* ViewWithHeaderVIewController.swift */,
+				395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */,
 				26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */,
 				2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */,
 				2684C6642ADD2E920030B844 /* BasketTagViewController.swift */,
@@ -342,7 +342,7 @@
 				268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */,
 				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
 				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
-				395BE8E92AF15A2600079746 /* ViewWithHeaderVIewController.swift in Sources */,
+				395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */,
 				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
 				2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */,
 				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
