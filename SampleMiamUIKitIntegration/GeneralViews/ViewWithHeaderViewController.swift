@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import UIKit
 import MiamNeutraliOSFramework
-import SwiftUI
 
 class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountBackground: UIView!
@@ -28,7 +27,6 @@ class ViewWithHeaderViewController: UIViewController {
     @IBAction func showBasket() {
         self.present(PretendBasketViewController(), animated: true)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let embeddedVC = segue.destination as? UITabBarController {
@@ -51,7 +49,7 @@ class ViewWithHeaderViewController: UIViewController {
                 guard let strongSelf = self else { return }
                 DispatchQueue.main.async {
                     let total = items.map({($0.price ?? 0) * Double($0.quantity)}).reduce(0, + )
-                    strongSelf.totalAmountLabel.text = "\(total) €"
+                    strongSelf.totalAmountLabel.text = total.currencyFormatted
                 }
             }
             .store(in: &cancellables)
@@ -61,11 +59,8 @@ class ViewWithHeaderViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-}
-
-extension ViewWithHeaderViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if navigationController.viewControllers.count > 1 {
+    func checkLeftButton(countViewInStack: Int) {
+        if countViewInStack > 1 {
             leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         }else{
             leftButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
@@ -73,16 +68,17 @@ extension ViewWithHeaderViewController: UINavigationControllerDelegate {
     }
 }
 
+extension ViewWithHeaderViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        checkLeftButton(countViewInStack: navigationController.viewControllers.count)
+    }
+}
+
 extension ViewWithHeaderViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let vc = viewController as? UINavigationController {
             vc.delegate = self
-            if vc.viewControllers.count > 1 {
-                leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-            }else{
-                leftButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
-            }
+            checkLeftButton(countViewInStack: vc.viewControllers.count)
         }
     }
-    
 }
