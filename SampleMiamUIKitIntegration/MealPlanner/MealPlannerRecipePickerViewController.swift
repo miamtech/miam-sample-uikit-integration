@@ -42,7 +42,7 @@ class MealPlannerRecipePickerViewController: UIViewController {
                     onOpenFiltersOptions: { [weak self] filtersInstance in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(
-                            FiltersViewController(filtersInstance), animated: true)
+                            FiltersViewController(filtersInstance, isForMealPlanner: true), animated: true)
                 }),
             gridConfig: localRecipesListViewConfig,
             indexOfReplacedRecipe: indexOfRecipe)

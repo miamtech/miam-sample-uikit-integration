@@ -14,10 +14,15 @@ import miamCore
  This is a sample UIKit implementation of Filters
  */
 class FiltersViewController: UIViewController {
-    public let singletonFilterViewModel: SingletonFilterViewModel
+    public let filterInstance: FilterInstance
+    private let isForMealPlanner: Bool
     
-    init(_ singletonFilterViewModel: SingletonFilterViewModel) {
-        self.singletonFilterViewModel = singletonFilterViewModel
+    init(
+        _ filterInstance: FilterInstance,
+        isForMealPlanner: Bool = false
+    ) {
+        self.filterInstance = filterInstance
+        self.isForMealPlanner = isForMealPlanner
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,17 +37,22 @@ class FiltersViewController: UIViewController {
         return FiltersView.init(
             params: FiltersParameters(
                 onApplied: { [weak self] in
-                    // this is overly complex so that when the user taps the apply button,
-                    // the next return will take them to Catalog, instead of back to filters
-                     guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
-                     let viewB = CatalogResultsViewController()
-                     strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+                    guard let strongSelf = self else { return }
+                    if strongSelf.isForMealPlanner {
+                        strongSelf.navigationController?.popViewController(animated: true)
+                    } else {
+                        // this is overly complex so that when the user taps the apply button,
+                        // the next return will take them to Catalog, instead of back to filters
+                        guard let viewA = strongSelf.navigationController?.viewControllers.first else { return }
+                        let viewB = CatalogResultsViewController()
+                        strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+                    }
                 }, onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 }
             ),
-            singletonFilterViewModel: singletonFilterViewModel
+            filterInstance: filterInstance
         )
     }
     // The hosting controller for your SwiftUI view

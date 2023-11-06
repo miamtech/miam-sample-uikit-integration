@@ -12,6 +12,16 @@ import MiamNeutraliOSFramework
 import miamCore
 
 class CatalogSearchViewController: UIViewController {
+    public let filterInstance: FilterInstance
+    
+    init(_ filterInstance: FilterInstance) {
+        self.filterInstance = filterInstance
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     deinit { print("deinit: CatalogSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogSearchViewTemplate<
@@ -25,7 +35,7 @@ class CatalogSearchViewController: UIViewController {
                     strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
                 }
             ),
-            singletonFilterViewModel: MiamDI.shared.recipeFilterViewModel
+            filterInstance: filterInstance
         )
     }
     // The hosting controller for your SwiftUI view

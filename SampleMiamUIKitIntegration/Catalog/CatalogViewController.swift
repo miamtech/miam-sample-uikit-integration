@@ -14,11 +14,11 @@ import miamCore
 // simple function to share navigation between CatalogView & CatalogResultsView
 public func sharedCatalogViewParams(navigationController: UINavigationController?) -> CatalogParameters {
     return CatalogParameters(
-        onFiltersTapped: { filterVM in
-            navigationController?.pushViewController(FiltersViewController(filterVM), animated: true)
+        onFiltersTapped: { filterInstance in
+            navigationController?.pushViewController(FiltersViewController(filterInstance), animated: true)
         },
-        onSearchTapped: {
-            navigationController?.pushViewController(CatalogSearchViewController(), animated: true)
+        onSearchTapped: { filterInstance in
+            navigationController?.pushViewController(CatalogSearchViewController(filterInstance), animated: true)
         },
         onFavoritesTapped: {
             navigationController?.pushViewController(CatalogResultsViewController(), animated: true)
