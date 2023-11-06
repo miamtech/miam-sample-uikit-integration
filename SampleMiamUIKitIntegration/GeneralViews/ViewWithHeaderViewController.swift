@@ -16,15 +16,25 @@ class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
-
+    
+    var embeddedVC: UITabBarController? = nil
     private var cancellables: Set<AnyCancellable> = []
-
+    
     @IBAction func showMenu() {
-        
+        guard let vc = self.embeddedVC?.selectedViewController as? UINavigationController else { return }
+        vc.popViewController(animated: true)
     }
     
     @IBAction func showBasket() {
         self.present(PretendBasketViewController(), animated: true)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let embeddedVC = segue.destination as? UITabBarController {
+            self.embeddedVC = embeddedVC
+            self.embeddedVC?.delegate = self
+        }
     }
     
     override func viewDidLoad() {
@@ -49,6 +59,30 @@ class ViewWithHeaderViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+}
+
+extension ViewWithHeaderViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if navigationController.viewControllers.count > 1 {
+            leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        }else{
+            leftButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+        }
+    }
+}
+
+extension ViewWithHeaderViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let vc = viewController as? UINavigationController {
+            vc.delegate = self
+            if vc.viewControllers.count > 1 {
+                leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            }else{
+                leftButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+            }
+        }
     }
     
 }
