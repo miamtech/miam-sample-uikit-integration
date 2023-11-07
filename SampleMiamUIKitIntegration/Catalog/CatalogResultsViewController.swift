@@ -37,7 +37,6 @@ class CatalogResultsViewController: UIViewController {
             return CatalogResults(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 recipesListParams: CatalogRecipesListParameters(
-                    onShowRecipes: { [weak self] _ in },
                     onNoResultsRedirect: { [weak self] in },
                     onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
