@@ -32,9 +32,9 @@ class FiltersViewController: UIViewController {
     
     deinit { print("deinit: FiltersViewController")}
     // Your SwiftUI View
-    var swiftUIView: FiltersView<
+    var swiftUIView: Filters<
         FiltersParameters> {
-        return FiltersView.init(
+        return Filters.init(
             params: FiltersParameters(
                 onApplied: { [weak self] in
                     guard let strongSelf = self else { return }
@@ -56,7 +56,7 @@ class FiltersViewController: UIViewController {
         )
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<FiltersView<
+    private var hostingController: UIHostingController<Filters<
         FiltersParameters>>?
 
     override func viewDidLoad() {
