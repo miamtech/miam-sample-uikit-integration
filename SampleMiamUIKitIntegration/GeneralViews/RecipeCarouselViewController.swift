@@ -55,7 +55,6 @@ class RecipeCarouselViewController: UIViewController {
         RecipeCarouselParameters
     > {
         let params = RecipeCarouselParameters(
-            onNoResultsRedirect: { [weak self] in },
             onShowRecipeDetails: { [weak self] recipeId in
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
