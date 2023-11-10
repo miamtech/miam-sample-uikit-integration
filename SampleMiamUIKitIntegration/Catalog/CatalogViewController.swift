@@ -31,7 +31,9 @@ public func sharedCatalogViewParams(navigationController: UINavigationController
         },
         onMealsInBasketButtonTapped: {
             navigationController?.pushViewController(MyMealsViewController(), animated: true)
-        })
+        },
+        viewOptions: CatalogViewOptions(useMealPlanner: true)
+    )
 }
 
 class CatalogViewController: UIViewController {
@@ -57,7 +59,9 @@ class CatalogViewController: UIViewController {
                     }, onRecipeCallToActionTapped: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
-                    }),
+                    },
+                    viewOptions: CatalogPackageRowViewOptions(recipeCard: TypeSafeCatalogRecipeCard(DemoCatalogRecipeCardView()))
+                ),
                 gridConfig: localRecipesListViewConfig
             )
         }

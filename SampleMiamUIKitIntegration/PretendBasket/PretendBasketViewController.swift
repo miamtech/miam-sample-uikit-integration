@@ -87,7 +87,6 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
 
 extension PretendBasketViewController: PretendBasketCellDelegate {
     func didSelectRecipeDetail(with recipeId: String) {
-        print("PretendBasket: didSelectRecipeDetail")
         let detailsVC = RecipeDetailsViewController(recipeId)
         navigationController?.pushViewController(detailsVC, animated: true)
     }
@@ -131,22 +130,18 @@ class PretendBasketTableViewCell: UITableViewCell {
     
     private func configureBasketTags() {
         guard let id = productId else { return }
-        
         let tags = BasketTag.init(
             params: BasketTagParameters(
                 onShowRecipeDetails: { [weak self] recipeId in
-                    print("PretendBasket: onShowRecipeDetails")
                     guard let strongSelf = self else { return }
                     strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
                 }),
             retailerProductId: id,
             scrollAlignment: .horizontal)
-        
         let hostingController = UIHostingController(rootView: tags)
         // Clear any previous tags or views in basketTags
         basketTags.subviews.forEach { $0.removeFromSuperview() }
-        // Add the hosting controller's view to basketTags
-        let tagView = hostingController.view!
+        guard let tagView = hostingController.view else { return }
         basketTags.addSubview(tagView)
         tagView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([ // Add constraints for the tags view to fit in basketTags
@@ -154,7 +149,7 @@ class PretendBasketTableViewCell: UITableViewCell {
             tagView.trailingAnchor.constraint(equalTo: basketTags.trailingAnchor),
             tagView.topAnchor.constraint(equalTo: basketTags.topAnchor),
             tagView.bottomAnchor.constraint(equalTo: basketTags.bottomAnchor)
-                                    ])
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -162,8 +157,6 @@ class PretendBasketTableViewCell: UITableViewCell {
         self.isUserInteractionEnabled = true
         setupViews()
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

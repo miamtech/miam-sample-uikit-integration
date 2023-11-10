@@ -37,7 +37,7 @@ class MealPlannerBasketViewController: UIViewController {
                 },
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId, isForMealPlanner: true), animated: true)
                 }),
             gridConfig: localBasketGridConfig
         )
