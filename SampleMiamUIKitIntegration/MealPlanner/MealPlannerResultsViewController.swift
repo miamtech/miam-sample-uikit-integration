@@ -21,21 +21,15 @@ class MealPlannerResultsViewController: UIViewController {
                 MealPlannerResultsParameters(
                     onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
-                        DispatchQueue.main.async {
-                            strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                        }
+                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId, isForMealPlanner: true), animated: true)
                     },
                     onOpenReplaceRecipe: { [weak self] indexOfRecipe in
-                        DispatchQueue.main.async {
-                            guard let strongSelf = self else { return }
-                            strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(indexOfRecipe), animated: true)
-                        }
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(indexOfRecipe), animated: true)
                     },
                     onNavigateToBasket: {[weak self] in
-                        DispatchQueue.main.async {
-                            guard let strongSelf = self else { return }
-                            strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
-                        }
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
                     }),
             gridConfig: MealPlannerRecipesListGridConfig(
                 spacing: CGSize(width: 0, height: 0),
