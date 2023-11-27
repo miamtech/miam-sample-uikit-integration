@@ -31,5 +31,12 @@
 "store" = "Magasin";
 "your_store_is" = "Votre Magasin est %@";
 "change_store" = "Modifier Magasin";
-// utils
-"account_settings" = "Paramètres du Compte";
+// account
+"account_my_profile" = "My Profile";
+"account_orders" = "Orders";
+"account_lists" = "Lists";
+"account_client_card" = "Client Card";
+"account_payment_methods" = "Payment methods";
+"account_settings" = "Account Settings";
+"account_components" = "UI Components";
+"account_sign_out" = "Sign Out";

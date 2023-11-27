@@ -60,7 +60,9 @@ class CatalogViewController: UIViewController {
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                     },
-                    viewOptions: CatalogPackageRowViewOptions(recipeCard: TypeSafeCatalogRecipeCard(DemoCatalogRecipeCardView()))
+                    viewOptions: CatalogPackageRowViewOptions(
+                        recipeCard: TypeSafeCatalogRecipeCard(MiamNeutralRecipeCard())
+                    )
                 ),
                 gridConfig: localRecipesListViewConfig
             )

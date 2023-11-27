@@ -22,7 +22,6 @@
 "continue_as_anon" = "Continuer Comme Anonyme";
 "your_userID_is" = "Votre UserId est %@";
 "change_userId" = "Modifier UserID";
-"sign_out" = "S'inscrire";
 "delete_account" = "Supprimer le compte";
 "user" = "User";
 "confirm" = "Confirmer";
@@ -31,5 +30,12 @@
 "store" = "Magasin";
 "your_store_is" = "Votre Magasin est %@";
 "change_store" = "Modifier Magasin";
-// utils
-"account_settings" = "Paramètres du Compte";
+// account
+"account_my_profile" = "Mon profil";
+"account_orders" = "Commandes";
+"account_lists" = "Listes";
+"account_client_card" = "Carte client";
+"account_payment_methods" = "Modes de paiement";
+"account_settings" = "Préférence de contact";
+"account_components" = "UI Components";
+"account_sign_out" = "Déconnexion";

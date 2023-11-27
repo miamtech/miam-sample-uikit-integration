@@ -78,5 +78,3 @@ class CatalogResultsViewController: UIViewController {
         hostingController.didMove(toParent: self)
     }
 }
-
-
