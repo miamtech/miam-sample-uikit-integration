@@ -39,3 +39,5 @@
 "account_settings" = "Préférence de contact";
 "account_components" = "UI Components";
 "account_sign_out" = "Déconnexion";
+// util
+"not_implemented" = "Pas encore mis en œuvre";

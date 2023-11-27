@@ -20,33 +20,31 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         NSLocalizedString("account_sign_out", comment: "Sign out"),
         NSLocalizedString("account_components", comment: "UI Components")
     ]
-        private let tableView = UITableView()
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            navigationItem.title = "Components"
-            
-            // Configure the tableView
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.frame = view.bounds
-            view.addSubview(tableView)
-            
-            // Register a basic UITableViewCell
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        }
-        
-        // Number of rows
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return options.count
-        }
+    private let tableView = UITableView()
     
-        // Cell configuration
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Configure the tableView
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
+        
+        // Register a basic UITableViewCell
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    // Number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+    
+    // Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = options[indexPath.row]
-
+        
         // Set the icon for each option
         let iconName = getIconNameForOption(option: options[indexPath.row])
         cell.imageView?.image = UIImage(named: iconName)
@@ -54,11 +52,11 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Add an arrow at the end of each cell
         cell.accessoryType = .disclosureIndicator
-
+        
         return cell
     }
-
-        
+    
+    
     // Handle cell tap
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -67,21 +65,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         var viewController: UIViewController?
         
         switch option {
-        case NSLocalizedString("account_my_profile", comment: "My Profile"),
-            NSLocalizedString("account_orders", comment: "Orders"),
-            NSLocalizedString("account_lists", comment: "Lists"),
-            NSLocalizedString("account_client_card", comment: "Client Card"),
-            NSLocalizedString("account_payment_methods", comment: "Payment Methods"),
-            NSLocalizedString("account_settings", comment: "Settings"),
-            NSLocalizedString("account_sign_out", comment: "Sign out"):
-            viewController = FavoritesViewController()
         case NSLocalizedString("account_components", comment: "UI Components"):
             viewController = ComponentsViewController()
-        case "Carousel":
-            viewController = ExplainCarouselViewController()
-        case "Basket Tag":
-            viewController = ExplainBasketTagViewController()
         default:
+            viewController = NotImplementedViewController()
             break
         }
         
@@ -112,5 +99,4 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             return "Basket" // A default icon if no specific icon is set
         }
     }
-
 }

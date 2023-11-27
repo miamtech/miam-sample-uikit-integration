@@ -40,3 +40,5 @@
 "account_settings" = "Account Settings";
 "account_components" = "UI Components";
 "account_sign_out" = "Sign Out";
+// util
+"not_implemented" = "Not implemented yet";
