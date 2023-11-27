@@ -14,6 +14,7 @@ class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountBackground: UIView!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var shopButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     
     var embeddedVC: UITabBarController? = nil
@@ -26,6 +27,10 @@ class ViewWithHeaderViewController: UIViewController {
     
     @IBAction func showBasket() {
         self.present(PretendBasketViewController(), animated: true)
+    }
+    
+    @IBAction func showShop() {
+        self.present(MyStoreViewController(), animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
