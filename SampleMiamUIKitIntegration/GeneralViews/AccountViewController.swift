@@ -67,6 +67,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch option {
         case NSLocalizedString("account_components", comment: "UI Components"):
             viewController = ComponentsViewController()
+        case NSLocalizedString("account_my_profile", comment: "My Profile"):
+            viewController = MyProfileViewController()
         default:
             viewController = NotImplementedViewController()
             break
@@ -80,7 +82,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func getIconNameForOption(option: String) -> String {
         switch option {
         case NSLocalizedString("account_my_profile", comment: "My Profile"):
-            return "Account"
+            return "User"
         case NSLocalizedString("account_orders", comment: "Orders"):
             return "Basket"
         case NSLocalizedString("account_lists", comment: "Lists"):
