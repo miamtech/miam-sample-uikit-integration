@@ -24,8 +24,18 @@ class MyStoreViewController: UIViewController {
         setupImageView()
         setupContactLabel()
         setupHoursLabel()
-        
         self.view.backgroundColor = .white
+    }
+    
+    @objc func navigateToMap() {
+        let newViewController = ChangeStoreMapViewController() // Create the view controller you want to navigate to
+        // If this view controller is within a navigation controller, push the new view controller
+        if let navigationController = self.navigationController {
+            navigationController.pushViewController(newViewController, animated: true)
+        } else {
+            // If presented modally and you want to change the presented view controller
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     func setupScrollView() {
@@ -54,13 +64,14 @@ class MyStoreViewController: UIViewController {
         ])
 
         scrollView.addSubview(storeHoursViewController)
-        let storeHoursHeight: CGFloat = 700
+        let storeHoursHeight: CGFloat = 450
         storeHoursViewController.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             storeHoursViewController.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 10),
             storeHoursViewController.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             storeHoursViewController.heightAnchor.constraint(equalToConstant: storeHoursHeight), // fixed height for the imageView
-            storeHoursViewController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+            storeHoursViewController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            storeHoursViewController.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -69,6 +80,8 @@ class MyStoreViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
+
         imageView.image = UIImage(named: "GroceryStore")
         
         let imageHeight: CGFloat = 250
@@ -137,19 +150,22 @@ class MyStoreViewController: UIViewController {
         config.titlePadding = 10  // Padding around the title
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)  // Padding around the button's content
         config.baseBackgroundColor = .white
-        
-        changeStoreButton = UIButton(configuration: config, primaryAction: nil)
+        let action = UIAction { [weak self] _ in
+            self?.navigateToMap()
+        }
+        changeStoreButton = UIButton(configuration: config, primaryAction: action)
         changeStoreButton.setTitle("Changer de magasin", for: .normal)
         changeStoreButton.setTitleColor(UIColor(Color.miamColor(.primary)), for: .normal)
         changeStoreButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         changeStoreButton.layer.cornerRadius = 10
+        changeStoreButton.isUserInteractionEnabled = true
         
         // Shadow properties
         changeStoreButton.layer.shadowColor = UIColor.black.cgColor
         changeStoreButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         changeStoreButton.layer.shadowRadius = 3
         changeStoreButton.layer.shadowOpacity = 0.3
-
+        
         changeStoreButton.translatesAutoresizingMaskIntoConstraints = false
         imageView.addSubview(changeStoreButton)
         // Constraints for the button
@@ -180,7 +196,7 @@ class MyStoreViewController: UIViewController {
         contactLabel.addSubview(titleLabel)
         
         let telephoneLabel = UILabel()
-        telephoneLabel.text = "Par téléphone : 03 03 03 03 03"
+        telephoneLabel.text = "Par téléphone : 06 52 72 58 38"
         telephoneLabel.font = UIFont.systemFont(ofSize: 20)
         telephoneLabel.textColor = .black
         telephoneLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -225,6 +241,7 @@ class StoreHoursViewController: UIView, UITableViewDataSource {
             addSubview(tableView) // Add tableView to the view hierarchy
             tableView.dataSource = self
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "dayCell")
+        tableView.isScrollEnabled = false
             
             tableView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -269,6 +286,4 @@ class StoreHoursViewController: UIView, UITableViewDataSource {
 
         return cell
     }
-
 }
-
