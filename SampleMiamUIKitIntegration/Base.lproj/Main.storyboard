@@ -86,22 +86,6 @@
             </objects>
             <point key="canvasLocation" x="1816" y="402"/>
         </scene>
-        <!--My Meals View Controller-->
-        <scene sceneID="imP-Pj-XkE">
-            <objects>
-                <viewController id="zi0-R2-ciP" customClass="MyMealsViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2FF-dL-DCy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Fx4-mE-2Mb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3ie-f9-q2o"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NL9-4p-bAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2119" y="-1209"/>
-        </scene>
         <!--MyMeals-->
         <scene sceneID="SJq-rj-gCr">
             <objects>
@@ -115,12 +99,28 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zi0-R2-ciP" kind="relationship" relationship="rootViewController" id="SYu-Pj-akm"/>
+                        <segue destination="MYg-bu-BZo" kind="relationship" relationship="rootViewController" id="Qfg-rD-Vgd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftW-F3-yn1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="912" y="-1209"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Q80-9j-1dx">
+            <objects>
+                <viewController id="MYg-bu-BZo" customClass="HomeViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BZN-oK-QLv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="g0R-8F-f05"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WhA-Wl-fsP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HyD-QT-uYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098" y="-1212"/>
         </scene>
         <!--Components-->
         <scene sceneID="Y6G-AD-JnG">
