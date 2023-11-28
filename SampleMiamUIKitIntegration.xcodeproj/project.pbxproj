@@ -45,6 +45,7 @@
 		6E6173E02B15003800C18B86 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173DF2B15003800C18B86 /* MyStoreViewController.swift */; };
 		6E6173E32B15008900C18B86 /* ChangeStoreMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173E22B15008900C18B86 /* ChangeStoreMapViewController.swift */; };
 		6E6173E72B163DC300C18B86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173E62B163DC300C18B86 /* HomeViewController.swift */; };
+		6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173E82B16465F00C18B86 /* ProductView.swift */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
 		BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		6E6173DF2B15003800C18B86 /* MyStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
 		6E6173E22B15008900C18B86 /* ChangeStoreMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStoreMapViewController.swift; sourceTree = "<group>"; };
 		6E6173E62B163DC300C18B86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6E6173E82B16465F00C18B86 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
 		BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */,
 				2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */,
 				6E6173E62B163DC300C18B86 /* HomeViewController.swift */,
+				6E6173E82B16465F00C18B86 /* ProductView.swift */,
 			);
 			path = GeneralViews;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */,
 				268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */,
 				262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */,
 				264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */,
