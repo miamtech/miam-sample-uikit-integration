@@ -1,6 +1,6 @@
 
 /* Class = "UIViewController"; title = "Catalog"; ObjectID = "GFT-kg-Axc"; */
-"GFT-kg-Axc.title" = "Idées repas";
+"GFT-kg-Axc.title" = "Favoris";
 
 /* Class = "UITabBarItem"; title = "Components"; ObjectID = "GeF-d0-Okf"; */
 "GeF-d0-Okf.title" = "User";
@@ -12,4 +12,4 @@
 "TF4-ET-eqx.title" = "Rayons";
 
 /* Class = "UITabBarItem"; title = "Catalog"; ObjectID = "pR4-ux-lhF"; */
-"pR4-ux-lhF.title" = "Favoris";
+"pR4-ux-lhF.title" = "Idées repas";
