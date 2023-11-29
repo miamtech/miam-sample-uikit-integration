@@ -66,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="2909" y="468"/>
         </scene>
-        <!--Meal Ideas-->
+        <!--Idées repas-->
         <scene sceneID="1DP-S6-w3s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fNK-15-XhO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meal Ideas" image="Fork" id="pR4-ux-lhF">
+                    <tabBarItem key="tabBarItem" title="Idées repas" image="Fork" id="pR4-ux-lhF">
                         <color key="badgeColor" name="miamPrimaryDark"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -86,11 +86,11 @@
             </objects>
             <point key="canvasLocation" x="1816" y="402"/>
         </scene>
-        <!--MyMeals-->
+        <!--Home-->
         <scene sceneID="SJq-rj-gCr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sCq-IA-sQq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyMeals" image="Home" id="H25-8x-DYY">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="H25-8x-DYY">
                         <color key="badgeColor" name="miamPrimary"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -122,11 +122,11 @@
             </objects>
             <point key="canvasLocation" x="2098" y="-1212"/>
         </scene>
-        <!--Components-->
+        <!--User-->
         <scene sceneID="Y6G-AD-JnG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yXg-WC-YW0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Components" image="Account" id="GeF-d0-Okf">
+                    <tabBarItem key="tabBarItem" title="User" image="Account" id="GeF-d0-Okf">
                         <color key="badgeColor" name="miamPrimaryDark"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -220,11 +220,11 @@
             </objects>
             <point key="canvasLocation" x="264" y="623"/>
         </scene>
-        <!--Favorites-->
+        <!--Favoris-->
         <scene sceneID="TIj-Oh-8hb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Rbv-Lk-sMO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="Heart" id="n2h-d3-kwl"/>
+                    <tabBarItem key="tabBarItem" title="Favoris" image="Heart" id="n2h-d3-kwl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g0C-c9-shR">
                         <autoresizingMask key="autoresizingMask"/>
