@@ -35,7 +35,7 @@ public class MiamManager: ObservableObject {
         let supplierKey = "ewoJInN1cHBsaWVyX2lkIjogIjciLAoJInBsYXVzaWJsZV9kb21haW5lIjogIm1pYW0uY291cnNlc3UuYXBwIiwKCSJtaWFtX29yaWdpbiI6ICJjb3Vyc2VzdSIsCgkib3JpZ2luIjogIm1pYW0uY291cnNlc3UuYXBwIiwKCSJtaWFtX2Vudmlyb25tZW50IjogIlBST0QiCiJob3N0IjoiY29jbyIKfQ=="
        
         BasketHandlerInstance.shared.instance.setListenToRetailerBasket(func: initBasketListener)
-        BasketHandlerInstance.shared.instance.setPushProductsToRetailerBasket(func: pushProductToBasket)
+        BasketHandlerInstance.shared.instance.setPushProductsToSupplierBasket(func: pushProductToBasket)
         BasketHandlerInstance.shared.instance.pushProductsToMiamBasket(retailerBasket: [])
         
         PointOfSaleHandler.shared.updateStoreId(storeId: "25910")
@@ -54,10 +54,10 @@ public class MiamManager: ObservableObject {
 
     private func pretendProductsToRetailerProducts(
         products: [PretendProduct]
-    ) -> [RetailerProduct] {
+    ) -> [SupplierProduct] {
         return products.map {
-            return RetailerProduct(
-                retailerId: $0.id,
+            return SupplierProduct(
+                id: $0.id,
                 quantity: Int32($0.quantity),
                 name: $0.name,
                 productIdentifier: nil,
@@ -66,7 +66,7 @@ public class MiamManager: ObservableObject {
         }
     }
 
-    private func pushProductToBasket(products: [RetailerProduct]) {
+    private func pushProductToBasket(products: [SupplierProduct]) {
         let productsAddedFromRecipe = retailerProductsToYourProducts(products: products)
         let initialProducts = PretendBasket.shared.items
         var finalProducts = initialProducts.compactMap { retailerProduct in updateProductQuantityIfNeeded(
@@ -99,10 +99,10 @@ public class MiamManager: ObservableObject {
         return retailerProduct
     }
 
-    private func retailerProductsToYourProducts(products: [RetailerProduct]) -> [PretendProduct] {
+    private func retailerProductsToYourProducts(products: [SupplierProduct]) -> [PretendProduct] {
         return products.map {
             return   PretendProduct(
-                id: $0.retailerId,
+                id: $0.id,
                 name: $0.name ?? "Product",
                 quantity: Int($0.quantity),
                 imageUrl: $0.imageURL

@@ -8,6 +8,7 @@
 import UIKit
 import MiamIOSFramework
 import SwiftUI
+import Combine
 
 class ProductView: UIView {
     
@@ -15,14 +16,6 @@ class ProductView: UIView {
         didSet {
             guard let product = product else { return }
             titleLabel.text = product.name
-            if let url = URL(string: product.imageUrl ?? "") {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        self.productImageView.image = UIImage(data: data!)
-                    }
-                }
-            }
             priceLabel.text = product.price?.currencyFormatted
             let weight = Double.random(in: 0...4.5)
             let pricePerUnit = (product.price ?? 2) / weight
@@ -34,7 +27,7 @@ class ProductView: UIView {
     func configure(with product: PretendProduct) {
         self.product = product
     }
-    
+
     let background = UIView()
     let productImageView = UIImageView()
     let titleLabel = UILabel()
@@ -55,7 +48,9 @@ class ProductView: UIView {
     }
     
     private func setupCard() {
-        
+        if let imageUrl = product?.imageUrl {
+            productImageView.downloaded(from: imageUrl)
+        }
         addSubview(productImageView)
         productImageView.translatesAutoresizingMaskIntoConstraints = false
         

@@ -141,7 +141,63 @@ class ChangeStoreMapViewController: UIViewController, MKMapViewDelegate {
     
 }
 
-class StoreLocationsViewController: UIView, UITableViewDataSource {
+extension StoreLocationsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shops.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath) as? StoreCell
+
+        if let cell = cell {
+            cell.setStore(storeName: shops[indexPath.row], storeAddress: address)
+            return cell
+        } else { return UITableViewCell() }
+    }
+}
+
+class StoreCell: UITableViewCell {
+    
+    let textView = UILabel()
+    let addressView = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(textView)
+        addSubview(addressView)
+        
+        var content = self.defaultContentConfiguration()
+        content.textProperties.color = .black
+        content.textProperties.font = .systemFont(ofSize: 18, weight: .bold)
+        content.secondaryTextProperties.color = .black
+        
+        self.contentConfiguration = content
+        
+        NSLayoutConstraint.activate([
+            textView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
+            textView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            textView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            addressView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10),
+            addressView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            addressView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            addressView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 10)
+        ])
+    }
+    
+    func setStore(storeName: String, storeAddress: String) {
+        textView.text = storeName
+        addressView.text = storeAddress
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class StoreLocationsViewController: UIView {
     
     let tableView = UITableView(frame: .zero, style: .plain)
     let shops = ["Lille Centre", "Tibo's Grocer", "Kevin's Epicerie", "Thomas's Deli", "Damien's marché", "Aglaé's market", "Didi's liquor store"]
@@ -151,7 +207,7 @@ class StoreLocationsViewController: UIView, UITableViewDataSource {
             super.init(frame: frame)
             addSubview(tableView) // Add tableView to the view hierarchy
             tableView.dataSource = self
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "storeCell")
+            tableView.register(StoreCell.self, forCellReuseIdentifier: "storeCell")
         tableView.isScrollEnabled = false
             
             tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -166,26 +222,4 @@ class StoreLocationsViewController: UIView, UITableViewDataSource {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shops.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath)
-
-        // Create a default content configuration for the cell
-        var content = cell.defaultContentConfiguration()
-        content.text = shops[indexPath.row]
-        content.secondaryText = address
-        content.textProperties.color = .black
-        content.textProperties.font = .systemFont(ofSize: 18, weight: .bold)
-        content.secondaryTextProperties.color = .black
-
-        // Apply the configuration to the cell
-        cell.contentConfiguration = content
-
-        return cell
-    }
-
 }
