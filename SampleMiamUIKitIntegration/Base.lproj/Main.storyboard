@@ -10,21 +10,100 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Components View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="Olt-kC-koe">
             <objects>
-                <viewController id="eGL-Sn-D2r" customClass="ComponentsViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eGL-Sn-D2r" customClass="SettingViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VjM-i1-Q7o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour Raphaël !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arg-zj-HH6">
+                                <rect key="frame" x="16" y="68" width="382" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurer vos paramètres utilisateurs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOs-yM-8x6">
+                                <rect key="frame" x="16" y="107" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.12156862745098039" green="0.20784313725490194" blue="0.2627450980392157" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jKg-YG-Evo">
+                                <rect key="frame" x="0.0" y="151.5" width="414" height="513.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="56" id="PHW-Wr-GTl" customClass="SettingsCell" customModule="SampleMiamUIKitIntegration" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PHW-Wr-GTl" id="81Q-ze-Sg2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miamPeoples" translatesAutoresizingMaskIntoConstraints="NO" id="0Qo-hn-wbx">
+                                                    <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="4N6-YL-B0d"/>
+                                                        <constraint firstAttribute="height" constant="24" id="HfW-pH-iF5"/>
+                                                        <constraint firstAttribute="width" secondItem="0Qo-hn-wbx" secondAttribute="height" multiplier="1:1" id="s5s-85-MtS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhB-l7-H0B">
+                                                    <rect key="frame" x="56" y="11" width="302" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.12156862745098039" green="0.20784313725490194" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="500" verticalHuggingPriority="251" image="SettingsChevron" translatesAutoresizingMaskIntoConstraints="NO" id="fP6-rQ-26T">
+                                                    <rect key="frame" x="374" y="0.0" width="24" height="56"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fP6-rQ-26T" secondAttribute="bottom" id="6CB-q2-SRY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KhB-l7-H0B" secondAttribute="bottom" id="7th-Gp-wcN"/>
+                                                <constraint firstItem="fP6-rQ-26T" firstAttribute="leading" secondItem="KhB-l7-H0B" secondAttribute="trailing" constant="16" id="Vhi-Yl-lwC"/>
+                                                <constraint firstItem="KhB-l7-H0B" firstAttribute="leading" secondItem="0Qo-hn-wbx" secondAttribute="trailing" constant="16" id="XDR-an-oke"/>
+                                                <constraint firstItem="0Qo-hn-wbx" firstAttribute="leading" secondItem="81Q-ze-Sg2" secondAttribute="leading" constant="16" id="bzr-7o-ji3"/>
+                                                <constraint firstAttribute="trailing" secondItem="fP6-rQ-26T" secondAttribute="trailing" constant="16" id="p79-oS-nYw"/>
+                                                <constraint firstItem="0Qo-hn-wbx" firstAttribute="centerY" secondItem="81Q-ze-Sg2" secondAttribute="centerY" id="vaX-Yv-dKu"/>
+                                                <constraint firstItem="KhB-l7-H0B" firstAttribute="top" secondItem="81Q-ze-Sg2" secondAttribute="topMargin" id="vrf-ZF-l5U"/>
+                                                <constraint firstItem="fP6-rQ-26T" firstAttribute="top" secondItem="81Q-ze-Sg2" secondAttribute="top" id="xQT-f6-C6y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="cellPicto" destination="0Qo-hn-wbx" id="pao-B8-Jzw"/>
+                                            <outlet property="cellTitle" destination="KhB-l7-H0B" id="ngK-mj-5B5"/>
+                                            <outlet property="chevronPicto" destination="fP6-rQ-26T" id="VzH-zf-pFH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vru-hw-2XA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vru-hw-2XA" firstAttribute="trailing" secondItem="jKg-YG-Evo" secondAttribute="trailing" id="3ZN-gf-ypN"/>
+                            <constraint firstItem="jKg-YG-Evo" firstAttribute="top" secondItem="hOs-yM-8x6" secondAttribute="bottom" constant="24" id="BS4-c9-E86"/>
+                            <constraint firstItem="vru-hw-2XA" firstAttribute="bottom" secondItem="jKg-YG-Evo" secondAttribute="bottom" constant="20" id="NyB-qq-NBP"/>
+                            <constraint firstItem="vru-hw-2XA" firstAttribute="trailing" secondItem="hOs-yM-8x6" secondAttribute="trailing" constant="16" id="WQO-tK-3Wd"/>
+                            <constraint firstItem="jKg-YG-Evo" firstAttribute="leading" secondItem="vru-hw-2XA" secondAttribute="leading" id="fDt-4f-9H8"/>
+                            <constraint firstItem="arg-zj-HH6" firstAttribute="top" secondItem="vru-hw-2XA" secondAttribute="top" constant="20" id="gwW-xv-eWd"/>
+                            <constraint firstItem="vru-hw-2XA" firstAttribute="trailing" secondItem="arg-zj-HH6" secondAttribute="trailing" constant="16" id="kaJ-5s-uUG"/>
+                            <constraint firstItem="hOs-yM-8x6" firstAttribute="top" secondItem="arg-zj-HH6" secondAttribute="bottom" constant="10" id="pno-Yp-Bky"/>
+                            <constraint firstItem="hOs-yM-8x6" firstAttribute="leading" secondItem="vru-hw-2XA" secondAttribute="leading" constant="16" id="x2L-Ie-IhB"/>
+                            <constraint firstItem="arg-zj-HH6" firstAttribute="leading" secondItem="vru-hw-2XA" secondAttribute="leading" constant="16" id="xje-C2-CgW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mcc-r1-cSC"/>
+                    <connections>
+                        <outlet property="tableview" destination="jKg-YG-Evo" id="xy2-bc-qW5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3l-HF-BwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="-2048"/>
+            <point key="canvasLocation" x="2118.840579710145" y="-2048.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HkC-UL-pEn">
@@ -370,9 +449,11 @@
         <image name="Heart" width="20" height="20"/>
         <image name="Home" width="20" height="20"/>
         <image name="Rayons" width="20" height="20"/>
+        <image name="SettingsChevron" width="24" height="24"/>
         <image name="StoreLogo" width="139" height="34"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="miamPeoples" width="30" height="30"/>
         <namedColor name="miamNeutralPrimary">
             <color red="0.14100000262260437" green="0.45500001311302185" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

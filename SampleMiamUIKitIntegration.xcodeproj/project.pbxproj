@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,6 @@
 		262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */; };
 		263462872AE7CD90004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263462892AE7CD90004C1C63 /* Localizable.strings */; };
 		2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2634628E2AE7CDA4004C1C63 /* Localizable.strings */; };
-		264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */; };
-		264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */; };
 		264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */; };
 		264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */; };
 		264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */; };
@@ -39,6 +37,12 @@
 		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
 		26F51A322ABC487C00DCD031 /* CatalogResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */; };
 		395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */; };
+		3976C6812B1748DC00151D08 /* MiamNeutraliOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 3976C6802B1748DC00151D08 /* MiamNeutraliOSFramework */; };
+		3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 3976C6832B1748EE00151D08 /* MiamIOSFramework */; };
+		3976C6872B17518600151D08 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C6862B17518600151D08 /* SettingViewController.swift */; };
+		3976C68A2B17598D00151D08 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C6892B17598D00151D08 /* SettingsCell.swift */; };
+		3976C68E2B18D92E00151D08 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C68C2B18D92E00151D08 /* ProfilViewController.swift */; };
+		3976C68F2B18D92E00151D08 /* ProfilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3976C68D2B18D92E00151D08 /* ProfilViewController.xib */; };
 		BF1A8027287DC14400F8FF9A /* DiscloseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */; };
 		BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */; };
 		BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */; };
@@ -87,6 +91,10 @@
 		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResultsViewController.swift; sourceTree = "<group>"; };
 		395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithHeaderViewController.swift; sourceTree = "<group>"; };
+		3976C6862B17518600151D08 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3976C6892B17598D00151D08 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		3976C68C2B18D92E00151D08 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		3976C68D2B18D92E00151D08 /* ProfilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilViewController.xib; sourceTree = "<group>"; };
 		BF1A8026287DC14400F8FF9A /* DiscloseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseViewController.swift; sourceTree = "<group>"; };
 		BF2AC98A28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSuggestionTestViewController.swift; sourceTree = "<group>"; };
 		BF2AC98F28F818AB000776A2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,8 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264A36B42A6FC3D300EA2D23 /* MiamIOSFramework in Frameworks */,
-				264A36C12A70022200EA2D23 /* MiamNeutraliOSFramework in Frameworks */,
+				3976C6812B1748DC00151D08 /* MiamNeutraliOSFramework in Frameworks */,
+				3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +206,33 @@
 			path = Catalog;
 			sourceTree = "<group>";
 		};
+		3976C6852B1750B500151D08 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3976C68B2B18D91F00151D08 /* Profil */,
+				3976C6882B17596700151D08 /* Cells */,
+				3976C6862B17518600151D08 /* SettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3976C6882B17596700151D08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3976C6892B17598D00151D08 /* SettingsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3976C68B2B18D91F00151D08 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				3976C68C2B18D92E00151D08 /* ProfilViewController.swift */,
+				3976C68D2B18D92E00151D08 /* ProfilViewController.xib */,
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
 		9FCC2D7B65602A1222F1A0AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +261,7 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				3976C6852B1750B500151D08 /* Settings */,
 				26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */,
 				26B847792AE90156000C9AF1 /* PretendBasket */,
 				263462842AE7CD46004C1C63 /* Localization */,
@@ -267,8 +303,8 @@
 			);
 			name = SampleMiamUIKitIntegration;
 			packageProductDependencies = (
-				264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */,
-				264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */,
+				3976C6802B1748DC00151D08 /* MiamNeutraliOSFramework */,
+				3976C6832B1748EE00151D08 /* MiamIOSFramework */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -300,9 +336,9 @@
 			);
 			mainGroup = BF85056E28578EF800651864;
 			packageReferences = (
-				264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */,
-				264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */,
 				26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3976C67F2B1748DC00151D08 /* XCLocalSwiftPackageReference "../MiamNeutraliOSFramework" */,
+				3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */,
 			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
@@ -324,6 +360,7 @@
 				BF85058428578EFA00651864 /* Assets.xcassets in Resources */,
 				BF85058228578EF800651864 /* Main.storyboard in Resources */,
 				26B847892AE96E54000C9AF1 /* GoogleService-Info.plist in Resources */,
+				3976C68F2B18D92E00151D08 /* ProfilViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +376,17 @@
 				264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */,
 				266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */,
 				264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */,
+				3976C6872B17518600151D08 /* SettingViewController.swift in Sources */,
 				268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */,
 				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
 				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
 				395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */,
 				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
 				2684C6672ADD3F900030B844 /* RecipeCarouselViewController.swift in Sources */,
+				3976C68E2B18D92E00151D08 /* ProfilViewController.swift in Sources */,
 				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
 				264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */,
+				3976C68A2B17598D00151D08 /* SettingsCell.swift in Sources */,
 				BF59A47F28D0DC0200882BA9 /* RecipeCardHostingTableViewCell.swift in Sources */,
 				BF2AC99028F818AB000776A2 /* ProductTableViewCell.swift in Sources */,
 				BF2AC98B28F6D1B1000776A2 /* RecipeSuggestionTestViewController.swift in Sources */,
@@ -609,23 +649,18 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		3976C67F2B1748DC00151D08 /* XCLocalSwiftPackageReference "../MiamNeutraliOSFramework" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../MiamNeutraliOSFramework;
+		};
+		3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../miam-sdk";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
-		264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/diarmuidmcgonagle/sources/miam/miam-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/diarmuidmcgonagle/sources/miam/MiamNeutraliOSFramework";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -637,15 +672,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		264A36B32A6FC3D300EA2D23 /* MiamIOSFramework */ = {
+		3976C6802B1748DC00151D08 /* MiamNeutraliOSFramework */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 264A36B22A6FC3D300EA2D23 /* XCRemoteSwiftPackageReference "miam-sdk" */;
-			productName = MiamIOSFramework;
-		};
-		264A36C02A70022200EA2D23 /* MiamNeutraliOSFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 264A36BF2A70022200EA2D23 /* XCRemoteSwiftPackageReference "MiamNeutraliOSFramework" */;
 			productName = MiamNeutraliOSFramework;
+		};
+		3976C6832B1748EE00151D08 /* MiamIOSFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MiamIOSFramework;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

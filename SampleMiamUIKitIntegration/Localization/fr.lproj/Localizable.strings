@@ -7,6 +7,7 @@
 */
 
 //----------------------------------------------- Demo App -----------------------------------------------
+
 // tabs
 "tab_products" = "Idées repas";
 "tab_meals" = "Mes Repas";
@@ -33,3 +34,12 @@
 "change_store" = "Modifier Magasin";
 // utils
 "account_settings" = "Paramètres du Compte";
+// settings
+"settings_profile" = "Mon profil";
+"settings_command" = "Commandes";
+"settings_lists" = "Listes";
+"settings_card" = "Carte client";
+"settings_credit_card" = "Modes de paiement";
+"settings_contact" = "Préférence de contact";
+"settings_logout" = "Déconnexion";
+
