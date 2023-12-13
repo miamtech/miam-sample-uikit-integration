@@ -38,6 +38,6 @@ class PretendBasket: ObservableObject {
 
     func removeAll() {
         items.removeAll()
-        BasketHandlerInstance.shared.instance.clear()
+        Mealz.shared.basket.clear()
     }
 }
