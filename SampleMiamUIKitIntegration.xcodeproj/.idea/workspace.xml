@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8079e80-d943-4c82-83ed-577d0c39675e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamInit/DemoBasketService.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamInit/MiamManager.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/GeneralViews/ProductView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/GeneralViews/ProductView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamManager.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/PretendBasket/PretendBasket.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamInit/PretendBasket/PretendBasket.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/PretendBasket/PretendBasketViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamInit/PretendBasket/PretendBasketViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/PretendBasket/PretendProduct.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../SampleMiamUIKitIntegration/MiamInit/PretendBasket/PretendProduct.swift" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZlQWUYoSO00QfWDQKSvzS6BFk5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8079e80-d943-4c82-83ed-577d0c39675e" name="Changes" comment="" />
+      <created>1702994218742</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702994218742</updated>
+    </task>
+    <servers />
+  </component>
+</project>
