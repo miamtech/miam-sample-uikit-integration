@@ -38,10 +38,9 @@ class ExplainBasketTagViewController: UIViewController {
                 description: "Fresh cheese from southern France",
                 pictureURL: (URL(string: "https://storage.googleapis.com/assets.miam.tech/pictures/recipes/studios-fg/14654-quiche-courgettes-et-mozzarella/14654-quiche-courgettes-et-mozzarella_1280x853.jpg") ?? URL(string: ""))!,
                 sharedRecipeCount: 0,
-                isSubstitutable: false,
-                pricePerUnit: 4.23,
-                isLoading: false),
-            actions: BasketProductActions(onDeleteProduct: {}, onUpdateGuests: { _ in }, onChangeProduct: {})).onTapGesture { [weak self] in
+                unitPrice: 4.23,
+                isReloading: false),
+            actions: BasketProductActions(onDeleteProduct: {}, onQuantityChanged: { _ in }, onChangeProduct: {})).onTapGesture { [weak self] in
                 
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(BasketTagViewController("239658"), animated: true)

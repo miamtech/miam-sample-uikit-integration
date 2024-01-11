@@ -11,10 +11,15 @@ import MiamIOSFramework
 import MiamNeutraliOSFramework
 
 class ItemSelectorViewController: UIViewController {
-    public let recipeId: String
+//    public let recipeId: String
+    public let ingredientId: String
     
-    init(_ recipeId: String) {
-        self.recipeId = recipeId
+    init(
+//        _ recipeId: String,
+        ingredientId: String
+    ) {
+//        self.recipeId = recipeId
+        self.ingredientId = ingredientId
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,7 +38,7 @@ class ItemSelectorViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 }
-            }), recipeId: recipeId)
+            }), ingredientId: ingredientId)
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<ItemSelector<ItemSelectorParameters>>?

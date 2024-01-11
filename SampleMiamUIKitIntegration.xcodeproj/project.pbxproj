@@ -282,7 +282,7 @@
 			);
 			path = Extensions;
 			sourceTree = "<group>";
-        };
+		};
 		6EA2E5312B3054EA007B7567 /* MiamInit */ = {
 			isa = PBXGroup;
 			children = (

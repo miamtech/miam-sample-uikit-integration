@@ -44,6 +44,10 @@ class RecipeDetailsViewController: UIViewController {
                 onContinueToBasket: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+                }, 
+                onReplaceProduct: { [weak self] ingredientId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(ingredientId: ingredientId), animated: true)
                 }),
             recipeId: recipeId,
             isForMealPlanner: isForMealPlanner)
