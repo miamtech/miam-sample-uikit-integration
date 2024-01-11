@@ -60,5 +60,7 @@ public class MiamManager: ObservableObject {
         Mealz.shared.notifications.analytics.listen { event in
             print("Mealz.Notifications.analytics \(String(describing: event))")
         }
+        
+        LogHandler.companion.logLevel = .allLogs
     }
 }
