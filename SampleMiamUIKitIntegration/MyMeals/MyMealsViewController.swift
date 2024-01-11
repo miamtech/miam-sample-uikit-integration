@@ -22,32 +22,23 @@ class MyMealsViewController: UIViewController {
     deinit { print("deinit: MyMealsViewController") }
     // Your SwiftUI View
     var swiftUIView: MyMeals<
-        MyMealsParameters,
-        BasketRecipeParameters
+        MyMealsParameters
     > {
         return MyMeals.init(
             params: MyMealsParameters(
                 onNoResultsRedirect: { [weak self] in
-                
-                }
-            ),
-            basketRecipesParams: BasketRecipeParameters(
-                onReplaceProduct: { [weak self] recipeId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(recipeId), animated: true)
-                },
-                onShowRecipeDetails: { [weak self] recipeId in
+                    
+                }, onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-            }),
+                }),
             gridConfig: myMealsBasketViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMeals<
-        MyMealsParameters,
-        BasketRecipeParameters>>?
-
+        MyMealsParameters>>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Meals"
