@@ -14,7 +14,7 @@ import miamCore
 var myMealsBasketViewConfig = BasketRecipesGridConfig(
     recipeSpacing: CGSize(width: 5, height: 5),
     productSpacing: CGSize(width: 6, height: 6),
-    recipeOverviewDimensions: CGSize(width: 300, height: 150),
+    recipeOverviewDimensions: CGSize(width: 300, height: 180),
     isExpandable: true)
 
 class MyMealsViewController: UIViewController {
@@ -27,7 +27,7 @@ class MyMealsViewController: UIViewController {
         return MyMeals.init(
             params: MyMealsParameters(
                 onNoResultsRedirect: { [weak self] in
-                
+                    // nav to the Catalog Page
                 }, onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)

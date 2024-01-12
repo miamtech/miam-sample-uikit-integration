@@ -22,7 +22,7 @@ class SettingViewController: UIViewController {
     var menuItems : [MenuItem] {
         [
             MenuItem(picto: "SettingsUser", title: "settings_profile", next: ProfilViewController.self),
-            MenuItem(picto: "SettingsBasket", title: "settings_command"),
+            MenuItem(picto: "SettingsBasket", title: "settings_command", next: MyMealsViewController.self),
             MenuItem(picto: "SettingsMenu", title: "settings_lists"),
             MenuItem(picto: "SettingsBarcode", title: "settings_card"),
             MenuItem(picto: "SettingsCreditCard", title: "settings_credit_card"),
