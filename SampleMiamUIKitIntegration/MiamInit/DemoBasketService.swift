@@ -56,7 +56,9 @@ class DemoBasketService: BasketSubscriber, BasketPublisher {
             // check if we already have the product to remove or update info
             if let productToUpdateIndex = PretendBasket.shared.items.firstIndex(where: { $0.id == product.id }) {
                 if product.quantity == 0 { // we know an item is deleted if the qty is 0
-                    basketCopy.remove(at: productToUpdateIndex)
+                    if basketCopy.indices.contains(productToUpdateIndex) {
+                        basketCopy.remove(at: productToUpdateIndex)
+                    }
                 } else {
                     let item = PretendBasket.shared.items[productToUpdateIndex]
                     basketCopy[productToUpdateIndex] = PretendProduct(

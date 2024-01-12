@@ -38,7 +38,7 @@ class MyMealsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMeals<
         MyMealsParameters>>?
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Meals"
