@@ -29,7 +29,8 @@ class RecipeDetailsViewController: UIViewController {
     
     // Your SwiftUI View
     var swiftUIView: RecipeDetails<
-        RecipeDetailParameters
+        RecipeDetailParameters,
+        RecipeDetailsProductParameters
     > {
         return RecipeDetails.init(
             params: RecipeDetailParameters(
@@ -44,14 +45,21 @@ class RecipeDetailsViewController: UIViewController {
                 onContinueToBasket: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
-                }),
+                },
+                onReplaceProduct: { [weak self] ingredientId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(ingredientId: ingredientId), animated: true)
+                }
+               ),
+            productParams: RecipeDetailsProductParameters(),
             recipeId: recipeId,
             isForMealPlanner: isForMealPlanner)
     }
     
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<RecipeDetails<
-        RecipeDetailParameters
+        RecipeDetailParameters,
+        RecipeDetailsProductParameters
 >>?
 
     override func viewDidLoad() {

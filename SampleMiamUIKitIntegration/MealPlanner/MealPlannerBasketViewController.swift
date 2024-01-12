@@ -31,9 +31,9 @@ class MealPlannerBasketViewController: UIViewController {
                 },
                 onNavigateToBasket: { [weak self] in }),
             basketRecipesParams: BasketRecipeParameters(
-                onReplaceProduct: { [weak self] recipeId in
+                onReplaceProduct: { [weak self] ingredientId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(recipeId), animated: true)
+                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(ingredientId: ingredientId), animated: true)
                 },
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
