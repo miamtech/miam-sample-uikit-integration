@@ -27,7 +27,7 @@ class MyMealsViewController: UIViewController {
         return MyMeals.init(
             params: MyMealsParameters(
                 onNoResultsRedirect: { [weak self] in
-                    
+                
                 }, onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
@@ -38,7 +38,7 @@ class MyMealsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMeals<
         MyMealsParameters>>?
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Meals"
