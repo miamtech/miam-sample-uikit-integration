@@ -8,7 +8,7 @@
 import UIKit
 import MiamIOSFramework
 import SwiftUI
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 class ExplainMealPlannerViewController: UIViewController {
 
@@ -19,18 +19,18 @@ class ExplainMealPlannerViewController: UIViewController {
         self.view.backgroundColor = .white
         
         let text = createLabel(text: "The Meal Planner is a Miam Feature where users enter a budget, number of guests, & number of meals they are looking for. Miam will then provide recipes for their selected criteria.", alignment: .left, fontSize: 16)
-        text.textColor = UIColor(Color.miamColor(.primaryDark))
+        text.textColor = UIColor(Color.mealzColor(.primary))
         self.view.addSubview(text)
         
         let buttonText = createLabel(text: "The Meal Planner is launched by a Button like below", alignment: .center, fontSize: 16, isBold: true)
         self.view.addSubview(buttonText)
         
-        let miamNeutralMealPlannerCallToAction = MiamNeutralMealPlannerCallToAction()
-        let miamNeutralMealPlannerCallToActionView = miamNeutralMealPlannerCallToAction.content { [weak self] in
+        let mealzMealPlannerCallToAction = MealzMealPlannerCallToAction()
+        let mealzMealPlannerCallToActionView = mealzMealPlannerCallToAction.content { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
         }
-        let mealPlannerCTA = UIHostingController(rootView: miamNeutralMealPlannerCallToActionView)
+        let mealPlannerCTA = UIHostingController(rootView: mealzMealPlannerCallToActionView)
 
         // Create a vertical stack view to layout the label and buttons
         let stackView = UIStackView(arrangedSubviews: [text, buttonText, mealPlannerCTA.view])

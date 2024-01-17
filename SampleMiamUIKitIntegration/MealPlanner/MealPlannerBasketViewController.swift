@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import MiamIOSFramework
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 public var localBasketGridConfig = BasketRecipesGridConfig(
     recipeSpacing: CGSize(width: 5, height: 5),

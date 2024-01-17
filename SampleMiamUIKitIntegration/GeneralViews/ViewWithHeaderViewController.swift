@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 import UIKit
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountBackground: UIView!

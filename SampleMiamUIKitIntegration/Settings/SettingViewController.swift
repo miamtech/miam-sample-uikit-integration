@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 
 struct MenuItem{

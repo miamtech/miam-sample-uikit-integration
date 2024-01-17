@@ -7,7 +7,7 @@
 import UIKit
 import SwiftUI
 import MiamIOSFramework
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 import miamCore
 
 /**

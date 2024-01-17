@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 import MiamIOSFramework
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 import SwiftUI
 
 class PretendBasketViewController: UIViewController, UITableViewDelegate,       UITableViewDataSource {

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import MiamIOSFramework
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 class MealPlannerResultsViewController: UIViewController {
     deinit { print("deinit: MealPlannerResultsViewController") }
