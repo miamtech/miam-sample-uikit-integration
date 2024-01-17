@@ -8,7 +8,7 @@
 import UIKit
 import MiamIOSFramework
 import SwiftUI
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 import miamCore
 
 class ExplainBasketTagViewController: UIViewController {
@@ -23,13 +23,13 @@ class ExplainBasketTagViewController: UIViewController {
         self.view.addSubview(inlineTitle)
         
         let text = createLabel(text: "The Meal Planner is a Miam Feature where users enter a budget, number of guests, & number of meals they are looking for. Miam will then provide recipes for their selected criteria.", alignment: .left, fontSize: 16)
-        text.textColor = UIColor(Color.miamColor(.primaryDark))
+        text.textColor = UIColor(Color.mealzColor(.primary))
         self.view.addSubview(text)
         
         let buttonText = createLabel(text: "You can launch the Basket Tag on another page: ", alignment: .center, fontSize: 16, isBold: true)
         self.view.addSubview(buttonText)
         
-        let sampleBasketProduct = MiamNeutralBasketProduct()
+        let sampleBasketProduct = MealzBasketProduct()
         let sampleBasketProductView = sampleBasketProduct.content(
             quantity: .constant(4),
             data: BasketProductData(

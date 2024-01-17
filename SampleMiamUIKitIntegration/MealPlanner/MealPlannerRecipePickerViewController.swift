@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import MiamIOSFramework
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 
 class MealPlannerRecipePickerViewController: UIViewController {
     public let indexOfRecipe: Int

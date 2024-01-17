@@ -9,7 +9,7 @@ import UIKit
 import MiamIOSFramework
 import miamCore
 import SwiftUI
-import MiamNeutraliOSFramework
+import MealzUIModuleIOS
 //import FirebaseCore
 
 @main
