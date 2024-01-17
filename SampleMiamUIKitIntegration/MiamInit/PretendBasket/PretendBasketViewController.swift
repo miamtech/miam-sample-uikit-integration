@@ -136,6 +136,7 @@ class PretendBasketTableViewCell: UITableViewCell {
                     guard let strongSelf = self else { return }
                     strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
                 }),
+            baseViews: BaseViewParameters(),
             retailerProductId: id,
             scrollAlignment: .horizontal)
         let hostingController = UIHostingController(rootView: tags)

@@ -14,7 +14,8 @@ class MealPlannerResultsViewController: UIViewController {
     deinit { print("deinit: MealPlannerResultsViewController") }
     // Your SwiftUI View
     var swiftUIView: MealPlannerResults<
-        MealPlannerResultsParameters
+        MealPlannerResultsParameters,
+        BaseViewParameters
     > {
         return MealPlannerResults(
             params:
@@ -31,6 +32,7 @@ class MealPlannerResultsViewController: UIViewController {
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
                     }),
+            baseViews: BaseViewParameters(),
             gridConfig: MealPlannerRecipesListGridConfig(
                 spacing: CGSize(width: 0, height: 0),
                 recipeCardDimensions: CGSize(width: 300, height: 200)))
@@ -38,7 +40,8 @@ class MealPlannerResultsViewController: UIViewController {
     
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerResults<
-        MealPlannerResultsParameters
+        MealPlannerResultsParameters,
+        BaseViewParameters
 >>?
 
     override func viewDidLoad() {

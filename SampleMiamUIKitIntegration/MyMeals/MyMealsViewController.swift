@@ -22,7 +22,8 @@ class MyMealsViewController: UIViewController {
     deinit { print("deinit: MyMealsViewController") }
     // Your SwiftUI View
     var swiftUIView: MyMeals<
-        MyMealsParameters
+        MyMealsParameters,
+        BaseViewParameters
     > {
         return MyMeals.init(
             params: MyMealsParameters(
@@ -32,12 +33,15 @@ class MyMealsViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 }),
+            baseViews: BaseViewParameters(),
             gridConfig: myMealsBasketViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MyMeals<
-        MyMealsParameters>>?
+        MyMealsParameters,
+        BaseViewParameters
+    >>?
   
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -52,7 +52,8 @@ class RecipeCarouselViewController: UIViewController {
     
     // Your SwiftUI View
     var swiftUIView: RecipeCarousel<
-        RecipeCarouselParameters
+        RecipeCarouselParameters,
+        BaseViewParameters
     > {
         let params = RecipeCarouselParameters(
             onShowRecipeDetails: { [weak self] recipeId in
@@ -65,6 +66,7 @@ class RecipeCarouselViewController: UIViewController {
         if let productId {
             return RecipeCarousel.init(
                 params: params,
+                baseViews: BaseViewParameters(),
                 gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 productId: productId
@@ -72,6 +74,7 @@ class RecipeCarouselViewController: UIViewController {
         } else if let criteria {
             return RecipeCarousel.init(
                 params: params,
+                baseViews: BaseViewParameters(),
                 gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 criteria: criteria
@@ -84,7 +87,8 @@ class RecipeCarouselViewController: UIViewController {
     
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<RecipeCarousel<
-        RecipeCarouselParameters
+        RecipeCarouselParameters,
+        BaseViewParameters
 >>?
 
     override func viewDidLoad() {

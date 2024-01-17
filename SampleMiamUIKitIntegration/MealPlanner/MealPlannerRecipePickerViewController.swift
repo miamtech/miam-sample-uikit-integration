@@ -24,7 +24,9 @@ class MealPlannerRecipePickerViewController: UIViewController {
     deinit { print("deinit: MealPlannerRecipePickerViewController") }
     // Your SwiftUI View
     var swiftUIView: MealPlannerRecipePicker<
-        MealPlannerRecipePickerParameters> {
+        MealPlannerRecipePickerParameters,
+        BaseViewParameters
+    > {
         return MealPlannerRecipePicker(
             params:
                 MealPlannerRecipePickerParameters(
@@ -44,13 +46,16 @@ class MealPlannerRecipePickerViewController: UIViewController {
                         strongSelf.navigationController?.pushViewController(
                             FiltersViewController(filtersInstance, isForMealPlanner: true), animated: true)
                 }),
+            baseViews: BaseViewParameters(),
             gridConfig: localRecipesListViewConfig,
             indexOfReplacedRecipe: indexOfRecipe)
             
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerRecipePicker<
-        MealPlannerRecipePickerParameters>>?
+        MealPlannerRecipePickerParameters,
+        BaseViewParameters
+    >>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
