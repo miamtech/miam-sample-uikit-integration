@@ -33,7 +33,9 @@ class CatalogResultsViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: CatalogResults<
         CatalogParameters,
-        CatalogRecipesListParameters> {
+        CatalogRecipesListParameters,
+        BaseViewParameters
+    > {
             return CatalogResults(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 recipesListParams: CatalogRecipesListParameters(
@@ -47,6 +49,7 @@ class CatalogResultsViewController: UIViewController {
                         strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                     }
                 ),
+                baseViews: BaseViewParameters(),
                 categoryId: categoryId,
                 title: categoryTitle,
                 gridConfig: localRecipesListViewConfig
@@ -55,7 +58,9 @@ class CatalogResultsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResults<
         CatalogParameters,
-        CatalogRecipesListParameters>>?
+        CatalogRecipesListParameters,
+        BaseViewParameters
+    >>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

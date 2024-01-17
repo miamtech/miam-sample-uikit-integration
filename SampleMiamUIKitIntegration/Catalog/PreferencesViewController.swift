@@ -18,7 +18,8 @@ class PreferencesViewController: UIViewController {
     deinit { print("deinit: PreferencesViewController") }
     // Your SwiftUI View
     var swiftUIView: Preferences<
-        PreferencesParameters
+        PreferencesParameters,
+        BaseViewParameters
     > {
             return Preferences.init(
                 params: PreferencesParameters(
@@ -29,13 +30,15 @@ class PreferencesViewController: UIViewController {
                     onGoToSearch: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
-                    })
+                    }),
+                baseViews: BaseViewParameters()
             )
         }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<
-        Preferences<PreferencesParameters>
-    >?
+    private var hostingController: UIHostingController<Preferences<
+        PreferencesParameters,
+        BaseViewParameters
+    >>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

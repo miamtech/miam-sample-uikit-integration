@@ -25,7 +25,9 @@ class CatalogSearchViewController: UIViewController {
     deinit { print("deinit: CatalogSearchViewController") }
     // Your SwiftUI View
     var swiftUIView: CatalogSearch<
-        CatalogSearchParameters> {
+        CatalogSearchParameters,
+        BaseViewParameters
+    > {
         return CatalogSearch.init(
             params: CatalogSearchParameters(
                 onApplied: { [weak self] in
@@ -35,12 +37,15 @@ class CatalogSearchViewController: UIViewController {
                     strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
                 }
             ),
+            baseViews: BaseViewParameters(),
             filterInstance: filterInstance
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogSearch<
-        CatalogSearchParameters>>?
+        CatalogSearchParameters,
+        BaseViewParameters
+    >>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

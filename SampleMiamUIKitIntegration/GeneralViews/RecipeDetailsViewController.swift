@@ -30,7 +30,8 @@ class RecipeDetailsViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: RecipeDetails<
         RecipeDetailParameters,
-        RecipeDetailsProductParameters
+        RecipeDetailsProductParameters,
+        BaseViewParameters
     > {
         return RecipeDetails.init(
             params: RecipeDetailParameters(
@@ -52,6 +53,7 @@ class RecipeDetailsViewController: UIViewController {
                 }
                ),
             productParams: RecipeDetailsProductParameters(),
+            baseViews: BaseViewParameters(),
             recipeId: recipeId,
             isForMealPlanner: isForMealPlanner)
     }
@@ -59,7 +61,8 @@ class RecipeDetailsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<RecipeDetails<
         RecipeDetailParameters,
-        RecipeDetailsProductParameters
+        RecipeDetailsProductParameters,
+        BaseViewParameters
 >>?
 
     override func viewDidLoad() {

@@ -30,7 +30,10 @@ class ItemSelectorViewController: UIViewController {
     deinit { print("deinit: ItemSelectorViewController")}
 
     // Your SwiftUI View
-    var swiftUIView: ItemSelector<ItemSelectorParameters> {
+    var swiftUIView: ItemSelector<
+        ItemSelectorParameters,
+        BaseViewParameters
+    > {
         return ItemSelector(
             params: ItemSelectorParameters(onItemSelected: { [weak self] in
                 // added small delay to ensure image reloads
@@ -38,10 +41,15 @@ class ItemSelectorViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
                 }
-            }), ingredientId: ingredientId)
+            }), 
+            baseViews: BaseViewParameters(),
+            ingredientId: ingredientId)
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<ItemSelector<ItemSelectorParameters>>?
+    private var hostingController: UIHostingController<ItemSelector<
+        ItemSelectorParameters,
+        BaseViewParameters
+    >>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

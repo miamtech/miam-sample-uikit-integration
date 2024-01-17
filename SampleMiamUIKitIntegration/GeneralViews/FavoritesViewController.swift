@@ -15,7 +15,9 @@ class FavoritesViewController: UIViewController {
     deinit { print("deinit: FavoritesViewController") }
     // Your SwiftUI View
     var swiftUIView: Favorites<
-        FavoritesParameters> {
+        FavoritesParameters,
+        BaseViewParameters
+    > {
         return Favorites.init(
             params: FavoritesParameters(
                 onNoResultsRedirect: { [weak self] in },
@@ -26,12 +28,15 @@ class FavoritesViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                 }),
+            baseViews: BaseViewParameters(),
             gridConfig: localRecipesListViewConfig
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<Favorites<
-        FavoritesParameters>>?
+        FavoritesParameters,
+        BaseViewParameters
+    >>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

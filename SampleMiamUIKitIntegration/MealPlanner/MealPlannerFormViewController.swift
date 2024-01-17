@@ -13,17 +13,25 @@ import MealzUIModuleIOS
 class MealPlannerFormViewController: UIViewController {
     deinit { print("deinit: MealPlannerFormViewController") }
     // Your SwiftUI View
-    var swiftUIView: MealPlannerForm<MealPlannerFormParameters> {
+    var swiftUIView: MealPlannerForm<
+        MealPlannerFormParameters,
+        BaseViewParameters
+    > {
         return MealPlannerForm(
             params: MealPlannerFormParameters(
                 onNavigateToMealPlannerResults: { [weak self] recipes in
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(MealPlannerResultsViewController(), animated: true)
-                }))
+                }),
+            baseViews: BaseViewParameters()
+        )
            
     }
     // The hosting controller for your SwiftUI view
-    private var hostingController: UIHostingController<MealPlannerForm<MealPlannerFormParameters>>?
+    private var hostingController: UIHostingController<MealPlannerForm<
+        MealPlannerFormParameters,
+        BaseViewParameters
+    >>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

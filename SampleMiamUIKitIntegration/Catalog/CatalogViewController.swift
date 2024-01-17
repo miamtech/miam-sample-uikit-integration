@@ -41,7 +41,9 @@ class CatalogViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: CatalogView<
         CatalogParameters,
-        CatalogPackageRowParameters> {
+        CatalogPackageRowParameters,
+        BaseViewParameters
+    > {
             return CatalogView.init(
                 params: sharedCatalogViewParams(navigationController: self.navigationController),
                 catalogPackageRowParams: CatalogPackageRowParameters(
@@ -62,13 +64,16 @@ class CatalogViewController: UIViewController {
                     },
                     viewOptions: CatalogPackageRowViewOptions(recipeCard: TypeSafeCatalogRecipeCard(MealzRecipeCard()))
                 ),
+                baseViews: BaseViewParameters(),
                 gridConfig: localRecipesListViewConfig
             )
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogView<
         CatalogParameters,
-        CatalogPackageRowParameters>>?
+        CatalogPackageRowParameters,
+        BaseViewParameters
+    >>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
