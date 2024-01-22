@@ -15,24 +15,26 @@ class MealPlannerResultsViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: MealPlannerResults<
         MealPlannerResultsParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return MealPlannerResults(
             params:
                 MealPlannerResultsParameters(
-                    onShowRecipeDetails: { [weak self] recipeId in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId, isForMealPlanner: true), animated: true)
-                    },
-                    onOpenReplaceRecipe: { [weak self] indexOfRecipe in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(indexOfRecipe), animated: true)
-                    },
-                    onNavigateToBasket: {[weak self] in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
-                    }),
-            baseViews: BaseViewParameters(),
+                    actions: MealPlannerResultsActions(
+                        onShowRecipeDetails: { [weak self] recipeId in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId, isForMealPlanner: true), animated: true)
+                        },
+                        onOpenReplaceRecipe: { [weak self] indexOfRecipe in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.pushViewController(MealPlannerRecipePickerViewController(indexOfRecipe), animated: true)
+                        },
+                        onNavigateToBasket: {[weak self] in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.pushViewController(MealPlannerBasketViewController(), animated: true)
+                        })
+                ),
+            baseViews: BasePageViewParameters(),
             gridConfig: MealPlannerRecipesListGridConfig(
                 spacing: CGSize(width: 0, height: 0),
                 recipeCardDimensions: CGSize(width: 300, height: 200)))
@@ -41,9 +43,9 @@ class MealPlannerResultsViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerResults<
         MealPlannerResultsParameters,
-        BaseViewParameters
->>?
-
+        BasePageViewParameters
+    >>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Mon assistant Budget repas"

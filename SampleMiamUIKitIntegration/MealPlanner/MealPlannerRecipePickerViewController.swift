@@ -25,38 +25,40 @@ class MealPlannerRecipePickerViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: MealPlannerRecipePicker<
         MealPlannerRecipePickerParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return MealPlannerRecipePicker(
             params:
                 MealPlannerRecipePickerParameters(
-                    onShowRecipeDetails: { [weak self] recipeId in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(
-                            recipeId,
-                            isForMealPlanner: true
-                        ), animated: true)
-                    },
-                    onSelectRecipeForMealPlanner: { [weak self] _ in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.popViewController(animated: true)
-                },
-                    onOpenFiltersOptions: { [weak self] filtersInstance in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(
-                            FiltersViewController(filtersInstance, isForMealPlanner: true), animated: true)
-                }),
-            baseViews: BaseViewParameters(),
+                    actions: MealPlannerRecipePickerActions(
+                        onShowRecipeDetails: { [weak self] recipeId in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(
+                                recipeId,
+                                isForMealPlanner: true
+                            ), animated: true)
+                        },
+                        onSelectRecipeForMealPlanner: { [weak self] _ in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.popViewController(animated: true)
+                        },
+                        onOpenFiltersOptions: { [weak self] filtersInstance in
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.pushViewController(
+                                FiltersViewController(filtersInstance, isForMealPlanner: true), animated: true)
+                        })
+                ),
+            baseViews: BasePageViewParameters(),
             gridConfig: localRecipesListViewConfig,
             indexOfReplacedRecipe: indexOfRecipe)
-            
+        
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerRecipePicker<
         MealPlannerRecipePickerParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Mon assistant Budget repas"

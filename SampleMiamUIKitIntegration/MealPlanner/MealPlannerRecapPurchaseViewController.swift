@@ -14,15 +14,17 @@ class MealPlannerRecapPurchaseViewController: UIViewController {
     var swiftUIView: MealPlannerRecap<MealPlannerRecapParameters> {
         return MealPlannerRecap(
             params: MealPlannerRecapParameters(
-                onNavigateAwayFromMealPlanner: { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.popToRootViewController(animated: true)
-                }
-            ))
+                actions: MealPlannerRecapActions(
+                    onNavigateAwayFromMealPlanner: { [weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.popToRootViewController(animated: true)
+                    }
+                ))
+        )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerRecap<MealPlannerRecapParameters>>?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Mon assistant Budget repas"

@@ -68,7 +68,7 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
         let cell = tableView.dequeueReusableCell(withIdentifier: "pretendBasketCell", for: indexPath) as! PretendBasketTableViewCell
         cell.delegate = self
         
-        cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name
+        cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name + " " + String(PretendBasket.shared.items[indexPath.row].quantity)
         let url = URL(string: PretendBasket.shared.items[indexPath.row].imageUrl ?? "")
         cell.cellImageView.image = UIImage(named: "")
         cell.productId = PretendBasket.shared.items[indexPath.row].id
@@ -132,11 +132,12 @@ class PretendBasketTableViewCell: UITableViewCell {
         guard let id = productId else { return }
         let tags = BasketTag.init(
             params: BasketTagParameters(
-                onShowRecipeDetails: { [weak self] recipeId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
-                }),
-            baseViews: BaseViewParameters(),
+                actions: BasketTagActions(
+                    onShowRecipeDetails: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
+                })),
+            baseViews: BaseComponentViewParameters(),
             retailerProductId: id,
             scrollAlignment: .horizontal)
         let hostingController = UIHostingController(rootView: tags)

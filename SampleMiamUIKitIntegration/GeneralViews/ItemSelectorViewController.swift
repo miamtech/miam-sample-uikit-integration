@@ -11,14 +11,14 @@ import MiamIOSFramework
 import MealzUIModuleIOS
 
 class ItemSelectorViewController: UIViewController {
-//    public let recipeId: String
+    //    public let recipeId: String
     public let ingredientId: String
     
     init(
-//        _ recipeId: String,
+        //        _ recipeId: String,
         ingredientId: String
     ) {
-//        self.recipeId = recipeId
+        //        self.recipeId = recipeId
         self.ingredientId = ingredientId
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,29 +28,34 @@ class ItemSelectorViewController: UIViewController {
     }
     
     deinit { print("deinit: ItemSelectorViewController")}
-
+    
     // Your SwiftUI View
     var swiftUIView: ItemSelector<
         ItemSelectorParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return ItemSelector(
-            params: ItemSelectorParameters(onItemSelected: { [weak self] in
-                // added small delay to ensure image reloads
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.popViewController(animated: true)
-                }
-            }), 
-            baseViews: BaseViewParameters(),
+            params: ItemSelectorParameters(
+                actions: ItemSelectorActions(
+                    onItemSelected: { [weak self] in
+                        // added small delay to ensure image reloads
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
+                            guard let strongSelf = self else { return }
+                            strongSelf.navigationController?.popViewController(animated: true)
+                        }
+                    },
+                    onSeeProductDetails: { _ in }
+                )
+            ),
+            baseViews: BasePageViewParameters(),
             ingredientId: ingredientId)
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<ItemSelector<
         ItemSelectorParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Mon assistant Budget repas"

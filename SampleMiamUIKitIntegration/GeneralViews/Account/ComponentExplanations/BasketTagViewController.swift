@@ -28,15 +28,16 @@ class BasketTagViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: BasketTag<
         BasketTagParameters,
-        BaseViewParameters
+        BaseComponentViewParameters
     > {
         return BasketTag.init(
             params: BasketTagParameters(
-                onShowRecipeDetails: { [weak self] recipeId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                }),
-            baseViews: BaseViewParameters(),
+                actions: BasketTagActions(
+                    onShowRecipeDetails: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                })),
+            baseViews: BaseComponentViewParameters(),
             retailerProductId: retailerProductId,
             scrollAlignment: .horizontal
         )
@@ -45,7 +46,7 @@ class BasketTagViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<BasketTag<
         BasketTagParameters,
-        BaseViewParameters
+        BaseComponentViewParameters
 >>?
 
     override func viewDidLoad() {

@@ -12,8 +12,8 @@ import MealzUIModuleIOS
 import miamCore
 
 // simple function to share navigation between CatalogView & CatalogResultsView
-public func sharedCatalogViewParams(navigationController: UINavigationController?) -> CatalogParameters {
-    return CatalogParameters(
+public func sharedCatalogActions(navigationController: UINavigationController?) -> CatalogActions {
+    return CatalogActions(
         onFiltersTapped: { filterInstance in
             navigationController?.pushViewController(FiltersViewController(filterInstance), animated: true)
         },
@@ -31,8 +31,7 @@ public func sharedCatalogViewParams(navigationController: UINavigationController
         },
         onMealsInBasketButtonTapped: {
             navigationController?.pushViewController(MyMealsViewController(), animated: true)
-        },
-        viewOptions: CatalogViewOptions(useMealPlanner: true)
+        }
     )
 }
 
@@ -42,11 +41,14 @@ class CatalogViewController: UIViewController {
     var swiftUIView: CatalogView<
         CatalogParameters,
         CatalogPackageRowParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
-            return CatalogView.init(
-                params: sharedCatalogViewParams(navigationController: self.navigationController),
-                catalogPackageRowParams: CatalogPackageRowParameters(
+        return CatalogView.init(
+            params: CatalogParameters(
+                actions: sharedCatalogActions(navigationController: self.navigationController),
+                viewOptions: CatalogViewOptions()),
+            catalogPackageRowParams: CatalogPackageRowParameters(
+                actions: CatalogPackageRowActions(
                     onSeeAllRecipes: { [weak self] categoryId, categoryTitle in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(
@@ -58,21 +60,22 @@ class CatalogViewController: UIViewController {
                     onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                    }, onRecipeCallToActionTapped: { [weak self] recipeId in
-                        guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
                     },
-                    viewOptions: CatalogPackageRowViewOptions(recipeCard: TypeSafeCatalogRecipeCard(MealzRecipeCard()))
-                ),
-                baseViews: BaseViewParameters(),
-                gridConfig: localRecipesListViewConfig
-            )
-        }
+                    onRecipeCallToActionTapped: { [weak self] recipeId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                    }),
+                viewOptions: CatalogPackageRowViewOptions(recipeCard: TypeSafeCatalogRecipeCard(MealzRecipeCard()))
+            ),
+            baseViews: BasePageViewParameters(),
+            gridConfig: localRecipesListViewConfig
+        )
+    }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogView<
         CatalogParameters,
         CatalogPackageRowParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
     
     override func viewDidLoad() {

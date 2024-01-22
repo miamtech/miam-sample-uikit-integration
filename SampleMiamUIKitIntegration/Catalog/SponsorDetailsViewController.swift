@@ -29,16 +29,16 @@ class SponsorDetailsViewController: UIViewController {
     deinit { print("deinit: SponsorDetailsViewController") }
     // Your SwiftUI View
     var swiftUIView: SponsorDetails<
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return SponsorDetails.init(
-            baseViews: BaseViewParameters(),
+            baseViews: BasePageViewParameters(),
             sponsor: sponsor
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<SponsorDetails<
-        BaseViewParameters>>?
+        BasePageViewParameters>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

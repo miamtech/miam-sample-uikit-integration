@@ -31,29 +31,31 @@ class RecipeDetailsViewController: UIViewController {
     var swiftUIView: RecipeDetails<
         RecipeDetailParameters,
         RecipeDetailsProductParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return RecipeDetails.init(
             params: RecipeDetailParameters(
-                onClosed: { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.popViewController(animated: true)
-                },
-                onSponsorDetailsTapped: { [weak self] sponsor in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
-                },
-                onContinueToBasket: { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
-                },
-                onReplaceProduct: { [weak self] ingredientId in
-                    guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(ItemSelectorViewController(ingredientId: ingredientId), animated: true)
-                }
-               ),
+                actions: RecipeDetailsActions(
+                    onClosed: { [weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.popViewController(animated: true)
+                    },
+                    onSponsorDetailsTapped: { [weak self] sponsor in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(SponsorDetailsViewController(sponsor: sponsor), animated: true)
+                    },
+                    onContinueToBasket: { [weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+                    },
+                    onReplaceProduct: { [weak self] ingredientId in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(ItemSelectorViewController(ingredientId: ingredientId), animated: true)
+                    }
+                )
+            ),
             productParams: RecipeDetailsProductParameters(),
-            baseViews: BaseViewParameters(),
+            baseViews: BasePageViewParameters(),
             recipeId: recipeId,
             isForMealPlanner: isForMealPlanner)
     }
@@ -62,9 +64,9 @@ class RecipeDetailsViewController: UIViewController {
     private var hostingController: UIHostingController<RecipeDetails<
         RecipeDetailParameters,
         RecipeDetailsProductParameters,
-        BaseViewParameters
->>?
-
+        BasePageViewParameters
+    >>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Recipe Details"

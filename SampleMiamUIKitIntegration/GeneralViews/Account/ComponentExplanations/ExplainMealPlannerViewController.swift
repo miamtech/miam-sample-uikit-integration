@@ -26,10 +26,10 @@ class ExplainMealPlannerViewController: UIViewController {
         self.view.addSubview(buttonText)
         
         let mealzMealPlannerCallToAction = MealzMealPlannerCallToAction()
-        let mealzMealPlannerCallToActionView = mealzMealPlannerCallToAction.content { [weak self] in
+        let mealzMealPlannerCallToActionView = mealzMealPlannerCallToAction.content(params: MealPlannerCTAViewParameters() { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
-        }
+        })
         let mealPlannerCTA = UIHostingController(rootView: mealzMealPlannerCallToActionView)
 
         // Create a vertical stack view to layout the label and buttons
