@@ -49,18 +49,18 @@ public class MiamManager: ObservableObject {
         Mealz.shared.notifications.toaster.listen(callBack: { event in
             switch event as? ToasterNotification {
             case ToasterNotification.RecipeAdded():
-                print("MealzNotification: Recipe Added")
+                LogHandler.companion.info("MealzNotification: Recipe Added")
             case ToasterNotification.RecipeLiked():
-                print("MealzNotification: Recipe Liked")
+                LogHandler.companion.info("MealzNotification: Recipe Liked")
             default:
                 break
             }
         })
         // listen to analytics events
         Mealz.shared.notifications.analytics.listen { event in
-            print("Mealz.Notifications.analytics \(String(describing: event))")
+            LogHandler.companion.info("Mealz.Notifications.analytics \(String(describing: event))")
         }
         
-        LogHandler.companion.logLevel = .errorsAndWarns
+        LogHandler.companion.logLevel = .allLogs
     }
 }

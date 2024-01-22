@@ -16,21 +16,23 @@ class PreferencesSearchViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: PreferencesSearch<
         PreferencesSearchParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return PreferencesSearch.init(
             params: PreferencesSearchParameters(
+                actions: PreferencesSearchActions(
                 onClosed: { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.navigationController?.popViewController(animated: true)
-                }),
-            baseViews: BaseViewParameters()
+                })
+                ),
+            baseViews: BasePageViewParameters()
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<PreferencesSearch<
         PreferencesSearchParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
 
     override func viewDidLoad() {

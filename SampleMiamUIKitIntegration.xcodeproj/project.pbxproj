@@ -12,6 +12,7 @@
 		262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */; };
 		263462872AE7CD90004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263462892AE7CD90004C1C63 /* Localizable.strings */; };
 		2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2634628E2AE7CDA4004C1C63 /* Localizable.strings */; };
+		2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 2642567E2B5E78F600010D91 /* MealzUIModuleIOS */; };
 		264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */; };
 		264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */; };
 		264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */; };
@@ -23,7 +24,6 @@
 		266175292ACAF3B400D89390 /* MyMealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175282ACAF3B400D89390 /* MyMealsViewController.swift */; };
 		266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */; };
 		2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */; };
-		2670D3EA2B56E8E60093E0FC /* MealzUIModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 2670D3E92B56E8E60093E0FC /* MealzUIModuleIOS */; };
 		268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */; };
 		268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */; };
 		268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */; };
@@ -67,7 +67,6 @@
 		263462882AE7CD90004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2634628D2AE7CDA4004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
-		264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MiamNeutraliOSFramework; path = ../MiamNeutraliOSFramework; sourceTree = "<group>"; };
 		264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerBasketViewController.swift; sourceTree = "<group>"; };
 		264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecipePickerViewController.swift; sourceTree = "<group>"; };
 		264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerFormViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */,
 				3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */,
-				2670D3EA2B56E8E60093E0FC /* MealzUIModuleIOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				264A36B12A6FC39C00EA2D23 /* miam-sdk */,
-				264A36BE2A70021400EA2D23 /* MiamNeutraliOSFramework */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -350,7 +348,7 @@
 			name = SampleMiamUIKitIntegration;
 			packageProductDependencies = (
 				3976C6832B1748EE00151D08 /* MiamIOSFramework */,
-				2670D3E92B56E8E60093E0FC /* MealzUIModuleIOS */,
+				2642567E2B5E78F600010D91 /* MealzUIModuleIOS */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -383,8 +381,8 @@
 			mainGroup = BF85056E28578EF800651864;
 			packageReferences = (
 				26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				3976C67F2B1748DC00151D08 /* XCLocalSwiftPackageReference "../MiamNeutraliOSFramework" */,
 				3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */,
+				2642567D2B5E78F600010D91 /* XCLocalSwiftPackageReference "../MealzUIModuleIOS" */,
 			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
@@ -623,7 +621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
@@ -654,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
@@ -702,9 +700,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		3976C67F2B1748DC00151D08 /* XCLocalSwiftPackageReference "../MiamNeutraliOSFramework" */ = {
+		2642567D2B5E78F600010D91 /* XCLocalSwiftPackageReference "../MealzUIModuleIOS" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../MiamNeutraliOSFramework;
+			relativePath = ../MealzUIModuleIOS;
 		};
 		3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
@@ -724,7 +722,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2670D3E92B56E8E60093E0FC /* MealzUIModuleIOS */ = {
+		2642567E2B5E78F600010D91 /* MealzUIModuleIOS */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MealzUIModuleIOS;
 		};

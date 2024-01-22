@@ -53,32 +53,34 @@ class RecipeCarouselViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: RecipeCarousel<
         RecipeCarouselParameters,
-        BaseViewParameters
+        BaseComponentViewParameters
     > {
         let params = RecipeCarouselParameters(
-            onShowRecipeDetails: { [weak self] recipeId in
-                guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-            }, onRecipeCallToActionTapped: { [weak self] recipeId in
-                guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
-            })
+            actions: RecipeCarouselActions(
+                onShowRecipeDetails: { [weak self] recipeId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                }, onRecipeCallToActionTapped: { [weak self] recipeId in
+                    guard let strongSelf = self else { return }
+                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+                })
+        )
         if let productId {
             return RecipeCarousel.init(
                 params: params,
-                baseViews: BaseViewParameters(),
+                baseViews: BaseComponentViewParameters(),
                 gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 productId: productId
-                )
+            )
         } else if let criteria {
             return RecipeCarousel.init(
                 params: params,
-                baseViews: BaseViewParameters(),
+                baseViews: BaseComponentViewParameters(),
                 gridConfig: gridConfig,
                 numberOfResults: numberOfResults,
                 criteria: criteria
-                )
+            )
         } else {
             fatalError("Neither productId nor criteria are available")
         }
@@ -88,9 +90,9 @@ class RecipeCarouselViewController: UIViewController {
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<RecipeCarousel<
         RecipeCarouselParameters,
-        BaseViewParameters
->>?
-
+        BaseComponentViewParameters
+    >>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Recipe Carousel"

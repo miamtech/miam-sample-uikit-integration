@@ -26,27 +26,28 @@ class CatalogSearchViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: CatalogSearch<
         CatalogSearchParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return CatalogSearch.init(
             params: CatalogSearchParameters(
-                onApplied: { [weak self] in
-                    // complex to remove this view from stack after redirecting to Results page so Results can directly navigate back to CatalogView
-                    guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
-                    let viewB = CatalogResultsViewController()
-                    strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
-                }
-            ),
-            baseViews: BaseViewParameters(),
+                actions: CatalogSearchActions(
+                    onApplied: { [weak self] in
+                        // complex to remove this view from stack after redirecting to Results page so Results can directly navigate back to CatalogView
+                        guard let strongSelf = self, let viewA = self?.navigationController?.viewControllers.first else { return }
+                        let viewB = CatalogResultsViewController()
+                        strongSelf.navigationController?.setViewControllers([viewA, viewB], animated: true)
+                    }
+                )),
+            baseViews: BasePageViewParameters(),
             filterInstance: filterInstance
         )
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogSearch<
         CatalogSearchParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Search"

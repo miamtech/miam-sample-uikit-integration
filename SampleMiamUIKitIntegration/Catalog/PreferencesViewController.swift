@@ -19,10 +19,11 @@ class PreferencesViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: Preferences<
         PreferencesParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
             return Preferences.init(
                 params: PreferencesParameters(
+                    actions: PreferencesActions(
                     onClosed: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.popViewController(animated: true)
@@ -30,14 +31,15 @@ class PreferencesViewController: UIViewController {
                     onGoToSearch: { [weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(PreferencesSearchViewController(), animated: true)
-                    }),
-                baseViews: BaseViewParameters()
+                    })
+                    ),
+                baseViews: BasePageViewParameters()
             )
         }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<Preferences<
         PreferencesParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
     
     override func viewDidLoad() {

@@ -15,22 +15,24 @@ class MealPlannerFormViewController: UIViewController {
     // Your SwiftUI View
     var swiftUIView: MealPlannerForm<
         MealPlannerFormParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
         return MealPlannerForm(
             params: MealPlannerFormParameters(
-                onNavigateToMealPlannerResults: { [weak self] recipes in
-                guard let strongSelf = self else { return }
-                strongSelf.navigationController?.pushViewController(MealPlannerResultsViewController(), animated: true)
-                }),
-            baseViews: BaseViewParameters()
+                actions: MealPlannerFormActions(
+                    onNavigateToMealPlannerResults: { [weak self] recipes in
+                        guard let strongSelf = self else { return }
+                        strongSelf.navigationController?.pushViewController(MealPlannerResultsViewController(), animated: true)
+                    })
+            ),
+            baseViews: BasePageViewParameters()
         )
-           
+        
     }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<MealPlannerForm<
         MealPlannerFormParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
     
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class MealPlannerFormViewController: UIViewController {
         navigationItem.title = "Mon assistant Budget repas"
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Retour", style: .plain, target: nil, action: nil)
-
+        
         // Initialize the hosting controller with your SwiftUI view
         hostingController = UIHostingController(rootView: swiftUIView)
         guard let hostingController = hostingController, let hcView = hostingController.view

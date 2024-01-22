@@ -51,7 +51,6 @@ class DemoBasketService: BasketSubscriber, BasketPublisher {
     private func updateBasketFromExternalSource(products: [SupplierProduct]) {
         // we need to update the basket all at once, otherwise we will have issues with Mealz updating too frequently
         var basketCopy = PretendBasket.shared.items
-        
         for product in products {
             // check if we already have the product to remove or update info
             if let productToUpdateIndex = PretendBasket.shared.items.firstIndex(where: { $0.id == product.id }) {
@@ -62,10 +61,10 @@ class DemoBasketService: BasketSubscriber, BasketPublisher {
                 } else {
                     let item = PretendBasket.shared.items[productToUpdateIndex]
                     basketCopy[productToUpdateIndex] = PretendProduct(
-                        id: item.id,
-                        name: item.name,
-                        quantity: item.quantity,
-                        imageUrl: item.imageUrl)
+                        id: product.id,
+                        name: product.name ?? item.name,
+                        quantity: Int(product.quantity),
+                        imageUrl: product.imageURL ?? item.imageUrl)
                 }
             }
             else { // otherwise add it to the client basket

@@ -31,16 +31,20 @@ class ExplainBasketTagViewController: UIViewController {
         
         let sampleBasketProduct = MealzBasketProduct()
         let sampleBasketProductView = sampleBasketProduct.content(
-            quantity: .constant(4),
-            data: BasketProductData(
-                price: 4.23,
-                name: "Mozzarella",
-                description: "Fresh cheese from southern France",
-                pictureURL: (URL(string: "https://storage.googleapis.com/assets.miam.tech/pictures/recipes/studios-fg/14654-quiche-courgettes-et-mozzarella/14654-quiche-courgettes-et-mozzarella_1280x853.jpg") ?? URL(string: ""))!,
-                sharedRecipeCount: 0,
-                unitPrice: 4.23,
-                isReloading: false),
-            actions: BasketProductActions(onDeleteProduct: {}, onQuantityChanged: { _ in }, onChangeProduct: {})).onTapGesture { [weak self] in
+            params: BasketProductParameters(
+                data: BasketProductData(
+                    price: 4.23,
+                    name: "Mozzarella",
+                    description: "Fresh cheese from southern France",
+                    pictureURL: (URL(string: "https://storage.googleapis.com/assets.miam.tech/pictures/recipes/studios-fg/14654-quiche-courgettes-et-mozzarella/14654-quiche-courgettes-et-mozzarella_1280x853.jpg") ?? URL(string: ""))!,
+                    sharedRecipeCount: 0,
+                    unitPrice: 4.23,
+                    isReloading: false), 
+                quantity: .constant(4),
+                onDeleteProduct: {},
+                onQuantityChanged: { _ in },
+                onChangeProduct: {}))
+            .onTapGesture { [weak self] in
                 
                 guard let strongSelf = self else { return }
                 strongSelf.navigationController?.pushViewController(BasketTagViewController("239658"), animated: true)

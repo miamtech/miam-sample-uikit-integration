@@ -34,32 +34,36 @@ class CatalogResultsViewController: UIViewController {
     var swiftUIView: CatalogResults<
         CatalogParameters,
         CatalogRecipesListParameters,
-        BaseViewParameters
+        BasePageViewParameters
     > {
-            return CatalogResults(
-                params: sharedCatalogViewParams(navigationController: self.navigationController),
-                recipesListParams: CatalogRecipesListParameters(
-                    onNoResultsRedirect: { [weak self] in },
+        return CatalogResults(
+            params: CatalogParameters(
+                actions: sharedCatalogActions(navigationController: self.navigationController),
+                viewOptions: CatalogViewOptions()),
+            recipesListParams: CatalogRecipesListParameters(
+                actions: CatalogRecipesListActions(
                     onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
                         strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
-                    },
+                    }, 
+                    onNoResultsRedirect: { [weak self] in },
                     onRecipeCallToActionTapped: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(MyMealsViewController(), animated: true)
+                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                     }
-                ),
-                baseViews: BaseViewParameters(),
-                categoryId: categoryId,
-                title: categoryTitle,
-                gridConfig: localRecipesListViewConfig
-            )
-        }
+                )
+            ),
+            baseViews: BasePageViewParameters(),
+            categoryId: categoryId,
+            title: categoryTitle,
+            gridConfig: localRecipesListViewConfig
+        )
+    }
     // The hosting controller for your SwiftUI view
     private var hostingController: UIHostingController<CatalogResults<
         CatalogParameters,
         CatalogRecipesListParameters,
-        BaseViewParameters
+        BasePageViewParameters
     >>?
     
     override func viewDidLoad() {
