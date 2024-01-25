@@ -56,6 +56,7 @@ class CatalogResultsViewController: UIViewController {
             baseViews: BasePageViewParameters(),
             categoryId: categoryId,
             title: categoryTitle,
+            showMealsInBasketButton: true,
             gridConfig: localRecipesListViewConfig
         )
     }

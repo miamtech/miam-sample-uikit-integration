@@ -61,6 +61,9 @@ public class MiamManager: ObservableObject {
             LogHandler.companion.info("Mealz.Notifications.analytics \(String(describing: event))")
         }
         
-        LogHandler.companion.logLevel = .allLogs
+        // show "Sponsored" tag on products that are sponsored
+        Mealz.shared.environment.setAllowsSponsoredProducts(isAllowed: true)
+        
+        LogHandler.companion.logLevel = .errorsAndWarns
     }
 }

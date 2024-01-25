@@ -15,6 +15,7 @@ var myMealsBasketViewConfig = BasketRecipesGridConfig(
     recipeSpacing: CGSize(width: 5, height: 5),
     productSpacing: CGSize(width: 6, height: 6),
     recipeOverviewDimensions: CGSize(width: 300, height: 180),
+    heightOfFooter: 150,
     isExpandable: true)
 
 class MyMealsViewController: UIViewController {

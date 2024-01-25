@@ -53,7 +53,7 @@ class DemoBasketService: BasketSubscriber, BasketPublisher {
         var basketCopy = PretendBasket.shared.items
         for product in products {
             // check if we already have the product to remove or update info
-            if let productToUpdateIndex = PretendBasket.shared.items.firstIndex(where: { $0.id == product.id }) {
+            if let productToUpdateIndex = basketCopy.firstIndex(where: { $0.id == product.id }) {
                 if product.quantity == 0 { // we know an item is deleted if the qty is 0
                     if basketCopy.indices.contains(productToUpdateIndex) {
                         basketCopy.remove(at: productToUpdateIndex)
@@ -61,7 +61,7 @@ class DemoBasketService: BasketSubscriber, BasketPublisher {
                 } else {
                     let item = PretendBasket.shared.items[productToUpdateIndex]
                     basketCopy[productToUpdateIndex] = PretendProduct(
-                        id: product.id,
+                        id: item.id,
                         name: product.name ?? item.name,
                         quantity: Int(product.quantity),
                         imageUrl: product.imageURL ?? item.imageUrl)
