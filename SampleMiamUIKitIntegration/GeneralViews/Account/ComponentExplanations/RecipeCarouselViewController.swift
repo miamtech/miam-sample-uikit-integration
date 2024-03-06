@@ -59,10 +59,10 @@ class RecipeCarouselViewController: UIViewController {
             actions: RecipeCarouselActions(
                 onShowRecipeDetails: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+//                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 }, onRecipeCallToActionTapped: { [weak self] recipeId in
                     guard let strongSelf = self else { return }
-                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+//                    strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 })
         )
         if let productId {

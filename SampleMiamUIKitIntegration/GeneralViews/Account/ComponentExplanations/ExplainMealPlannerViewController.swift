@@ -28,7 +28,7 @@ class ExplainMealPlannerViewController: UIViewController {
         let mealzMealPlannerCallToAction = MealzMealPlannerCallToAction()
         let mealzMealPlannerCallToActionView = mealzMealPlannerCallToAction.content(params: MealPlannerCTAViewParameters() { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(MealPlannerFormViewController(), animated: true)
+            strongSelf.navigationController?.pushViewController(MealPlannerFeatureViewController(), animated: true)
         })
         let mealPlannerCTA = UIHostingController(rootView: mealzMealPlannerCallToActionView)
 

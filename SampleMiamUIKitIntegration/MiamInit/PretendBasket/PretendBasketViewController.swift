@@ -87,8 +87,8 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
 
 extension PretendBasketViewController: PretendBasketCellDelegate {
     func didSelectRecipeDetail(with recipeId: String) {
-        let detailsVC = RecipeDetailsViewController(recipeId)
-        navigationController?.pushViewController(detailsVC, animated: true)
+//        let detailsVC = RecipeDetailsViewController(recipeId)
+//        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 

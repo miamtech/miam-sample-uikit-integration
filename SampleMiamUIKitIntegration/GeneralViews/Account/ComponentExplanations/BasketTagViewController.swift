@@ -35,7 +35,7 @@ class BasketTagViewController: UIViewController {
                 actions: BasketTagActions(
                     onShowRecipeDetails: { [weak self] recipeId in
                         guard let strongSelf = self else { return }
-                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
+//                        strongSelf.navigationController?.pushViewController(RecipeDetailsViewController(recipeId), animated: true)
                 })),
             baseViews: BaseComponentViewParameters(),
             retailerProductId: retailerProductId,

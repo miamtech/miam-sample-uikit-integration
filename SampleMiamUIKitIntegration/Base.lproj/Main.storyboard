@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PEE-Na-4zE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PEE-Na-4zE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -120,9 +120,9 @@
                     <connections>
                         <segue destination="sCq-IA-sQq" kind="relationship" relationship="viewControllers" id="4Jc-fK-YCm"/>
                         <segue destination="hbC-wm-In2" kind="relationship" relationship="viewControllers" id="PCT-eE-zcc"/>
-                        <segue destination="fNK-15-XhO" kind="relationship" relationship="viewControllers" id="Zwj-Lv-DMg"/>
-                        <segue destination="Rbv-Lk-sMO" kind="relationship" relationship="viewControllers" id="FIh-Lc-iku"/>
-                        <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="HSM-Q2-Ady"/>
+                        <segue destination="GFT-kg-Axc" kind="relationship" relationship="viewControllers" id="3BM-hu-LzS"/>
+                        <segue destination="oUp-uP-BPk" kind="relationship" relationship="viewControllers" id="QSr-Um-jGD"/>
+                        <segue destination="yXg-WC-YW0" kind="relationship" relationship="viewControllers" id="yAb-wL-LkI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxY-MG-qus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -148,38 +148,19 @@
         <!--Catalog-->
         <scene sceneID="7lA-wd-dDU">
             <objects>
-                <viewController title="Catalog" id="GFT-kg-Axc" customClass="CatalogViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Catalog" id="GFT-kg-Axc" customClass="CatalogFeatureViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XNw-sd-w26">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="XoK-Pb-Ecg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Idées Repas" image="Fork" id="Aoq-4H-2JJ"/>
                     <navigationItem key="navigationItem" id="YHM-rG-Zle"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwi-cO-BFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909" y="468"/>
-        </scene>
-        <!--Idées repas-->
-        <scene sceneID="1DP-S6-w3s">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fNK-15-XhO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Idées repas" image="Fork" id="pR4-ux-lhF">
-                        <color key="badgeColor" name="miamPrimaryDark"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cpy-fm-VpG">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GFT-kg-Axc" kind="relationship" relationship="rootViewController" id="kjl-R6-xa9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jHL-7Q-5se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1816" y="402"/>
+            <point key="canvasLocation" x="596" y="-206"/>
         </scene>
         <!--Home-->
         <scene sceneID="SJq-rj-gCr">
@@ -267,7 +248,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rayons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xD-4r-IGd">
-                                <rect key="frame" x="179" y="232" width="56" height="21"/>
+                                <rect key="frame" x="175" y="232" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -281,41 +262,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwu-Sf-oCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541" y="-543"/>
+            <point key="canvasLocation" x="2540.579710144928" y="-543.08035714285711"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favoris-->
         <scene sceneID="LIh-t1-QoW">
             <objects>
-                <viewController id="oUp-uP-BPk" customClass="FavoritesViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oUp-uP-BPk" customClass="FavoritesFeatureViewController" customModule="SampleMiamUIKitIntegration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aEP-Go-Uim">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mvL-v4-pLJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Favoris" image="Heart" id="hkd-Rh-DkI"/>
                     <navigationItem key="navigationItem" id="zin-YA-hgb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-7k-IJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="264" y="623"/>
-        </scene>
-        <!--Favoris-->
-        <scene sceneID="TIj-Oh-8hb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Rbv-Lk-sMO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favoris" image="Heart" id="n2h-d3-kwl"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g0C-c9-shR">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oUp-uP-BPk" kind="relationship" relationship="rootViewController" id="Son-vs-adI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UTb-uK-UPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-678" y="623"/>
         </scene>
         <!--Rayons-->
         <scene sceneID="O91-Jo-BTw">

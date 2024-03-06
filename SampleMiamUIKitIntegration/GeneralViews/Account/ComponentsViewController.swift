@@ -48,7 +48,7 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
         
         switch option {
         case "Favorites":
-            viewController = FavoritesViewController()
+            viewController = FavoritesFeatureViewController()
         case "Meal Planner":
             viewController = ExplainMealPlannerViewController()
         case "Carousel":
