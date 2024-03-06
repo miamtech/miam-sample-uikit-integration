@@ -109,7 +109,7 @@ struct MealzViewConfig {
 //        tagButton: TypeSafeBaseButton(MealzPreferencesSearchTag())
     )
     static let catalogConfig = CatalogFeatureConstructor(
-//        useMealPlanner: false,
+        useMealPlanner: true // only if you want Meal Planner feature
 //        usesPreferences: true,
 //        baseViews: baseViews,
 //        catalogViewOptions: catalogView,

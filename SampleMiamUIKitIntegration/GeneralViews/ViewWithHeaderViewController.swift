@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import UIKit
 import MealzUIModuleIOS
+import MealzNavModuleIOS
 
 class ViewWithHeaderViewController: UIViewController {
     @IBOutlet weak var totalAmountBackground: UIView!
@@ -21,8 +22,11 @@ class ViewWithHeaderViewController: UIViewController {
     private var cancellables: Set<AnyCancellable> = []
     
     @IBAction func showMenu() {
-        guard let vc = self.embeddedVC?.selectedViewController as? UINavigationController else { return }
-        vc.popViewController(animated: true)
+        if let vc = self.embeddedVC?.selectedViewController as? UINavigationController {
+            vc.popViewController(animated: true)
+        } else if  let vc = self.embeddedVC?.selectedViewController as? AbstractMealzViewController  {
+            vc.feature?.popViewController(animated: true)
+        }
     }
     
     @IBAction func showBasket() {
@@ -81,7 +85,12 @@ extension ViewWithHeaderViewController: UINavigationControllerDelegate {
 
 extension ViewWithHeaderViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if let vc = viewController as? UINavigationController {
+        if let vc = viewController as? AbstractMealzViewController {
+            vc.feature?.delegate = self
+            if let count = vc.feature?.viewControllers.count {
+                checkLeftButton(countViewInStack: count)
+            }
+        } else if let vc = viewController as? UINavigationController {
             vc.delegate = self
             checkLeftButton(countViewInStack: vc.viewControllers.count)
         }
