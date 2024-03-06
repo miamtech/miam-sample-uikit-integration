@@ -7,23 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26285D882A81415600E41EB7 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D872A81415500E41EB7 /* FiltersViewController.swift */; };
-		26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */; };
-		262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */; };
 		263462872AE7CD90004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263462892AE7CD90004C1C63 /* Localizable.strings */; };
 		2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2634628E2AE7CDA4004C1C63 /* Localizable.strings */; };
 		2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 2642567E2B5E78F600010D91 /* MealzUIModuleIOS */; };
-		264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */; };
-		264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */; };
-		264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */; };
-		264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */; };
-		264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */; };
-		264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */; };
 		265750DE2AE66B4F00E186F7 /* MiamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265750DD2AE66B4F00E186F7 /* MiamManager.swift */; };
 		265750E02AE6748D00E186F7 /* PretendBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265750DF2AE6748D00E186F7 /* PretendBasketViewController.swift */; };
-		266175292ACAF3B400D89390 /* MyMealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175282ACAF3B400D89390 /* MyMealsViewController.swift */; };
-		266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */; };
-		2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */; };
+		268269282B98699B0014BA35 /* CatalogFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268269272B98699B0014BA35 /* CatalogFeatureViewController.swift */; };
+		2682692B2B9869C90014BA35 /* MealzNavModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 2682692A2B9869C90014BA35 /* MealzNavModuleIOS */; };
+		2682692D2B9869E70014BA35 /* FavoritesFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682692C2B9869E70014BA35 /* FavoritesFeatureViewController.swift */; };
+		2682692F2B986A010014BA35 /* MyMealsFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682692E2B986A010014BA35 /* MyMealsFeatureViewController.swift */; };
+		268269312B986A4D0014BA35 /* MealPlannerFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268269302B986A4D0014BA35 /* MealPlannerFeatureViewController.swift */; };
+		268269332B98722D0014BA35 /* MealzViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268269322B98722D0014BA35 /* MealzViewConfig.swift */; };
+		268269352B98AB660014BA35 /* AbstractMealzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268269342B98AB660014BA35 /* AbstractMealzViewController.swift */; };
 		268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */; };
 		268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */; };
 		268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */; };
@@ -31,10 +26,7 @@
 		26B8477B2AE90178000C9AF1 /* PretendProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477A2AE90178000C9AF1 /* PretendProduct.swift */; };
 		26B8477D2AE9018F000C9AF1 /* PretendBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */; };
 		26B847892AE96E54000C9AF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */; };
-		26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */; };
-		26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */; };
-		26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */; };
-		26F51A322ABC487C00DCD031 /* CatalogResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */; };
+		26E8FA352B613FE800EE6478 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 26E8FA342B613FE800EE6478 /* FirebaseAppDistribution-Beta */; };
 		395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */; };
 		3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 3976C6832B1748EE00151D08 /* MiamIOSFramework */; };
 		3976C6872B17518600151D08 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C6862B17518600151D08 /* SettingViewController.swift */; };
@@ -57,9 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26285D872A81415500E41EB7 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
-		26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
-		262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesSearchViewController.swift; sourceTree = "<group>"; };
 		263462802AE7B0D6004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		263462812AE7B0D6004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		263462822AE7B262004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -67,17 +56,14 @@
 		263462882AE7CD90004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2634628D2AE7CDA4004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
-		264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerBasketViewController.swift; sourceTree = "<group>"; };
-		264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecipePickerViewController.swift; sourceTree = "<group>"; };
-		264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerFormViewController.swift; sourceTree = "<group>"; };
-		264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerResultsViewController.swift; sourceTree = "<group>"; };
-		264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectorViewController.swift; sourceTree = "<group>"; };
-		264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerRecapPurchaseViewController.swift; sourceTree = "<group>"; };
 		265750DD2AE66B4F00E186F7 /* MiamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiamManager.swift; sourceTree = "<group>"; };
 		265750DF2AE6748D00E186F7 /* PretendBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendBasketViewController.swift; sourceTree = "<group>"; };
-		266175282ACAF3B400D89390 /* MyMealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMealsViewController.swift; sourceTree = "<group>"; };
-		266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorDetailsViewController.swift; sourceTree = "<group>"; };
-		2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		268269272B98699B0014BA35 /* CatalogFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFeatureViewController.swift; sourceTree = "<group>"; };
+		2682692C2B9869E70014BA35 /* FavoritesFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFeatureViewController.swift; sourceTree = "<group>"; };
+		2682692E2B986A010014BA35 /* MyMealsFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMealsFeatureViewController.swift; sourceTree = "<group>"; };
+		268269302B986A4D0014BA35 /* MealPlannerFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerFeatureViewController.swift; sourceTree = "<group>"; };
+		268269322B98722D0014BA35 /* MealzViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealzViewConfig.swift; sourceTree = "<group>"; };
+		268269342B98AB660014BA35 /* AbstractMealzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMealzViewController.swift; sourceTree = "<group>"; };
 		268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsViewController.swift; sourceTree = "<group>"; };
 		268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCarouselViewController.swift; sourceTree = "<group>"; };
 		268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainMealPlannerViewController.swift; sourceTree = "<group>"; };
@@ -85,10 +71,6 @@
 		26B8477A2AE90178000C9AF1 /* PretendProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendProduct.swift; sourceTree = "<group>"; };
 		26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendBasket.swift; sourceTree = "<group>"; };
 		26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSearchViewController.swift; sourceTree = "<group>"; };
-		26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResultsViewController.swift; sourceTree = "<group>"; };
 		395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithHeaderViewController.swift; sourceTree = "<group>"; };
 		3976C6862B17518600151D08 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3976C6892B17598D00151D08 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -116,26 +98,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2682692B2B9869C90014BA35 /* MealzNavModuleIOS in Frameworks */,
 				2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */,
 				3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */,
+				26E8FA352B613FE800EE6478 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26285D892A82B2EA00E41EB7 /* MealPlanner */ = {
-			isa = PBXGroup;
-			children = (
-				264A36C92A7003F200EA2D23 /* MealPlannerResultsViewController.swift */,
-				264A36C42A7003CC00EA2D23 /* MealPlannerBasketViewController.swift */,
-				264A36CE2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift */,
-				264A36C82A7003F200EA2D23 /* MealPlannerFormViewController.swift */,
-				264A36C62A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift */,
-			);
-			path = MealPlanner;
-			sourceTree = "<group>";
-		};
 		263462842AE7CD46004C1C63 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,27 +125,28 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		266175272ACAF3A200D89390 /* MyMeals */ = {
-			isa = PBXGroup;
-			children = (
-				266175282ACAF3B400D89390 /* MyMealsViewController.swift */,
-			);
-			path = MyMeals;
-			sourceTree = "<group>";
-		};
 		2672B0242AB9CB31008D2327 /* GeneralViews */ = {
 			isa = PBXGroup;
 			children = (
 				6E6173E42B1500BA00C18B86 /* Account */,
 				6E6173E12B15006400C18B86 /* SelectStore */,
-				264A36CA2A7003F200EA2D23 /* ItemSelectorViewController.swift */,
 				395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */,
-				26C8A8F22AC1D77800090225 /* FavoritesViewController.swift */,
-				2670BA032ACF087600A188AC /* RecipeDetailsViewController.swift */,
 				6E6173E62B163DC300C18B86 /* HomeViewController.swift */,
 				6E6173E82B16465F00C18B86 /* ProductView.swift */,
 			);
 			path = GeneralViews;
+			sourceTree = "<group>";
+		};
+		268269262B98681A0014BA35 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				268269272B98699B0014BA35 /* CatalogFeatureViewController.swift */,
+				2682692C2B9869E70014BA35 /* FavoritesFeatureViewController.swift */,
+				2682692E2B986A010014BA35 /* MyMealsFeatureViewController.swift */,
+				268269302B986A4D0014BA35 /* MealPlannerFeatureViewController.swift */,
+				268269342B98AB660014BA35 /* AbstractMealzViewController.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		268CC3532AE286D60065FEFC /* ComponentExplanations */ = {
@@ -196,20 +169,6 @@
 				26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */,
 			);
 			path = PretendBasket;
-			sourceTree = "<group>";
-		};
-		26E0D9892A94E21400EA7DDD /* Catalog */ = {
-			isa = PBXGroup;
-			children = (
-				262BEA4C2AC713FC00E7835D /* PreferencesSearchViewController.swift */,
-				26285D872A81415500E41EB7 /* FiltersViewController.swift */,
-				26285D8A2A82B44000E41EB7 /* CatalogViewController.swift */,
-				26F51A312ABC487C00DCD031 /* CatalogResultsViewController.swift */,
-				26C8A8EE2ABC78D100090225 /* CatalogSearchViewController.swift */,
-				26C8A8F02ABDEC9C00090225 /* PreferencesViewController.swift */,
-				266175502ACC4A5C00D89390 /* SponsorDetailsViewController.swift */,
-			);
-			path = Catalog;
 			sourceTree = "<group>";
 		};
 		3976C6852B1750B500151D08 /* Settings */ = {
@@ -279,6 +238,7 @@
 				26B847792AE90156000C9AF1 /* PretendBasket */,
 				265750DD2AE66B4F00E186F7 /* MiamManager.swift */,
 				6EA2E5322B30551A007B7567 /* DemoBasketService.swift */,
+				268269322B98722D0014BA35 /* MealzViewConfig.swift */,
 			);
 			path = MiamInit;
 			sourceTree = "<group>";
@@ -311,15 +271,13 @@
 		BF85057928578EF800651864 /* SampleMiamUIKitIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				268269262B98681A0014BA35 /* Features */,
 				6E99487B2B31D00F00E36BD7 /* Utils */,
 				6EA2E5312B3054EA007B7567 /* MiamInit */,
 				3976C6852B1750B500151D08 /* Settings */,
 				26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */,
 				263462842AE7CD46004C1C63 /* Localization */,
-				266175272ACAF3A200D89390 /* MyMeals */,
 				2672B0242AB9CB31008D2327 /* GeneralViews */,
-				26E0D9892A94E21400EA7DDD /* Catalog */,
-				26285D892A82B2EA00E41EB7 /* MealPlanner */,
 				BF85057A28578EF800651864 /* AppDelegate.swift */,
 				BF85057C28578EF800651864 /* SceneDelegate.swift */,
 				BF85058028578EF800651864 /* Main.storyboard */,
@@ -349,6 +307,8 @@
 			packageProductDependencies = (
 				3976C6832B1748EE00151D08 /* MiamIOSFramework */,
 				2642567E2B5E78F600010D91 /* MealzUIModuleIOS */,
+				26E8FA342B613FE800EE6478 /* FirebaseAppDistribution-Beta */,
+				2682692A2B9869C90014BA35 /* MealzNavModuleIOS */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -383,6 +343,7 @@
 				26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */,
 				2642567D2B5E78F600010D91 /* XCLocalSwiftPackageReference "../MealzUIModuleIOS" */,
+				268269292B9869C90014BA35 /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */,
 			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
@@ -419,36 +380,26 @@
 				6EE1F3182B270ED3001AE70C /* BasketTagViewController.swift in Sources */,
 				6EE1F3162B270E96001AE70C /* RecipeCarouselViewController.swift in Sources */,
 				6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */,
+				2682692F2B986A010014BA35 /* MyMealsFeatureViewController.swift in Sources */,
 				268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */,
-				262BEA4D2AC713FC00E7835D /* PreferencesSearchViewController.swift in Sources */,
-				264A36CF2A70045200EA2D23 /* MealPlannerRecapPurchaseViewController.swift in Sources */,
-				266175512ACC4A5C00D89390 /* SponsorDetailsViewController.swift in Sources */,
-				264A36CB2A7003F200EA2D23 /* MealPlannerFormViewController.swift in Sources */,
 				3976C6872B17518600151D08 /* SettingViewController.swift in Sources */,
 				268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */,
-				264A36CC2A7003F200EA2D23 /* MealPlannerResultsViewController.swift in Sources */,
+				268269352B98AB660014BA35 /* AbstractMealzViewController.swift in Sources */,
 				6E6173E02B15003800C18B86 /* MyStoreViewController.swift in Sources */,
-				264A36CD2A7003F200EA2D23 /* ItemSelectorViewController.swift in Sources */,
 				395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */,
 				6E6173E72B163DC300C18B86 /* HomeViewController.swift in Sources */,
-				264A36C72A7003E300EA2D23 /* MealPlannerRecipePickerViewController.swift in Sources */,
+				268269332B98722D0014BA35 /* MealzViewConfig.swift in Sources */,
 				3976C68E2B18D92E00151D08 /* ProfilViewController.swift in Sources */,
-				26285D8B2A82B44000E41EB7 /* CatalogViewController.swift in Sources */,
-				264A36C52A7003CC00EA2D23 /* MealPlannerBasketViewController.swift in Sources */,
 				3976C68A2B17598D00151D08 /* SettingsCell.swift in Sources */,
 				6E6173E32B15008900C18B86 /* ChangeStoreMapViewController.swift in Sources */,
-				266175292ACAF3B400D89390 /* MyMealsViewController.swift in Sources */,
-				26285D882A81415600E41EB7 /* FiltersViewController.swift in Sources */,
-				26C8A8EF2ABC78D100090225 /* CatalogSearchViewController.swift in Sources */,
+				268269282B98699B0014BA35 /* CatalogFeatureViewController.swift in Sources */,
 				6E99487E2B31D04300E36BD7 /* UIImageView+Extension.swift in Sources */,
-				26F51A322ABC487C00DCD031 /* CatalogResultsViewController.swift in Sources */,
 				268CC3592AE2C52C0065FEFC /* ExplainBasketTagViewController.swift in Sources */,
+				2682692D2B9869E70014BA35 /* FavoritesFeatureViewController.swift in Sources */,
 				BF85057B28578EF800651864 /* AppDelegate.swift in Sources */,
-				26C8A8F32AC1D77800090225 /* FavoritesViewController.swift in Sources */,
 				BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */,
-				26C8A8F12ABDEC9C00090225 /* PreferencesViewController.swift in Sources */,
+				268269312B986A4D0014BA35 /* MealPlannerFeatureViewController.swift in Sources */,
 				26B8477D2AE9018F000C9AF1 /* PretendBasket.swift in Sources */,
-				2670BA042ACF087600A188AC /* RecipeDetailsViewController.swift in Sources */,
 				265750E02AE6748D00E186F7 /* PretendBasketViewController.swift in Sources */,
 				26B8477B2AE90178000C9AF1 /* PretendProduct.swift in Sources */,
 				265750DE2AE66B4F00E186F7 /* MiamManager.swift in Sources */,
@@ -621,7 +572,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
@@ -652,7 +603,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VLHN7Y8965;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleMiamUIKitIntegration/Info.plist;
@@ -704,6 +655,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../MealzUIModuleIOS;
 		};
+		268269292B9869C90014BA35 /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../MealzNavModuleIOS;
+		};
 		3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../miam-sdk";
@@ -725,6 +680,15 @@
 		2642567E2B5E78F600010D91 /* MealzUIModuleIOS */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MealzUIModuleIOS;
+		};
+		2682692A2B9869C90014BA35 /* MealzNavModuleIOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MealzNavModuleIOS;
+		};
+		26E8FA342B613FE800EE6478 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
 		};
 		3976C6832B1748EE00151D08 /* MiamIOSFramework */ = {
 			isa = XCSwiftPackageProductDependency;

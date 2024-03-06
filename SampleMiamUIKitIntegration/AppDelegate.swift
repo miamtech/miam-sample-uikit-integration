@@ -10,7 +10,7 @@ import MiamIOSFramework
 import miamCore
 import SwiftUI
 import MealzUIModuleIOS
-//import FirebaseCore
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // moved all the Miam Init logic to another file, MiamManager
         _ = MiamManager.sharedInstance
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
         
         return true
     }
