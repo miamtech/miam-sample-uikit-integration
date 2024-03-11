@@ -27,7 +27,8 @@ class SettingViewController: UIViewController {
             MenuItem(picto: "SettingsBarcode", title: "settings_card"),
             MenuItem(picto: "SettingsCreditCard", title: "settings_credit_card"),
             MenuItem(picto: "SettingsAdmin", title: "settings_contact"),
-            MenuItem(picto: "SettingsLogout", title: "settings_logout", hideChevon: true)
+            MenuItem(picto: "SettingsLogout", title: "settings_logout", hideChevon: true),
+            MenuItem(picto: "mealzLogo", title: "Components", next: ComponentsViewController.self)
         ]
     }
     

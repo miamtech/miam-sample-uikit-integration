@@ -38,7 +38,6 @@
 		6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173E82B16465F00C18B86 /* ProductView.swift */; };
 		6E99487E2B31D04300E36BD7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99487D2B31D04300E36BD7 /* UIImageView+Extension.swift */; };
 		6EA2E5332B30551A007B7567 /* DemoBasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2E5322B30551A007B7567 /* DemoBasketService.swift */; };
-		6EE1F3162B270E96001AE70C /* RecipeCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1F3152B270E96001AE70C /* RecipeCarouselViewController.swift */; };
 		6EE1F3182B270ED3001AE70C /* BasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */; };
 		BF85057B28578EF800651864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057A28578EF800651864 /* AppDelegate.swift */; };
 		BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057C28578EF800651864 /* SceneDelegate.swift */; };
@@ -81,7 +80,6 @@
 		6E6173E82B16465F00C18B86 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		6E99487D2B31D04300E36BD7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		6EA2E5322B30551A007B7567 /* DemoBasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBasketService.swift; sourceTree = "<group>"; };
-		6EE1F3152B270E96001AE70C /* RecipeCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCarouselViewController.swift; sourceTree = "<group>"; };
 		6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTagViewController.swift; sourceTree = "<group>"; };
 		BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMiamUIKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF85057A28578EF800651864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */,
-				6EE1F3152B270E96001AE70C /* RecipeCarouselViewController.swift */,
 				268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */,
 				268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */,
 				268CC3582AE2C52C0065FEFC /* ExplainBasketTagViewController.swift */,
@@ -375,7 +372,6 @@
 			files = (
 				6EA2E5332B30551A007B7567 /* DemoBasketService.swift in Sources */,
 				6EE1F3182B270ED3001AE70C /* BasketTagViewController.swift in Sources */,
-				6EE1F3162B270E96001AE70C /* RecipeCarouselViewController.swift in Sources */,
 				6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */,
 				2682692F2B986A010014BA35 /* MyMealsFeatureViewController.swift in Sources */,
 				268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */,
