@@ -9,10 +9,13 @@ import UIKit
 import MiamIOSFramework
 import SwiftUI
 import miamCore
+import MealzNavModuleIOS
 
 class ExplainCarouselViewController: UIViewController {
     
     var scrollView: UIScrollView!
+    var productStackView: UIStackView!
+    var criteriaStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +25,47 @@ class ExplainCarouselViewController: UIViewController {
         
         // Set the view's background color
         self.view.backgroundColor = .white
- // -------------------- Product
+        
+        
+        // Initialize and setup the scrollView
+            scrollView = UIScrollView()
+            scrollView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(scrollView)
+        
+        // Constraints for scrollView
+            NSLayoutConstraint.activate([
+                scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            ])
+        
+        productStackView = setupProductUI()
+        criteriaStackView = setupCriteriaUI()
+        
+        // Create a vertical stack view to layout the label and buttons
+        let stackView = UIStackView(arrangedSubviews: [productStackView, criteriaStackView])
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(stackView)
+        
+        // Layout constraints for the stack view
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 20), // Left padding
+            stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -20), // Right padding
+            stackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: -40) // Adjust width for padding
+        ])
+    }
+    
+    func setupProductUI() -> UIStackView {
         let productTitle = createLabel(text: "By Product", alignment: .center, fontSize: 24, isBold: true)
         self.view.addSubview(productTitle)
         
         let productText = createLabel(text: "Passing a ``productId`` to the Recipe Carousel is when you would like to generate recipes for one particular product (ingredient). For example, if the user is on 'cream' & you would like to show recipe suggestions, you would pass in the productId of the cream product.\nThe Recipe Carousel can also have multiple rows, based on your configuration", alignment: .left, fontSize: 16)
-        productText.textColor = UIColor(Color.miamColor(.primaryDark))
+        productText.textColor = UIColor(Color.mealzColor(.standardDarkText))
         self.view.addSubview(productText)
         
         let productExampleText = createLabel(text: "Here are some examples for Mozzarella:", alignment: .center, fontSize: 16, isBold: true)
@@ -67,8 +105,10 @@ class ExplainCarouselViewController: UIViewController {
         productStackView.spacing = 10
         productStackView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(productStackView)
-        
-// -------------------- Criteria
+        return productStackView
+    }
+    
+    func setupCriteriaUI() -> UIStackView {
         let criteriaTitle = createLabel(text: "By Criteria", alignment: .center, fontSize: 24, isBold: true)
         self.view.addSubview(criteriaTitle)
         
@@ -113,21 +153,7 @@ class ExplainCarouselViewController: UIViewController {
         criteriaStackView.spacing = 10
         criteriaStackView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(criteriaStackView)
-        
-        // Create a vertical stack view to layout the label and buttons
-        let stackView = UIStackView(arrangedSubviews: [productStackView, criteriaStackView])
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(stackView)
-        
-        // Layout constraints for the stack view
-        NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: self.view.trailingAnchor, constant: -20)
-        ])
+        return criteriaStackView
     }
     
     func createLabel(text: String, alignment: NSTextAlignment, fontSize: CGFloat, isBold: Bool = false) -> UILabel {
@@ -141,15 +167,21 @@ class ExplainCarouselViewController: UIViewController {
     }
     
     // Refactored navigation function
-    func navigateProduct(withGridConfig gridConfig: RecipesCarouselGridConfig = localRecipesCarouselViewConfig) {
-        let viewController = RecipeCarouselViewController(productId: "239658", numberOfResults: 10, gridConfig: gridConfig)
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func navigateProduct(withGridConfig gridConfig: RecipesCarouselGridConfig = RecipesCarouselGridConfig()) {
+        let vc = MealzRecipeCarouselFeatureUIKit(
+            productId: "239658", numberOfResults: 10,
+            recipeCarouselFeatureConstructor: RecipeCarouselFeatureConstructor(
+                recipesCarouselGridConfig: gridConfig))
+        self.navigationController?.present(vc, animated: true)
     }
     // Refactored navigation function
-    func navigateCritera(withGridConfig gridConfig: RecipesCarouselGridConfig = localRecipesCarouselViewConfig) {
+    func navigateCritera(withGridConfig gridConfig: RecipesCarouselGridConfig = RecipesCarouselGridConfig()) {
         let criteria = SuggestionsCriteria(shelfIngredientsIds: nil, currentIngredientsIds: ["5319173", "53755728", "53755778", "53755841", "53755837"], basketIngredientsIds: nil, groupId: nil)
-        let viewController = RecipeCarouselViewController(criteria: criteria, numberOfResults: 10, gridConfig: gridConfig)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let vc = MealzRecipeCarouselFeatureUIKit(
+            criteria: criteria, numberOfResults: 10,
+            recipeCarouselFeatureConstructor: RecipeCarouselFeatureConstructor(
+                recipesCarouselGridConfig: gridConfig))
+        self.navigationController?.present(vc, animated: true)
     }
 
     // Refactored button creation function to accept a closure

@@ -64,6 +64,6 @@ public class MiamManager: ObservableObject {
         // show "Sponsored" tag on products that are sponsored
         Mealz.shared.environment.setAllowsSponsoredProducts(isAllowed: true)
         
-        LogHandler.companion.logLevel = .errorsAndWarns
+        LogHandler.companion.logLevel = .allLogs
     }
 }
