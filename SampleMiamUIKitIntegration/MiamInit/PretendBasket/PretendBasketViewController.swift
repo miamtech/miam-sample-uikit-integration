@@ -10,6 +10,7 @@ import Combine
 import MiamIOSFramework
 import MealzUIModuleIOS
 import SwiftUI
+import MealzNavModuleIOS
 
 class PretendBasketViewController: UIViewController, UITableViewDelegate,       UITableViewDataSource {
     
@@ -38,6 +39,7 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
         tableView.dataSource = self
         tableView.frame = view.bounds
         tableView.rowHeight = 100
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         view.addSubview(tableView)
         
         tableView.register(PretendBasketTableViewCell.self, forCellReuseIdentifier: "pretendBasketCell")
@@ -66,7 +68,7 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pretendBasketCell", for: indexPath) as! PretendBasketTableViewCell
-        cell.delegate = self
+        cell.parentVC = self
         
         cell.textLabel?.text = PretendBasket.shared.items[indexPath.row].name + " " + String(PretendBasket.shared.items[indexPath.row].quantity)
         let url = URL(string: PretendBasket.shared.items[indexPath.row].imageUrl ?? "")
@@ -85,18 +87,10 @@ class PretendBasketViewController: UIViewController, UITableViewDelegate,       
     }
 }
 
-extension PretendBasketViewController: PretendBasketCellDelegate {
-    func didSelectRecipeDetail(with recipeId: String) {
-//        let detailsVC = RecipeDetailsViewController(recipeId)
-//        navigationController?.pushViewController(detailsVC, animated: true)
-    }
-}
-
-
 class PretendBasketTableViewCell: UITableViewCell {
     
     var onTrashButtonTapped: (() -> Void)?
-    weak var delegate: PretendBasketCellDelegate?
+    weak var parentVC: UIViewController?
     
     var productId: String? {
         didSet {
@@ -130,27 +124,17 @@ class PretendBasketTableViewCell: UITableViewCell {
     
     private func configureBasketTags() {
         guard let id = productId else { return }
-        let tags = BasketTag.init(
-            params: BasketTagParameters(
-                actions: BasketTagActions(
-                    onShowRecipeDetails: { [weak self] recipeId in
-                        guard let strongSelf = self else { return }
-                        strongSelf.delegate?.didSelectRecipeDetail(with: recipeId)
-                })),
-            baseViews: BaseComponentViewParameters(),
-            retailerProductId: id,
-            scrollAlignment: .horizontal)
-        let hostingController = UIHostingController(rootView: tags)
         // Clear any previous tags or views in basketTags
         basketTags.subviews.forEach { $0.removeFromSuperview() }
-        guard let tagView = hostingController.view else { return }
-        basketTags.addSubview(tagView)
-        tagView.translatesAutoresizingMaskIntoConstraints = false
+        let tagView = MealzBasketTagFeatureUIKit(retailerProductId: id)
+        parentVC?.addChild(tagView)
+        basketTags.addSubview(tagView.view)
+        tagView.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([ // Add constraints for the tags view to fit in basketTags
-            tagView.leadingAnchor.constraint(equalTo: basketTags.leadingAnchor),
-            tagView.trailingAnchor.constraint(equalTo: basketTags.trailingAnchor),
-            tagView.topAnchor.constraint(equalTo: basketTags.topAnchor),
-            tagView.bottomAnchor.constraint(equalTo: basketTags.bottomAnchor)
+            tagView.view.leadingAnchor.constraint(equalTo: basketTags.leadingAnchor),
+            tagView.view.trailingAnchor.constraint(equalTo: basketTags.trailingAnchor),
+            tagView.view.topAnchor.constraint(equalTo: basketTags.topAnchor),
+            tagView.view.bottomAnchor.constraint(equalTo: basketTags.bottomAnchor)
         ])
     }
     
@@ -200,8 +184,4 @@ class PretendBasketTableViewCell: UITableViewCell {
             basketTags.trailingAnchor.constraint(equalTo: trashButton.leadingAnchor, constant: -10)
         ])
     }
-}
-
-protocol PretendBasketCellDelegate: AnyObject {
-    func didSelectRecipeDetail(with id: String)
 }

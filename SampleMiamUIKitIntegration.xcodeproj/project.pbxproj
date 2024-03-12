@@ -22,7 +22,6 @@
 		268CC3522AE284FF0065FEFC /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */; };
 		268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */; };
 		268CC3572AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */; };
-		268CC3592AE2C52C0065FEFC /* ExplainBasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CC3582AE2C52C0065FEFC /* ExplainBasketTagViewController.swift */; };
 		26B8477B2AE90178000C9AF1 /* PretendProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477A2AE90178000C9AF1 /* PretendProduct.swift */; };
 		26B8477D2AE9018F000C9AF1 /* PretendBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */; };
 		26B847892AE96E54000C9AF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */; };
@@ -38,7 +37,6 @@
 		6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6173E82B16465F00C18B86 /* ProductView.swift */; };
 		6E99487E2B31D04300E36BD7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99487D2B31D04300E36BD7 /* UIImageView+Extension.swift */; };
 		6EA2E5332B30551A007B7567 /* DemoBasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2E5322B30551A007B7567 /* DemoBasketService.swift */; };
-		6EE1F3182B270ED3001AE70C /* BasketTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */; };
 		BF85057B28578EF800651864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057A28578EF800651864 /* AppDelegate.swift */; };
 		BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85057C28578EF800651864 /* SceneDelegate.swift */; };
 		BF85058228578EF800651864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF85058028578EF800651864 /* Main.storyboard */; };
@@ -65,7 +63,6 @@
 		268CC3512AE284FF0065FEFC /* ComponentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsViewController.swift; sourceTree = "<group>"; };
 		268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCarouselViewController.swift; sourceTree = "<group>"; };
 		268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainMealPlannerViewController.swift; sourceTree = "<group>"; };
-		268CC3582AE2C52C0065FEFC /* ExplainBasketTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainBasketTagViewController.swift; sourceTree = "<group>"; };
 		26B8477A2AE90178000C9AF1 /* PretendProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendProduct.swift; sourceTree = "<group>"; };
 		26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendBasket.swift; sourceTree = "<group>"; };
 		26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -80,7 +77,6 @@
 		6E6173E82B16465F00C18B86 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		6E99487D2B31D04300E36BD7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		6EA2E5322B30551A007B7567 /* DemoBasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBasketService.swift; sourceTree = "<group>"; };
-		6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTagViewController.swift; sourceTree = "<group>"; };
 		BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMiamUIKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF85057A28578EF800651864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF85057C28578EF800651864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,10 +144,8 @@
 		268CC3532AE286D60065FEFC /* ComponentExplanations */ = {
 			isa = PBXGroup;
 			children = (
-				6EE1F3172B270ED3001AE70C /* BasketTagViewController.swift */,
 				268CC3542AE286FD0065FEFC /* ExplainCarouselViewController.swift */,
 				268CC3562AE2BCC20065FEFC /* ExplainMealPlannerViewController.swift */,
-				268CC3582AE2C52C0065FEFC /* ExplainBasketTagViewController.swift */,
 			);
 			path = ComponentExplanations;
 			sourceTree = "<group>";
@@ -371,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EA2E5332B30551A007B7567 /* DemoBasketService.swift in Sources */,
-				6EE1F3182B270ED3001AE70C /* BasketTagViewController.swift in Sources */,
 				6E6173E92B16465F00C18B86 /* ProductView.swift in Sources */,
 				2682692F2B986A010014BA35 /* MyMealsFeatureViewController.swift in Sources */,
 				268CC3552AE286FD0065FEFC /* ExplainCarouselViewController.swift in Sources */,
@@ -387,7 +380,6 @@
 				6E6173E32B15008900C18B86 /* ChangeStoreMapViewController.swift in Sources */,
 				268269282B98699B0014BA35 /* CatalogFeatureViewController.swift in Sources */,
 				6E99487E2B31D04300E36BD7 /* UIImageView+Extension.swift in Sources */,
-				268CC3592AE2C52C0065FEFC /* ExplainBasketTagViewController.swift in Sources */,
 				2682692D2B9869E70014BA35 /* FavoritesFeatureViewController.swift in Sources */,
 				BF85057B28578EF800651864 /* AppDelegate.swift in Sources */,
 				BF85057D28578EF800651864 /* SceneDelegate.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 class ComponentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private let options = ["Favorites", "Meal Planner", "Carousel", "Basket Tag"]
+    private let options = ["Favorites", "Meal Planner", "Carousel"]
         private let tableView = UITableView()
         
         override func viewDidLoad() {
@@ -53,8 +53,6 @@ class ComponentsViewController: UIViewController, UITableViewDelegate, UITableVi
             viewController = ExplainMealPlannerViewController()
         case "Carousel":
             viewController = ExplainCarouselViewController()
-        case "Basket Tag":
-            viewController = ExplainBasketTagViewController()
         default:
             break
         }
