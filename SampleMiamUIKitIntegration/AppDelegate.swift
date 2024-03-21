@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import MiamIOSFramework
-import miamCore
+import MealzIOSFramework
+import mealzcore
 import SwiftUI
 import MealzUIModuleIOS
 //import FirebaseCore

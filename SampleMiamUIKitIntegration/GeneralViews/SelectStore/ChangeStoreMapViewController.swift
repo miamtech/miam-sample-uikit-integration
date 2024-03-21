@@ -7,7 +7,7 @@
 
 import UIKit
 import MapKit
-import MiamIOSFramework
+import MealzIOSFramework
 import SwiftUI
 
 class ChangeStoreMapViewController: UIViewController, MKMapViewDelegate {

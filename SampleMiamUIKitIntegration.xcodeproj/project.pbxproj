@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26151C132BAC616400F654EC /* MealzNavModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 26151C122BAC616400F654EC /* MealzNavModuleIOS */; };
 		263462872AE7CD90004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263462892AE7CD90004C1C63 /* Localizable.strings */; };
 		2634628C2AE7CDA4004C1C63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2634628E2AE7CDA4004C1C63 /* Localizable.strings */; };
-		2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */ = {isa = PBXBuildFile; productRef = 2642567E2B5E78F600010D91 /* MealzUIModuleIOS */; };
 		265750DE2AE66B4F00E186F7 /* MiamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265750DD2AE66B4F00E186F7 /* MiamManager.swift */; };
 		265750E02AE6748D00E186F7 /* PretendBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265750DF2AE6748D00E186F7 /* PretendBasketViewController.swift */; };
 		268269282B98699B0014BA35 /* CatalogFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268269272B98699B0014BA35 /* CatalogFeatureViewController.swift */; };
@@ -27,7 +27,6 @@
 		26B8477D2AE9018F000C9AF1 /* PretendBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8477C2AE9018F000C9AF1 /* PretendBasket.swift */; };
 		26B847892AE96E54000C9AF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B847882AE96E54000C9AF1 /* GoogleService-Info.plist */; };
 		395BE8E92AF15A2600079746 /* ViewWithHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE8E82AF15A2600079746 /* ViewWithHeaderViewController.swift */; };
-		3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 3976C6832B1748EE00151D08 /* MiamIOSFramework */; };
 		3976C6872B17518600151D08 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C6862B17518600151D08 /* SettingViewController.swift */; };
 		3976C68A2B17598D00151D08 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C6892B17598D00151D08 /* SettingsCell.swift */; };
 		3976C68E2B18D92E00151D08 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976C68C2B18D92E00151D08 /* ProfilViewController.swift */; };
@@ -54,7 +53,6 @@
 		263462832AE7B262004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		263462882AE7CD90004C1C63 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2634628D2AE7CDA4004C1C63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		264A36B12A6FC39C00EA2D23 /* miam-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "miam-sdk"; path = "../miam-sdk"; sourceTree = "<group>"; };
 		265750DD2AE66B4F00E186F7 /* MiamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiamManager.swift; sourceTree = "<group>"; };
 		265750DF2AE6748D00E186F7 /* PretendBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendBasketViewController.swift; sourceTree = "<group>"; };
 		268269272B98699B0014BA35 /* CatalogFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFeatureViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26151C132BAC616400F654EC /* MealzNavModuleIOS in Frameworks */,
 				2682692B2B9869C90014BA35 /* MealzNavModuleIOS in Frameworks */,
-				2642567F2B5E78F600010D91 /* MealzUIModuleIOS in Frameworks */,
-				3976C6842B1748EE00151D08 /* MiamIOSFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,14 +110,6 @@
 				2634628E2AE7CDA4004C1C63 /* Localizable.strings */,
 			);
 			path = Localization;
-			sourceTree = "<group>";
-		};
-		264A36B02A6FC39C00EA2D23 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				264A36B12A6FC39C00EA2D23 /* miam-sdk */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		2672B0242AB9CB31008D2327 /* GeneralViews */ = {
@@ -251,7 +240,6 @@
 		BF85056E28578EF800651864 = {
 			isa = PBXGroup;
 			children = (
-				264A36B02A6FC39C00EA2D23 /* Packages */,
 				BF85057928578EF800651864 /* SampleMiamUIKitIntegration */,
 				BF85057828578EF800651864 /* Products */,
 				9FCC2D7B65602A1222F1A0AD /* Frameworks */,
@@ -303,9 +291,8 @@
 			);
 			name = SampleMiamUIKitIntegration;
 			packageProductDependencies = (
-				3976C6832B1748EE00151D08 /* MiamIOSFramework */,
-				2642567E2B5E78F600010D91 /* MealzUIModuleIOS */,
 				2682692A2B9869C90014BA35 /* MealzNavModuleIOS */,
+				26151C122BAC616400F654EC /* MealzNavModuleIOS */,
 			);
 			productName = SampleUIKitIntegration;
 			productReference = BF85057728578EF800651864 /* SampleMiamUIKitIntegration.app */;
@@ -338,9 +325,7 @@
 			mainGroup = BF85056E28578EF800651864;
 			packageReferences = (
 				26B847852AE96DF4000C9AF1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */,
-				2642567D2B5E78F600010D91 /* XCLocalSwiftPackageReference "../MealzUIModuleIOS" */,
-				268269292B9869C90014BA35 /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */,
+				26151C112BAC616400F654EC /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */,
 			);
 			productRefGroup = BF85057828578EF800651864 /* Products */;
 			projectDirPath = "";
@@ -648,17 +633,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		2642567D2B5E78F600010D91 /* XCLocalSwiftPackageReference "../MealzUIModuleIOS" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../MealzUIModuleIOS;
-		};
-		268269292B9869C90014BA35 /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */ = {
+		26151C112BAC616400F654EC /* XCLocalSwiftPackageReference "../MealzNavModuleIOS" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../MealzNavModuleIOS;
-		};
-		3976C6822B1748EE00151D08 /* XCLocalSwiftPackageReference "../miam-sdk" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../miam-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -674,17 +651,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2642567E2B5E78F600010D91 /* MealzUIModuleIOS */ = {
+		26151C122BAC616400F654EC /* MealzNavModuleIOS */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = MealzUIModuleIOS;
+			productName = MealzNavModuleIOS;
 		};
 		2682692A2B9869C90014BA35 /* MealzNavModuleIOS */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MealzNavModuleIOS;
-		};
-		3976C6832B1748EE00151D08 /* MiamIOSFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MiamIOSFramework;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

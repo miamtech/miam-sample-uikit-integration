@@ -7,7 +7,7 @@
 
 import Foundation
 import MealzUIModuleIOS
-import MiamIOSFramework
+import MealzIOSFramework
 import MealzNavModuleIOS
 
 struct MealzViewConfig {

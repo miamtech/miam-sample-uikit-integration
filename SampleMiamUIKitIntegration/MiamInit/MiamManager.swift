@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import miamCore
-import MiamIOSFramework
+import mealzcore
+import MealzIOSFramework
 import MealzUIModuleIOS
 
 public class MiamManager: ObservableObject {

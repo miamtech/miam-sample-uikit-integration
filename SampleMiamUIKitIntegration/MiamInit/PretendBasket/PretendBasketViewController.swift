@@ -7,7 +7,7 @@
 
 import UIKit
 import Combine
-import MiamIOSFramework
+import MealzIOSFramework
 import MealzUIModuleIOS
 import SwiftUI
 

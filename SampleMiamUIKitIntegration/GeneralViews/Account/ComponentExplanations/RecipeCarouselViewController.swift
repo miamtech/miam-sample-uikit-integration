@@ -7,9 +7,9 @@
 
 import UIKit
 import SwiftUI
-import MiamIOSFramework
+import MealzIOSFramework
 import MealzUIModuleIOS
-import miamCore
+import mealzcore
 
 public var localRecipesCarouselViewConfig = RecipesCarouselGridConfig(
     numberOfRows: 1,

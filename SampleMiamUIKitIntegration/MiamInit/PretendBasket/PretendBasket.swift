@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import miamCore
+import mealzcore
 
 class PretendBasket: ObservableObject {
     static let shared = PretendBasket(

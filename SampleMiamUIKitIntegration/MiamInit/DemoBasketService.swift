@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import miamCore
+import mealzcore
 
 class DemoBasketService: BasketSubscriber, BasketPublisher {
     private var cancellable: AnyCancellable? // used to create stream between mealz basket & our own

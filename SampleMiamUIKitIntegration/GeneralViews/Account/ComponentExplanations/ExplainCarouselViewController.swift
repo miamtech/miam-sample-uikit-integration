@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import MiamIOSFramework
+import MealzIOSFramework
 import SwiftUI
-import miamCore
+import mealzcore
 
 class ExplainCarouselViewController: UIViewController {
     

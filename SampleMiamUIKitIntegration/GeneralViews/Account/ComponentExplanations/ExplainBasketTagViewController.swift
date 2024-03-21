@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import MiamIOSFramework
+import MealzIOSFramework
 import SwiftUI
 import MealzUIModuleIOS
-import miamCore
+import mealzcore
 
 class ExplainBasketTagViewController: UIViewController {
 

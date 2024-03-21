@@ -7,7 +7,7 @@
 
 import UIKit
 import MealzNavModuleIOS
-import MiamIOSFramework
+import MealzIOSFramework
 
 class CatalogFeatureViewController: AbstractMealzViewController {
     

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MiamIOSFramework
+import MealzIOSFramework
 import SwiftUI
 import MealzUIModuleIOS
 

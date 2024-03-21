@@ -7,9 +7,9 @@
 
 import UIKit
 import SwiftUI
-import MiamIOSFramework
+import MealzIOSFramework
 import MealzUIModuleIOS
-import miamCore
+import mealzcore
 
 class BasketTagViewController: UIViewController {
     public let retailerProductId: String
